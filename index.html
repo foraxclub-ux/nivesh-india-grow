@@ -1,80 +1,110 @@
-<!doctype html>
-<html lang="hi">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <title>Nivesh India Grow</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#f2f6f5;font-family:Arial,sans-serif;color:#172522}
-.app{max-width:430px;margin:auto;min-height:100vh;background:#f7faf9;padding-bottom:78px}
-header{background:linear-gradient(135deg,#063b31,#08785b);color:white;padding:18px 16px 20px;border-radius:0 0 24px 24px}
-.brand{font-size:21px;font-weight:800}.brand span{color:#67e0b3}.sub{font-size:12px;opacity:.85;margin-top:4px}
-.balance{margin-top:18px;background:#ffffff18;border:1px solid #ffffff25;border-radius:16px;padding:15px}.balance small{opacity:.8}.balance b{display:block;font-size:27px;margin:5px 0}.actions{display:flex;gap:10px;margin-top:12px}.actions button{flex:1;border:0;border-radius:11px;padding:11px;font-weight:700;background:white;color:#075d48}.actions button.alt{background:#ffffff20;color:white;border:1px solid #ffffff40}
-.page{padding:16px}.section{margin-bottom:18px}.title{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.title h2{font-size:17px;margin:0}.title a{font-size:12px;color:#08785b}
-.cards{display:flex;gap:10px;overflow:auto}.card{min-width:180px;background:white;border-radius:15px;padding:14px;box-shadow:0 5px 18px #15352a12}.card .tag{font-size:11px;color:#08785b;font-weight:700}.card h3{margin:8px 0 4px}.card p{font-size:12px;color:#687774;margin:0 0 12px}.card button,.primary{width:100%;border:0;border-radius:10px;background:#08785b;color:#fff;padding:11px;font-weight:700}
-.list{background:white;border-radius:15px;overflow:hidden;box-shadow:0 5px 18px #15352a10}.row{display:flex;align-items:center;gap:12px;padding:14px;border-bottom:1px solid #edf2f0}.row:last-child{border-bottom:0}.icon{width:36px;height:36px;border-radius:11px;background:#e4f6ef;display:grid;place-items:center;color:#08785b;font-weight:bold}.row .grow{flex:1}.row b{display:block;font-size:14px}.row small{color:#71807d;font-size:11px}.row .arrow{color:#9aa7a4}
-.bottom{position:fixed;bottom:0;left:0;right:0;max-width:430px;margin:auto;height:70px;background:white;border-top:1px solid #dfe9e5;display:flex;justify-content:space-around;z-index:10}.bottom button{flex:1;border:0;background:white;color:#7b8986;font-size:19px}.bottom button span{display:block;font-size:10px;margin-top:4px}.bottom button.active{color:#08785b;font-weight:800}
-.hero-card{background:linear-gradient(135deg,#0a8061,#18a875);color:#fff;border-radius:18px;padding:17px;margin-bottom:16px}.hero-card h2{margin:0 0 6px;font-size:20px}.hero-card p{margin:0;font-size:12px;opacity:.9}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{background:white;padding:14px;border-radius:14px}.stat small{color:#7a8885}.stat b{display:block;margin-top:6px}
-.qr{width:150px;height:150px;margin:12px auto;background:repeating-linear-gradient(45deg,#111 0 4px,#fff 4px 8px);border:10px solid white}
-.notice{margin:12px 16px;background:#fff7da;border:1px solid #f0db8c;border-radius:10px;padding:9px;font-size:10px;color:#695400;text-align:center}
-.hidden{display:none!important}
-.login{min-height:100vh;display:flex;align-items:center;padding:24px}.loginbox{width:100%;background:white;border-radius:22px;padding:24px;box-shadow:0 10px 35px #15352a15}.loginbox h1{margin:0 0 5px;color:#075d48}.loginbox p{font-size:12px;color:#74817f}.input{width:100%;padding:13px;border:1px solid #d9e5e1;border-radius:10px;margin:7px 0;outline:0}.loginbox button{width:100%;padding:13px;border:0;border-radius:10px;background:#08785b;color:white;font-weight:800;margin-top:8px}
-.toast{position:fixed;left:20px;right:20px;bottom:85px;background:#17332c;color:#fff;padding:12px;border-radius:10px;text-align:center;font-size:12px;display:none;z-index:20}
+*{box-sizing:border-box}body{margin:0;background:#f3f6f4;font-family:Arial,sans-serif;color:#17221c}
+.app{max-width:430px;margin:auto;min-height:100vh;background:#fff;padding-bottom:76px}
+header{background:linear-gradient(135deg,#087443,#18a66a);color:#fff;padding:22px 18px;border-radius:0 0 22px 22px}
+.brand{font-size:22px;font-weight:800}.sub{opacity:.85;font-size:12px;margin-top:5px}
+.balance{margin-top:20px;font-size:30px;font-weight:800}
+.section{padding:18px}.title{font-size:18px;font-weight:800;margin-bottom:12px}
+.card{background:#fff;border:1px solid #e7ece9;border-radius:16px;padding:15px;margin-bottom:12px;box-shadow:0 4px 15px #0000000a}
+.plan{display:flex;justify-content:space-between;gap:12px}.plan h3{margin:0 0 8px}.muted{color:#718078;font-size:12px}
+.price{font-size:20px;font-weight:800;color:#087443}.btn{border:0;border-radius:10px;padding:10px 14px;background:#087443;color:white;font-weight:700}
+.btn.light{background:#eaf6ef;color:#087443}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{background:#f7faf8;border-radius:12px;padding:13px}.stat b{display:block;font-size:19px;margin-top:5px}
+.nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(430px,100%);height:68px;background:#fff;border-top:1px solid #e5ebe7;display:grid;grid-template-columns:repeat(5,1fr);z-index:5}
+.nav button{border:0;background:none;font-size:11px;color:#68756e}.nav button.active{color:#087443;font-weight:800}.nav span{display:block;font-size:21px;margin-bottom:3px}
+.page{display:none}.page.active{display:block}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px}.qr{width:170px;height:170px;margin:15px auto;background:repeating-linear-gradient(45deg,#111 0 4px,#fff 4px 8px);border:10px solid #fff;box-shadow:0 0 0 1px #ddd}
+input{width:100%;padding:13px;border:1px solid #dfe7e2;border-radius:10px;margin:7px 0 12px}.toast{position:fixed;left:50%;bottom:82px;transform:translateX(-50%);background:#17221c;color:white;padding:10px 16px;border-radius:20px;display:none;font-size:13px;z-index:9}
+.notice{background:#fff8e6;border:1px solid #f1dfaa;color:#735b16;padding:12px;border-radius:12px;font-size:12px;line-height:1.5}
 </style>
 </head>
 <body>
-<div id="login" class="login">
- <div class="loginbox">
-  <h1>Nivesh India Grow</h1><p>Mobile Investment Information & Demo</p>
-  <input id="mobile" class="input" placeholder="Mobile number">
-  <input id="password" class="input" type="password" placeholder="Password">
-  <button onclick="enterApp()">Login</button>
-  <button onclick="demoRegister()" style="background:#e7f5f0;color:#08785b">Create Demo Account</button>
-  <p style="margin-top:14px;text-align:center">Demo only — no real money is accepted.</p>
- </div>
-</div>
-
-<div id="app" class="app hidden">
+<div class="app">
 <header>
- <div class="brand">Nivesh India <span>Grow</span></div><div class="sub">Smart investment information</div>
- <div class="balance"><small>Demo Balance</small><b>₹12,850</b><small>Illustrative account value</small></div>
- <div class="actions"><button onclick="toast('Demo action: Deposit')">Recharge</button><button class="alt" onclick="toast('Demo action: Withdrawal')">Withdraw</button></div>
+<div class="brand">🎩 Nivesh India Grow</div>
+<div class="sub">Mobile Demo Platform</div>
+<div class="balance">₹12,850</div>
+<div class="sub">Demo balance · No real money</div>
 </header>
-<main id="content"></main>
-<div class="notice">DEMO WEBSITE — amounts, plans and returns shown here are illustrative only.</div>
-<nav class="bottom">
- <button data-page="home" onclick="show('home')" class="active">⌂<span>Home</span></button>
- <button data-page="team" onclick="show('team')">♧<span>Team</span></button>
- <button data-page="share" onclick="show('share')">↗<span>Share</span></button>
- <button data-page="devices" onclick="show('devices')">▣<span>Devices</span></button>
- <button data-page="my" onclick="show('my')">◉<span>My</span></button>
-</nav>
-</div>
-<div id="toast" class="toast"></div>
 
+<main id="home" class="page active">
+<section class="section">
+<div class="notice">Demo/educational interface only. No real deposits, withdrawals, investment returns or guaranteed profits are processed here.</div>
+<div class="title" style="margin-top:18px">Investment Plans</div>
+<div class="card"><div class="plan"><div><h3>Starter</h3><div class="muted">Illustrative plan · 7 days</div></div><div class="price">₹1,000</div></div><p class="muted">Daily illustrative figure: ₹50 · Total illustrative: ₹1,350</p><button class="btn" onclick="toast('Demo plan selected')">Plan Details</button></div>
+<div class="card"><div class="plan"><div><h3>Growth</h3><div class="muted">Illustrative plan · 15 days</div></div><div class="price">₹5,000</div></div><p class="muted">Daily illustrative figure: ₹300 · Total illustrative: ₹9,500</p><button class="btn" onclick="toast('Demo plan selected')">Plan Details</button></div>
+<div class="card"><div class="plan"><div><h3>Premium</h3><div class="muted">Coming Soon</div></div><div class="price">—</div></div><button class="btn light" onclick="toast('Coming Soon')">Coming Soon</button></div>
+</section>
+</main>
+
+<main id="team" class="page"><section class="section">
+<div class="title">Team</div><div class="grid">
+<div class="stat">Team Size<b>24</b></div><div class="stat">Level 1<b>12</b></div><div class="stat">Level 2<b>8</b></div><div class="stat">Level 3<b>4</b></div>
+</div>
+<div class="title" style="margin-top:20px">Demo Team</div>
+<div class="card row"><span>Member 001<br><small class="muted">Level 1</small></span><b>Active</b></div>
+<div class="card row"><span>Member 002<br><small class="muted">Level 2</small></span><b>Active</b></div>
+<div class="card row"><span>Member 003<br><small class="muted">Level 3</small></span><b>Active</b></div>
+</section></main>
+
+<main id="share" class="page"><section class="section">
+<div class="title">Share & Referral</div><div class="card" style="text-align:center">
+<div class="qr"></div><h3>Demo Referral Code</h3><b id="code">NIG2026</b><br><button class="btn" style="margin-top:12px" onclick="copyCode()">Copy Code</button>
+</div>
+<div class="card"><div class="muted">Referral Link</div><input id="link" readonly value="https://example.com/nivesh-india-grow"><button class="btn light" onclick="copyLink()">Copy Link</button></div>
+</section></main>
+
+<main id="devices" class="page"><section class="section">
+<div class="title">Devices</div>
+<div class="card"><div class="row"><b>Starter Demo</b><span class="muted">ACTIVE</span></div><p class="muted">Demo amount: ₹1,000 · 7 days</p><button class="btn light" onclick="toast('Demo device details')">Details</button></div>
+<div class="card"><div class="row"><b>Old Demo Plan</b><span class="muted">EXPIRED</span></div><p class="muted">Demo record only</p><button class="btn light" onclick="toast('Demo device details')">Details</button></div>
+</section></main>
+
+<main id="my" class="page"><section class="section">
+<div class="title">My Account</div><div class="card"><div class="grid"><div class="stat">Balance<b>₹12,850</b></div><div class="stat">Total Income<b>₹3,250</b></div></div></div>
+<div class="grid">
+<button class="btn" onclick="toast('Demo only — Recharge unavailable')">Recharge</button>
+<button class="btn" onclick="toast('Demo only — Withdraw unavailable')">Withdraw</button>
+<button class="btn light" onclick="go('devices')">Devices</button>
+<button class="btn light" onclick="toast('Bank section is demo only')">Bank</button>
+</div>
+<div class="card" style="margin-top:15px">
+<div class="row" onclick="toast('Personal Information')">Personal Information <b>›</b></div><hr>
+<div class="row" onclick="toast('Income Details')">Income Details <b>›</b></div><hr>
+<div class="row" onclick="toast('Recharge Details')">Recharge Details <b>›</b></div><hr>
+<div class="row" onclick="toast('Withdrawal Details')">Withdrawal Details <b>›</b></div><hr>
+<div class="row" onclick="toast('About Us')">About Us <b>›</b></div><hr>
+<div class="row" onclick="toast('Download')">Download <b>›</b></div><hr>
+<div class="row" onclick="toast('Language: English')">Language <b>›</b></div><hr>
+<div class="row" onclick="toast('Logged out of demo')">Log Out <b>›</b></div>
+</div>
+</section></main>
+
+<nav class="nav">
+<button class="active" onclick="go('home',this)"><span>⌂</span>Home</button>
+<button onclick="go('team',this)"><span>👥</span>Team</button>
+<button onclick="go('share',this)"><span>↗</span>Share</button>
+<button onclick="go('devices',this)"><span>▣</span>Devices</button>
+<button onclick="go('my',this)"><span>☻</span>My</button>
+</nav>
+<div id="toast" class="toast"></div>
+</div>
 <script>
-const plans=[
- ['Starter','Educational example','₹1,000','12 months'],
- ['Growth','Educational example','₹5,000','24 months'],
- ['Premium','Educational example','₹10,000','36 months']
-];
-function enterApp(){document.getElementById('login').classList.add('hidden');document.getElementById('app').classList.remove('hidden');show('home')}
-function demoRegister(){toast('Demo account created');enterApp()}
-function toast(t){let x=document.getElementById('toast');x.textContent=t;x.style.display='block';setTimeout(()=>x.style.display='none',1800)}
-function nav(p){document.querySelectorAll('.bottom button').forEach(b=>b.classList.toggle('active',b.dataset.page===p))}
-function show(p){
- nav(p); let c=document.getElementById('content');
- if(p==='home') c.innerHTML=`<div class="page">
-  <div class="hero-card"><h2>Welcome to Nivesh India Grow</h2><p>Investment concepts, calculators and portfolio education — all in one place.</p></div>
-  <section class="section"><div class="title"><h2>Featured Plans</h2><a>View all</a></div><div class="cards">${plans.map(x=>`<div class="card"><span class="tag">${x[1]}</span><h3>${x[0]}</h3><p>Example amount: ${x[2]}<br>Period: ${x[3]}</p><button onclick="toast('Plan details — demo only')">View Details</button></div>`).join('')}</div></section>
-  <section class="section"><div class="title"><h2>Quick Tools</h2></div><div class="grid2"><div class="stat"><small>SIP Calculator</small><b>Calculate →</b></div><div class="stat"><small>Learn Investing</small><b>Explore →</b></div></div></section>
-  <section class="section"><div class="title"><h2>Recent Activity</h2></div><div class="list"><div class="row"><div class="icon">i</div><div class="grow"><b>Market Learning</b><small>New educational article</small></div><span class="arrow">›</span></div><div class="row"><div class="icon">₹</div><div class="grow"><b>Demo Portfolio</b><small>Illustrative update</small></div><span class="arrow">›</span></div></div></section>
- </div>`;
- if(p==='team') c.innerHTML=`<div class="page"><div class="hero-card"><h2>My Team</h2><p>Referral interface for demonstration purposes.</p></div><div class="grid2"><div class="stat"><small>Total Members</small><b>24</b></div><div class="stat"><small>Active Members</small><b>18</b></div></div><br><div class="list"><div class="row"><div class="icon">1</div><div class="grow"><b>Level 1</b><small>12 demo members</small></div><span>›</span></div><div class="row"><div class="icon">2</div><div class="grow"><b>Level 2</b><small>8 demo members</small></div><span>›</span></div><div class="row"><div class="icon">3</div><div class="grow"><b>Level 3</b><small>4 demo members</small></div><span>›</span></div></div></div>`;
- if(p==='share') c.innerHTML=`<div class="page"><div class="hero-card"><h2>Share & Invite</h2><p>Demo referral interface.</p></div><div class="list"><div class="row"><div class="grow"><b>Demo Invite Code</b><small>NIG-DEMO-001</small></div><button onclick="toast('Copied demo code')" class="primary" style="width:85px;padding:9px">Copy</button></div></div><div class="card" style="margin-top:15px;text-align:center"><h3>QR Code</h3><div class="qr"></div><p>Demo QR — no payment or investment link.</p></div></div>`;
- if(p==='devices') c.innerHTML=`<div class="page"><div class="hero-card"><h2>My Devices</h2><p>Demo portfolio/product records.</p></div><div class="list">${plans.map(x=>`<div class="row"><div class="icon">₹</div><div class="grow"><b>${x[0]}</b><small>${x[2]} · ${x[3]}</small></div><span style="color:#08785b;font-size:11px">DEMO</span></div>`).join('')}</div></div>`;
- if(p==='my') c.innerHTML=`<div class="page"><div class="hero-card"><h2>My Account</h2><p>Demo user · Nivesh India Grow</p></div><div class="grid2"><div class="stat"><small>Demo Balance</small><b>₹12,850</b></div><div class="stat"><small>Illustrative Gain</small><b>₹2,850</b></div></div><br><div class="list">${['Personal Information','Income Details','Recharge Details','Withdrawal Details','About Us','Download','Language'].map((x,i)=>`<div class="row" onclick="toast('${x} — demo')"><div class="icon">${i+1}</div><div class="grow"><b>${x}</b><small>Open section</small></div><span class="arrow">›</span></div>`).join('')}<div class="row" onclick="location.reload()"><div class="icon">↪</div><div class="grow"><b>Log Out</b><small>Return to login</small></div></div></div></div>`;
+function go(id,btn){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
+if(btn)btn.classList.add('active');
+window.scrollTo(0,0);
 }
+function toast(msg){let t=document.getElementById('toast');t.textContent=msg;t.style.display='block';setTimeout(()=>t.style.display='none',1800)}
+function copyCode(){navigator.clipboard?.writeText(document.getElementById('code').textContent);toast('Demo code copied')}
+function copyLink(){navigator.clipboard?.writeText(document.getElementById('link').value);toast('Demo link copied')}
 </script>
 </body>
 </html>
