@@ -3,53 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Nivesh India Grow</title>
 
 <style>
-*{box-sizing:border-box}
+
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
 margin:0;
 font-family:Arial,Helvetica,sans-serif;
 background:#f5f7fb;
 color:#172033;
-padding-bottom:78px
+padding-bottom:82px;
 }
-button,input{font:inherit}
-button{cursor:pointer}
+
+button,input{
+font:inherit;
+}
+
+button{
+cursor:pointer;
+}
 
 .top{
 background:linear-gradient(135deg,#0f172a,#1d4ed8);
 color:white;
 padding:18px 16px 22px;
-border-radius:0 0 24px 24px
+border-radius:0 0 24px 24px;
 }
+
 .brand{
 font-size:21px;
-font-weight:800
+font-weight:800;
 }
+
 .muted{
 color:#64748b;
-font-size:13px
+font-size:13px;
 }
-.top .muted{color:#cbd5e1}
 
-.page{display:none}
-.page.active{display:block}
+.top .muted{
+color:#cbd5e1;
+}
+
+.page{
+display:none;
+}
+
+.page.active{
+display:block;
+}
 
 .section{
-padding:18px 15px
+padding:18px 15px;
 }
+
 .title{
 font-size:21px;
 font-weight:800;
-margin-bottom:15px
+margin-bottom:15px;
 }
+
 .card{
 background:white;
 border-radius:18px;
 padding:16px;
 margin-bottom:13px;
-box-shadow:0 5px 18px rgba(15,23,42,.07)
+box-shadow:0 5px 18px rgba(15,23,42,.07);
 }
 
 .balance{
@@ -57,10 +84,11 @@ margin-top:15px;
 background:rgba(255,255,255,.12);
 border:1px solid rgba(255,255,255,.18);
 padding:16px;
-border-radius:17px
+border-radius:17px;
 }
+
 .balance strong{
-font-size:27px
+font-size:27px;
 }
 
 .btn{
@@ -70,30 +98,34 @@ padding:13px;
 border-radius:12px;
 background:#2563eb;
 color:white;
-font-weight:700
+font-weight:700;
 }
+
 .btn.light{
 background:#eff6ff;
-color:#2563eb
+color:#2563eb;
 }
+
 .btn.red{
 background:#fee2e2;
-color:#dc2626
+color:#dc2626;
 }
 
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:12px
+gap:12px;
 }
+
 .stat{
 background:white;
 border-radius:16px;
 padding:15px;
-box-shadow:0 4px 14px rgba(15,23,42,.06)
+box-shadow:0 4px 14px rgba(15,23,42,.06);
 }
+
 .stat b{
-font-size:20px
+font-size:20px;
 }
 
 .plan{
@@ -101,31 +133,37 @@ border:1px solid #e2e8f0;
 border-radius:17px;
 padding:16px;
 margin-bottom:12px;
-background:white
+background:white;
 }
+
 .plan-head{
 display:flex;
 justify-content:space-between;
 align-items:center;
-margin-bottom:12px
+margin-bottom:12px;
 }
+
 .badge{
 background:#dbeafe;
 color:#1d4ed8;
 padding:6px 9px;
 border-radius:20px;
 font-size:11px;
-font-weight:800
+font-weight:800;
 }
 
 .row{
 display:flex;
 justify-content:space-between;
+align-items:center;
 padding:10px 0;
 border-bottom:1px solid #f1f5f9;
-font-size:14px
+font-size:14px;
 }
-.row:last-child{border-bottom:0}
+
+.row:last-child{
+border-bottom:0;
+}
 
 .notice{
 background:#fff7ed;
@@ -135,117 +173,143 @@ padding:14px;
 border-radius:14px;
 font-size:12px;
 line-height:1.5;
-margin-bottom:13px
+margin-bottom:13px;
 }
+
+
+/* ================= BOTTOM NAV ================= */
 
 .bottom{
 position:fixed;
 bottom:0;
-left:0;
-right:0;
-height:70px;
+left:50%;
+transform:translateX(-50%);
+width:min(430px,100%);
+height:72px;
 background:white;
 border-top:1px solid #e5e7eb;
 display:none;
 grid-template-columns:repeat(5,1fr);
-z-index:50
+z-index:999;
+box-shadow:0 -5px 18px rgba(15,23,42,.10);
 }
+
 .bottom button{
 border:0;
 background:white;
 font-size:11px;
-color:#64748b
-}
-.bottom button.active{
-color:#2563eb;
-font-weight:800
-}
-.bottom span{
-display:block;
-font-size:20px;
-margin-bottom:3px
+color:#64748b;
 }
 
-/* LOGIN */
+.bottom button.active{
+color:#2563eb;
+font-weight:800;
+}
+
+.bottom span{
+display:block;
+font-size:21px;
+margin-bottom:3px;
+}
+
+
+/* ================= LOGIN ================= */
+
 .auth{
 min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
 padding:20px;
-background:linear-gradient(145deg,#0f172a,#1d4ed8)
+background:linear-gradient(145deg,#0f172a,#1d4ed8);
 }
+
 .auth-box{
 width:100%;
 max-width:410px;
 background:white;
 padding:25px;
 border-radius:24px;
-box-shadow:0 20px 50px rgba(0,0,0,.2)
+box-shadow:0 20px 50px rgba(0,0,0,.2);
 }
+
 .auth-logo{
 text-align:center;
 font-size:25px;
 font-weight:900;
-margin-bottom:5px
+margin-bottom:5px;
 }
+
 .auth-sub{
 text-align:center;
 color:#64748b;
 font-size:13px;
-margin-bottom:22px
+margin-bottom:22px;
 }
+
 .auth input{
 width:100%;
 padding:14px;
 border:1px solid #dbe3ee;
 border-radius:12px;
 margin-bottom:12px;
-outline:none
+outline:none;
 }
+
 .auth input:focus{
-border-color:#2563eb
+border-color:#2563eb;
 }
+
 .auth-link{
 text-align:center;
 margin-top:15px;
 font-size:13px;
 color:#2563eb;
 font-weight:700;
-cursor:pointer
+cursor:pointer;
 }
+
 .auth-msg{
 font-size:12px;
 color:#dc2626;
 margin-bottom:10px;
-display:none
+display:none;
 }
 
-/* TEAM */
+
+/* ================= TEAM ================= */
+
 .team-hero{
 background:linear-gradient(135deg,#111827,#2563eb);
 color:white;
 border-radius:20px;
 padding:20px;
-margin-bottom:14px
+margin-bottom:14px;
 }
+
 .team-hero b{
-font-size:30px
+font-size:30px;
 }
+
 .level{
 border-radius:15px;
 padding:14px;
 background:#f8fafc;
-border:1px solid #e2e8f0
+border:1px solid #e2e8f0;
 }
+
 .member{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:13px 0;
-border-bottom:1px solid #eef2f7
+border-bottom:1px solid #eef2f7;
 }
-.member:last-child{border-bottom:0}
+
+.member:last-child{
+border-bottom:0;
+}
+
 .avatar{
 width:40px;
 height:40px;
@@ -255,58 +319,111 @@ display:flex;
 align-items:center;
 justify-content:center;
 font-weight:800;
-color:#1d4ed8
+color:#1d4ed8;
 }
+
 .member-left{
 display:flex;
 align-items:center;
-gap:10px
+gap:10px;
 }
+
 .filter{
 display:flex;
 gap:7px;
 overflow:auto;
-margin-bottom:12px
+margin-bottom:12px;
 }
+
 .filter button{
 white-space:nowrap;
 border:1px solid #dbe3ee;
 background:white;
 padding:8px 13px;
 border-radius:20px;
-font-size:12px
+font-size:12px;
 }
+
 .filter button.active{
 background:#2563eb;
 color:white;
-border-color:#2563eb
+border-color:#2563eb;
 }
 
-/* SHARE */
+
+/* ================= SHARE ================= */
+
 .qr{
 width:150px;
 height:150px;
 margin:auto;
 border:8px solid white;
 background:
-repeating-linear-gradient(0deg,#111 0 5px,#fff 5px 10px),
-repeating-linear-gradient(90deg,transparent 0 5px,#111 5px 10px);
-box-shadow:0 0 0 1px #ddd
+repeating-linear-gradient(
+0deg,
+#111 0 5px,
+#fff 5px 10px
+),
+repeating-linear-gradient(
+90deg,
+transparent 0 5px,
+#111 5px 10px
+);
+box-shadow:0 0 0 1px #ddd;
 }
+
 .ref-code{
 font-size:24px;
 letter-spacing:2px;
 background:#f1f5f9;
 padding:12px;
 border-radius:12px;
-margin-top:8px
+margin-top:8px;
 }
 
-/* TOAST */
+
+/* ================= PROFILE ================= */
+
+.profile-card{
+background:linear-gradient(135deg,#0f172a,#2563eb);
+color:white;
+border-radius:18px;
+padding:18px;
+margin-bottom:13px;
+}
+
+.profile-avatar{
+width:58px;
+height:58px;
+border-radius:50%;
+background:rgba(255,255,255,.15);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:25px;
+font-weight:900;
+}
+
+.quick-card{
+background:white;
+border-radius:16px;
+padding:16px;
+text-align:center;
+box-shadow:0 5px 18px rgba(15,23,42,.07);
+}
+
+.quick-icon{
+font-size:25px;
+margin-bottom:5px;
+}
+
+
+/* ================= TOAST ================= */
+
 .toast{
 position:fixed;
 left:50%;
-bottom:85px;
+bottom:88px;
 transform:translateX(-50%);
 background:#111827;
 color:white;
@@ -314,12 +431,16 @@ padding:11px 16px;
 border-radius:10px;
 font-size:13px;
 display:none;
-z-index:100
+z-index:1100;
+white-space:nowrap;
 }
+
 </style>
 </head>
 
+
 <body>
+
 
 <!-- ================= LOGIN ================= -->
 
@@ -335,11 +456,22 @@ Nivesh India Grow
 Secure Demo Portal
 </div>
 
+
+<!-- LOGIN -->
+
 <div id="loginBox">
 
-<input id="loginUser" type="text" placeholder="Username">
+<input
+id="loginUser"
+type="text"
+placeholder="Username"
+>
 
-<input id="loginPass" type="password" placeholder="Password">
+<input
+id="loginPass"
+type="password"
+placeholder="Password"
+>
 
 <div id="loginMsg" class="auth-msg"></div>
 
@@ -354,15 +486,33 @@ Don't have an account? Register
 </div>
 
 
+<!-- REGISTER -->
+
 <div id="registerBox" style="display:none">
 
-<input id="regName" type="text" placeholder="Full Name">
+<input
+id="regName"
+type="text"
+placeholder="Full Name"
+>
 
-<input id="regUser" type="text" placeholder="Create Username">
+<input
+id="regUser"
+type="text"
+placeholder="Create Username"
+>
 
-<input id="regPass" type="password" placeholder="Create Password">
+<input
+id="regPass"
+type="password"
+placeholder="Create Password"
+>
 
-<input id="regPass2" type="password" placeholder="Confirm Password">
+<input
+id="regPass2"
+type="password"
+placeholder="Confirm Password"
+>
 
 <div id="regMsg" class="auth-msg"></div>
 
@@ -377,12 +527,17 @@ Already have an account? Login
 </div>
 
 </div>
+
 </div>
+
 
 
 <!-- ================= APP ================= -->
 
 <div id="app" style="display:none">
+
+
+<!-- ================= HEADER ================= -->
 
 <header class="top">
 
@@ -396,13 +551,18 @@ Welcome, <span id="welcomeName">User</span>
 
 <div class="balance">
 
-<div class="muted">Demo Balance</div>
+<div class="muted">
+Demo Balance
+</div>
 
-<strong>₹12,850</strong>
+<strong>
+₹12,850
+</strong>
 
 </div>
 
 </header>
+
 
 
 <!-- ================= HOME ================= -->
@@ -415,43 +575,80 @@ Welcome, <span id="welcomeName">User</span>
 Dashboard
 </div>
 
+
 <div class="grid">
 
 <div class="stat">
-<div class="muted">Total Income</div>
-<b>₹3,250</b>
+
+<div class="muted">
+Total Income
 </div>
+
+<b>
+₹3,250
+</b>
+
+</div>
+
 
 <div class="stat">
-<div class="muted">Team Members</div>
-<b>24</b>
+
+<div class="muted">
+Team Members
+</div>
+
+<b>
+24
+</b>
+
 </div>
 
 </div>
+
 
 <br>
 
+
 <div class="notice">
-<b>Demo Mode</b><br>
+
+<b>Demo Mode</b>
+<br>
+
 All amounts shown on this website are illustrative only.
 No real investment, return or payout is processed.
+
 </div>
+
 
 <div class="title">
 Available Plans
 </div>
 
 
+<!-- STARTER -->
+
 <div class="plan">
 
 <div class="plan-head">
+
 <div>
-<b>Starter Plan</b>
-<div class="muted">7 Days</div>
+
+<b>
+Starter Plan
+</b>
+
+<div class="muted">
+7 Days
 </div>
 
-<span class="badge">DEMO</span>
 </div>
+
+<span class="badge">
+DEMO
+</span>
+
+</div>
+
 
 <div class="row">
 <span>Price</span>
@@ -468,23 +665,41 @@ Available Plans
 <b>₹1,350</b>
 </div>
 
-<button class="btn light" onclick="toast('Demo plan selected')">
+
+<button
+class="btn light"
+onclick="toast('Demo plan selected')"
+>
 View Plan
 </button>
 
 </div>
 
 
+<!-- GROWTH -->
+
 <div class="plan">
 
 <div class="plan-head">
+
 <div>
-<b>Growth Plan</b>
-<div class="muted">15 Days</div>
+
+<b>
+Growth Plan
+</b>
+
+<div class="muted">
+15 Days
 </div>
 
-<span class="badge">DEMO</span>
 </div>
+
+<span class="badge">
+DEMO
+</span>
+
+</div>
+
 
 <div class="row">
 <span>Price</span>
@@ -501,7 +716,11 @@ View Plan
 <b>₹9,500</b>
 </div>
 
-<button class="btn light" onclick="toast('Demo plan selected')">
+
+<button
+class="btn light"
+onclick="toast('Demo plan selected')"
+>
 View Plan
 </button>
 
@@ -510,7 +729,9 @@ View Plan
 
 <div class="card">
 
-<b>Announcement</b>
+<b>
+Announcement
+</b>
 
 <p class="muted">
 Welcome to Nivesh India Grow demo portal.
@@ -519,9 +740,11 @@ More features will be added after business verification.
 
 </div>
 
+
 </section>
 
 </main>
+
 
 
 <!-- ================= TEAM ================= -->
@@ -534,13 +757,16 @@ More features will be added after business verification.
 My Team
 </div>
 
+
 <div class="team-hero">
 
 <div class="muted" style="color:#dbeafe">
 Total Team Members
 </div>
 
-<b>24</b>
+<b>
+24
+</b>
 
 <div style="margin-top:5px;font-size:12px;color:#dbeafe">
 Demo team statistics
@@ -573,31 +799,59 @@ Demo team statistics
 
 </div>
 
+
 <br>
+
 
 <div class="title">
 Team Levels
 </div>
 
+
 <div class="card">
 
 <div class="level">
-<b>LV1</b>
-<div class="muted">12 Demo Members</div>
+
+<b>
+LV1
+</b>
+
+<div class="muted">
+12 Demo Members
 </div>
+
+</div>
+
 
 <br>
 
+
 <div class="level">
-<b>LV2</b>
-<div class="muted">8 Demo Members</div>
+
+<b>
+LV2
+</b>
+
+<div class="muted">
+8 Demo Members
 </div>
+
+</div>
+
 
 <br>
 
+
 <div class="level">
-<b>LV3</b>
-<div class="muted">4 Demo Members</div>
+
+<b>
+LV3
+</b>
+
+<div class="muted">
+4 Demo Members
+</div>
+
 </div>
 
 </div>
@@ -607,9 +861,13 @@ Team Levels
 Team Members
 </div>
 
+
 <div class="filter">
 
-<button class="active" onclick="filterTeam('all',this)">
+<button
+class="active"
+onclick="filterTeam('all',this)"
+>
 All
 </button>
 
@@ -630,88 +888,201 @@ LV3
 
 <div class="card">
 
+
 <div class="member" data-level="1">
+
 <div class="member-left">
-<div class="avatar">A</div>
+
+<div class="avatar">
+A
+</div>
+
 <div>
-<b>Member A</b>
-<div class="muted">LV1 • Active</div>
+
+<b>
+Member A
+</b>
+
+<div class="muted">
+LV1 • Active
 </div>
+
 </div>
-<span class="badge">LV1</span>
+
+</div>
+
+<span class="badge">
+LV1
+</span>
+
 </div>
 
 
 <div class="member" data-level="1">
+
 <div class="member-left">
-<div class="avatar">B</div>
+
+<div class="avatar">
+B
+</div>
+
 <div>
-<b>Member B</b>
-<div class="muted">LV1 • Active</div>
+
+<b>
+Member B
+</b>
+
+<div class="muted">
+LV1 • Active
 </div>
+
 </div>
-<span class="badge">LV1</span>
+
+</div>
+
+<span class="badge">
+LV1
+</span>
+
 </div>
 
 
 <div class="member" data-level="2">
+
 <div class="member-left">
-<div class="avatar">C</div>
+
+<div class="avatar">
+C
+</div>
+
 <div>
-<b>Member C</b>
-<div class="muted">LV2 • Active</div>
+
+<b>
+Member C
+</b>
+
+<div class="muted">
+LV2 • Active
 </div>
+
 </div>
-<span class="badge">LV2</span>
+
+</div>
+
+<span class="badge">
+LV2
+</span>
+
 </div>
 
 
 <div class="member" data-level="2">
+
 <div class="member-left">
-<div class="avatar">D</div>
+
+<div class="avatar">
+D
+</div>
+
 <div>
-<b>Member D</b>
-<div class="muted">LV2 • Active</div>
+
+<b>
+Member D
+</b>
+
+<div class="muted">
+LV2 • Active
 </div>
+
 </div>
-<span class="badge">LV2</span>
+
+</div>
+
+<span class="badge">
+LV2
+</span>
+
 </div>
 
 
 <div class="member" data-level="3">
+
 <div class="member-left">
-<div class="avatar">E</div>
+
+<div class="avatar">
+E
+</div>
+
 <div>
-<b>Member E</b>
-<div class="muted">LV3 • Active</div>
+
+<b>
+Member E
+</b>
+
+<div class="muted">
+LV3 • Active
 </div>
+
 </div>
-<span class="badge">LV3</span>
+
+</div>
+
+<span class="badge">
+LV3
+</span>
+
 </div>
 
 
 <div class="member" data-level="3">
+
 <div class="member-left">
-<div class="avatar">F</div>
+
+<div class="avatar">
+F
+</div>
+
 <div>
-<b>Member F</b>
-<div class="muted">LV3 • Active</div>
+
+<b>
+Member F
+</b>
+
+<div class="muted">
+LV3 • Active
 </div>
+
 </div>
-<span class="badge">LV3</span>
+
 </div>
+
+<span class="badge">
+LV3
+</span>
+
+</div>
+
 
 </div>
 
 
 <div class="notice">
-<b>Demo Team Notice</b><br>
+
+<b>
+Demo Team Notice
+</b>
+
+<br>
+
 Team members and statistics shown here are sample data for interface testing.
+
 </div>
+
 
 </section>
 
 </main>
+
 
 
 <!-- ================= SHARE ================= -->
@@ -724,25 +1095,44 @@ Team members and statistics shown here are sample data for interface testing.
 Share & Referral
 </div>
 
+
 <div class="card" style="text-align:center">
 
-<b>Invite & Grow</b>
+<b>
+Invite & Grow
+</b>
 
 <div class="muted">
 Share your demo referral code
 </div>
 
-<div class="qr" style="margin:18px auto"></div>
+
+<div
+class="qr"
+style="margin:18px auto"
+>
+</div>
+
 
 <div class="muted">
 Your Referral Code
 </div>
 
+
 <div class="ref-code">
-<b id="code">NIG2026</b>
+
+<b id="code">
+NIG2026
+</b>
+
 </div>
 
-<button class="btn" style="margin-top:13px" onclick="copyCode()">
+
+<button
+class="btn"
+style="margin-top:13px"
+onclick="copyCode()"
+>
 Copy Referral Code
 </button>
 
@@ -751,19 +1141,30 @@ Copy Referral Code
 
 <div class="card">
 
-<b>Referral Link</b>
+<b>
+Referral Link
+</b>
 
-<div class="muted" style="margin:8px 0">
+<div
+class="muted"
+style="margin:8px 0"
+>
 Share this demo link with your friends
 </div>
+
 
 <input
 id="link"
 readonly
-value="https://example.com/nivesh-india-grow"
-style="width:100%;padding:13px;border:1px solid #e5e7eb;border-radius:12px;background:#f8fafc;margin-bottom:10px">
+value="https://foraxclub-ux.github.io/nivesh-india-grow/"
+style="width:100%;padding:13px;border:1px solid #e5e7eb;border-radius:12px;background:#f8fafc;margin-bottom:10px"
+>
 
-<button class="btn light" onclick="copyLink()">
+
+<button
+class="btn light"
+onclick="copyLink()"
+>
 Copy Referral Link
 </button>
 
@@ -772,35 +1173,53 @@ Copy Referral Link
 
 <div class="card">
 
-<b>Referral Information</b>
+<b>
+Referral Information
+</b>
+
 
 <div class="row">
 <span>Referral Code</span>
 <b>NIG2026</b>
 </div>
 
+
 <div class="row">
 <span>Status</span>
-<b style="color:#16a34a">Active</b>
+<b style="color:#16a34a">
+Active
+</b>
 </div>
+
 
 <div class="row">
 <span>Sharing</span>
-<b>Available</b>
+<b>
+Available
+</b>
 </div>
 
 </div>
 
 
 <div class="notice">
-<b>Demo Referral Notice</b><br><br>
+
+<b>
+Demo Referral Notice
+</b>
+
+<br><br>
+
 This referral section is for interface testing only.
 No real commission, investment return, withdrawal or payout is processed.
+
 </div>
+
 
 </section>
 
 </main>
+
 
 
 <!-- ================= DEVICES ================= -->
@@ -813,10 +1232,14 @@ No real commission, investment return, withdrawal or payout is processed.
 My Devices
 </div>
 
-<div class="card" style="
+
+<div
+class="card"
+style="
 background:linear-gradient(135deg,#0f172a,#2563eb);
 color:white;
-">
+"
+>
 
 <div style="font-size:13px;color:#cbd5e1;">
 Total Demo Devices
@@ -834,9 +1257,16 @@ Your device dashboard
 
 
 <div class="notice">
-<b>Demo Mode</b><br>
+
+<b>
+Demo Mode
+</b>
+
+<br>
+
 The devices shown below are sample records for interface testing.
 No real purchase, investment or financial transaction is processed.
+
 </div>
 
 
@@ -844,14 +1274,17 @@ No real purchase, investment or financial transaction is processed.
 
 <div class="card">
 
-<div style="
+<div
+style="
 display:flex;
 justify-content:space-between;
 align-items:center;
 margin-bottom:14px;
-">
+"
+>
 
 <div>
+
 <b style="font-size:17px;">
 Starter Plan
 </b>
@@ -859,16 +1292,20 @@ Starter Plan
 <div class="muted">
 Demo Device #NIG001
 </div>
+
 </div>
 
-<span style="
+
+<span
+style="
 background:#dcfce7;
 color:#15803d;
 padding:6px 10px;
 border-radius:20px;
 font-size:11px;
 font-weight:800;
-">
+"
+>
 ACTIVE
 </span>
 
@@ -897,51 +1334,68 @@ Active
 </b>
 </div>
 
-<div style="
+
+<div
+style="
 margin-top:14px;
 height:9px;
 background:#e2e8f0;
 border-radius:20px;
 overflow:hidden;
-">
+"
+>
 
-<div style="
+<div
+style="
 width:65%;
 height:100%;
 background:#2563eb;
 border-radius:20px;
-"></div>
+"
+>
+</div>
 
 </div>
 
-<div style="
+
+<div
+style="
 display:flex;
 justify-content:space-between;
 margin-top:7px;
 font-size:11px;
 color:#64748b;
-">
+"
+>
 
-<span>Progress</span>
-<span>65%</span>
+<span>
+Progress
+</span>
+
+<span>
+65%
+</span>
 
 </div>
 
 </div>
 
 
-<!-- COMING SOON DEVICE -->
+<!-- COMING SOON -->
 
 <div class="card">
 
-<div style="
+<div
+style="
 display:flex;
 justify-content:space-between;
 align-items:center;
 margin-bottom:14px;
-">
+"
+>
 
 <div>
+
 <b style="font-size:17px;">
 Growth Plan
 </b>
@@ -949,16 +1403,20 @@ Growth Plan
 <div class="muted">
 Demo Device #NIG002
 </div>
+
 </div>
 
-<span style="
+
+<span
+style="
 background:#f1f5f9;
 color:#64748b;
 padding:6px 10px;
 border-radius:20px;
 font-size:11px;
 font-weight:800;
-">
+"
+>
 COMING SOON
 </span>
 
@@ -987,44 +1445,57 @@ Coming Soon
 </b>
 </div>
 
+
 <button
 class="btn light"
 style="margin-top:12px"
-onclick="toast('Growth Plan is coming soon')">
-
+onclick="toast('Growth Plan is coming soon')"
+>
 View Details
-
 </button>
 
 </div>
 
 
-<!-- DEVICE SUMMARY -->
-
 <div class="title">
 Device Summary
 </div>
 
+
 <div class="grid">
 
 <div class="stat">
+
 <div class="muted">
 Active
 </div>
-<b>01</b>
+
+<b>
+01
+</b>
+
 </div>
 
+
 <div class="stat">
+
 <div class="muted">
 Coming Soon
 </div>
-<b>01</b>
-</div>
+
+<b>
+01
+</b>
 
 </div>
 
+</div>
 
-<div class="card" style="margin-top:13px;">
+
+<div
+class="card"
+style="margin-top:13px;"
+>
 
 <b>
 Need Help?
@@ -1034,25 +1505,35 @@ Need Help?
 For demo interface testing, you can review your device status and plan details here.
 </p>
 
+
 <button
 class="btn light"
-onclick="toast('Support section coming soon')">
-
+onclick="toast('Support section coming soon')"
+>
 Contact Support
-
 </button>
 
 </div>
 
 
 <div class="notice">
-<b>Important:</b><br>
-All values on this page are illustrative demo values. Real-money functionality should only be connected after the business, payment and regulatory requirements are properly verified.
+
+<b>
+Important:
+</b>
+
+<br>
+
+All values on this page are illustrative demo values.
+Real-money functionality should only be connected after the business, payment and regulatory requirements are properly verified.
+
 </div>
+
 
 </section>
 
-  </main>
+</main>
+
 
 
 <!-- ================= MY ================= -->
@@ -1066,114 +1547,46 @@ My Account
 </div>
 
 
-<div class="card">
+<!-- PROFILE -->
 
-<div class="row">
-<span>Username</span>
-<b id="profileUser">User</b>
-</div>
+<div class="profile-card">
 
-<div class="row">
-<span>Balance</span>
-<b>₹12,850</b>
-</div>
-
-<div class="row">
-<span>Total Income</span>
-<b>₹3,250</b>
-</div>
-
-</div>
-
-
-<div class="card">
-
-<button class="btn light" onclick="toast('Recharge is available in demo mode only')">
-Recharge
-</button>
-
-<br><br>
-
-<button class="btn light" onclick="toast('Withdrawal is available in demo mode only')">
-Withdraw
-</button>
-
-<br><br>
-
-<button class="btn light" onclick="go('devices')">
-Devices
-</button>
-
-<br><br>
-
-<button class="btn light" onclick="toast('Bank section coming soon')">
-Bank
-</button>
-
-</div>
-
-
-<div class="card">
-
-<div class="row">
-<span>Personal Information</span>
-<span>›</span>
-</div>
-
-<div class="row">
-<span>Income Details</span>
-<span>›</span>
-</div>
-
-<div class="row">
-<span>Recharge Details</span>
-<span>›</span>
-</div>
-
-<div class="row">
-<span>Withdrawal Details</span>
-<span>›</span>
-</div>
-
-<div class="row">
-<span>About Us</span>
-<!-- ================= MY ================= -->
-
-<main id="my" class="page">
-
-<section class="section">
-
-<div class="title">My Account</div>
-
-<!-- PROFILE CARD -->
-<div class="card" style="
-background:linear-gradient(135deg,#0f172a,#2563eb);
-color:white;
-">
-
-<div style="display:flex;align-items:center;gap:14px;">
-
-<div style="
-width:58px;
-height:58px;
-border-radius:50%;
-background:rgba(255,255,255,.15);
+<div
+style="
 display:flex;
 align-items:center;
-justify-content:center;
-font-size:25px;
-font-weight:900;
-">
+gap:14px;
+"
+>
+
+<div class="profile-avatar">
 N
 </div>
 
+
 <div>
-<div style="font-size:18px;font-weight:900;">
+
+<div
+style="
+font-size:18px;
+font-weight:900;
+"
+>
 Nivesh User
 </div>
 
-<div style="font-size:12px;color:#dbeafe;margin-top:3px;">
-Username: DemoUser
+
+<div
+style="
+font-size:12px;
+color:#dbeafe;
+margin-top:3px;
+"
+>
+Username:
+<span id="profileUser">
+DemoUser
+</span>
 </div>
 
 </div>
@@ -1184,428 +1597,339 @@ Username: DemoUser
 
 
 <!-- BALANCE -->
+
 <div class="grid">
 
 <div class="stat">
-<div class="muted">Available Balance</div>
-<b>₹12,850</b>
+
+<div class="muted">
+Available Balance
 </div>
+
+<b>
+₹12,850
+</b>
+
+</div>
+
 
 <div class="stat">
-<div class="muted">Total Income</div>
-<b>₹3,250</b>
+
+<div class="muted">
+Total Income
+</div>
+
+<b>
+₹3,250
+</b>
+
 </div>
 
 </div>
+
+
+<br>
 
 
 <!-- QUICK ACTIONS -->
-<div class="title">Quick Actions</div>
+
+<div class="title">
+Quick Actions
+</div>
+
 
 <div class="grid">
 
-<div class="card" style="text-align:center;">
-<div style="font-size:25px;">💰</div>
-<b>Recharge</b>
-<div class="muted">Demo only</div>
+
+<div
+class="quick-card"
+onclick="toast('Recharge is available in demo mode only')"
+>
+
+<div class="quick-icon">
+💰
 </div>
 
-<div class="card" style="text-align:center;">
-<div style="font-size:25px;">🏦</div>
-<b>Withdraw</b>
-<div class="muted">Demo only</div>
-</div>
+<b>
+Recharge
+</b>
 
-<div class="card" style="text-align:center;">
-<div style="font-size:25px;">📱</div>
-<b>Devices</b>
-<div class="muted">View devices</div>
-</div>
-
-<div class="card" style="text-align:center;">
-<div style="font-size:25px;">🏧</div>
-<b>Bank</b>
-<div class="muted">Coming soon</div>
+<div class="muted">
+Demo only
 </div>
 
 </div>
+
+
+<div
+class="quick-card"
+onclick="toast('Withdrawal is available in demo mode only')"
+>
+
+<div class="quick-icon">
+🏦
+</div>
+
+<b>
+Withdraw
+</b>
+
+<div class="muted">
+Demo only
+</div>
+
+</div>
+
+
+<div
+class="quick-card"
+onclick="go('devices')"
+>
+
+<div class="quick-icon">
+📱
+</div>
+
+<b>
+Devices
+</b>
+
+<div class="muted">
+View devices
+</div>
+
+</div>
+
+
+<div
+class="quick-card"
+onclick="toast('Bank section coming soon')"
+>
+
+<div class="quick-icon">
+🏧
+</div>
+
+<b>
+Bank
+</b>
+
+<div class="muted">
+Coming soon
+</div>
+
+</div>
+
+
+</div>
+
+
+<br>
 
 
 <!-- ACCOUNT DETAILS -->
-<div class="title">Account Details</div>
+
+<div class="title">
+Account Details
+</div>
+
 
 <div class="card">
 
-<div class="row">
-<span>Personal Information</span>
-<b>›</b>
+
+<div
+class="row"
+onclick="toast('Personal Information coming soon')"
+style="cursor:pointer;"
+>
+
+<span>
+Personal Information
+</span>
+
+<b>
+›
+</b>
+
 </div>
 
-<div class="row">
-<span>Income Details</span>
-<b>›</b>
+
+<div
+class="row"
+onclick="toast('Income Details coming soon')"
+style="cursor:pointer;"
+>
+
+<span>
+Income Details
+</span>
+
+<b>
+›
+</b>
+
 </div>
 
-<div class="row">
-<span>Recharge Details</span>
-<b>›</b>
+
+<div
+class="row"
+onclick="toast('Recharge Details coming soon')"
+style="cursor:pointer;"
+>
+
+<span>
+Recharge Details
+</span>
+
+<b>
+›
+</b>
+
 </div>
 
-<div class="row">
-<span>Withdrawal Details</span>
-<b>›</b>
+
+<div
+class="row"
+onclick="toast('Withdrawal Details coming soon')"
+style="cursor:pointer;"
+>
+
+<span>
+Withdrawal Details
+</span>
+
+<b>
+›
+</b>
+
 </div>
+
 
 </div>
 
 
 <!-- OTHER -->
-<div class="title">Other</div>
+
+<div class="title">
+Other
+</div>
+
 
 <div class="card">
 
-<div class="row">
-<span>About Us</span>
-<b>›</b>
+
+<div
+class="row"
+onclick="toast('About Us coming soon')"
+style="cursor:pointer;"
+>
+
+<span>
+About Us
+</span>
+
+<b>
+›
+</b>
+
 </div>
 
-<div class="row">
-<span>Download App</span>
-<b>›</b>
+
+<div
+class="row"
+onclick="toast('Download feature coming soon')"
+style="cursor:pointer;"
+>
+
+<span>
+Download App
+</span>
+
+<b>
+›
+</b>
+
 </div>
 
+
 <div class="row">
-<span>Language</span>
-<b>English</b>
+
+<span>
+Language
+</span>
+
+<b>
+English
+</b>
+
 </div>
 
-<div class="row" onclick="logoutUser()" style="cursor:pointer;">
-<span style="color:#dc2626;font-weight:800;">
+
+<div
+class="row"
+onclick="logout()"
+style="cursor:pointer;"
+>
+
+<span
+style="
+color:#dc2626;
+font-weight:800;
+"
+>
 Log Out
 </span>
-<b style="color:#dc2626;">›</b>
+
+<b
+style="
+color:#dc2626;
+"
+>
+›
+</b>
+
 </div>
+
 
 </div>
 
 
 <!-- DEMO NOTICE -->
+
 <div class="notice">
 
-<b>Demo Account Notice</b><br><br>
+<b>
+Demo Account Notice
+</b>
+
+<br><br>
 
 This account page is currently for interface testing only.
 Balances, income, recharge, withdrawal and other financial values shown here are illustrative.
 
 </div>
 
+
 </section>
 
-  </main>
+</main>
+
 
 
 <!-- ================= BOTTOM NAV ================= -->
 
-<nav class="bottom" id="bottomNav">
-
-<button class="active" onclick="go('home',this)">
-<span>⌂</span>
-Home
-</button>
-
-<button onclick="go('team',this)">
-<span>👥</span>
-Team
-</button>
-
-<button onclick="go('share',this)">
-<span>↗</span>
-Share
-</button>
-
-<button onclick="go('devices',this)">
-<span>▣</span>
-Devices
-</button>
-
-<button onclick="go('my',this)">
-<span>●</span>
-My
-</button>
-
-</nav>
-
-</div>
-
-
-<div id="toastBox" class="toast"></div>
-
-
-<script>
-
-/* ================= AUTH ================= */
-
-function showRegister(){
-
-document.getElementById("loginBox").style.display="none";
-document.getElementById("registerBox").style.display="block";
-
-}
-
-function showLogin(){
-
-document.getElementById("registerBox").style.display="none";
-document.getElementById("loginBox").style.display="block";
-
-}
-
-function registerUser(){
-
-let name=document.getElementById("regName").value.trim();
-let user=document.getElementById("regUser").value.trim();
-let pass=document.getElementById("regPass").value;
-let pass2=document.getElementById("regPass2").value;
-let msg=document.getElementById("regMsg");
-
-msg.style.display="none";
-
-if(!name || !user || !pass || !pass2){
-
-msg.textContent="Please fill all fields.";
-msg.style.display="block";
-return;
-
-}
-
-if(pass!==pass2){
-
-msg.textContent="Passwords do not match.";
-msg.style.display="block";
-return;
-
-}
-
-localStorage.setItem("nig_user",user);
-localStorage.setItem("nig_pass",pass);
-localStorage.setItem("nig_name",name);
-
-toast("Account created successfully");
-
-showLogin();
-
-document.getElementById("loginUser").value=user;
-
-}
-
-
-function loginUser(){
-
-let user=document.getElementById("loginUser").value.trim();
-let pass=document.getElementById("loginPass").value;
-let msg=document.getElementById("loginMsg");
-
-msg.style.display="none";
-
-let savedUser=localStorage.getItem("nig_user");
-let savedPass=localStorage.getItem("nig_pass");
-
-if(!savedUser){
-
-msg.textContent="No account found. Please register first.";
-msg.style.display="block";
-return;
-
-}
-
-if(user!==savedUser || pass!==savedPass){
-
-msg.textContent="Incorrect username or password.";
-msg.style.display="block";
-return;
-
-}
-
-localStorage.setItem("nig_logged","1");
-
-openApp();
-
-}
-
-
-function openApp(){
-
-let name=localStorage.getItem("nig_name") || "User";
-let user=localStorage.getItem("nig_user") || "User";
-
-document.getElementById("auth").style.display="none";
-document.getElementById("app").style.display="block";
-document.getElementById("bottomNav").style.display="grid";
-
-document.getElementById("welcomeName").textContent=name;
-document.getElementById("profileUser").textContent=user;
-
-}
-
-
-function logout(){
-
-localStorage.removeItem("nig_logged");
-
-document.getElementById("app").style.display="none";
-document.getElementById("bottomNav").style.display="none";
-document.getElementById("auth").style.display="flex";
-
-document.getElementById("loginPass").value="";
-
-showLogin();
-
-toast("Logged out successfully");
-
-}
-
-
-/* ================= PAGE NAVIGATION ================= */
-
-function go(id,btn){
-
-document.querySelectorAll(".page").forEach(function(page){
-page.classList.remove("active");
-});
-
-let page=document.getElementById(id);
-
-if(page){
-page.classList.add("active");
-}
-
-if(btn){
-
-document.querySelectorAll(".bottom button").forEach(function(b){
-b.classList.remove("active");
-});
-
-btn.classList.add("active");
-
-}else{
-
-document.querySelectorAll(".bottom button").forEach(function(b){
-b.classList.remove("active");
-});
-
-let buttons=document.querySelectorAll(".bottom button");
-
-let ids=["home","team","share","devices","my"];
-
-let index=ids.indexOf(id);
-
-if(index>=0){
-buttons[index].classList.add("active");
-}
-
-}
-
-window.scrollTo(0,0);
-
-}
-
-
-/* ================= TEAM FILTER ================= */
-
-function filterTeam(level,btn){
-
-document.querySelectorAll(".filter button").forEach(function(b){
-b.classList.remove("active");
-});
-
-btn.classList.add("active");
-
-document.querySelectorAll(".member").forEach(function(member){
-
-if(level==="all"){
-member.style.display="flex";
-}else{
-member.style.display=
-member.getAttribute("data-level")===level
-?"flex"
-:"none";
-}
-
-});
-
-}
-
-
-/* ================= COPY ================= */
-
-function copyCode(){
-
-let code=document.getElementById("code").textContent;
-
-if(navigator.clipboard){
-
-navigator.clipboard.writeText(code);
-
-}
-
-toast("Referral code copied");
-
-}
-
-
-function copyLink(){
-
-let link=document.getElementById("link").value;
-
-if(navigator.clipboard){
-
-navigator.clipboard.writeText(link);
-
-}
-
-toast("Referral link copied");
-
-}
-
-
-/* ================= TOAST ================= */
-
-let toastTimer;
-
-function toast(message){
-
-let box=document.getElementById("toastBox");
-
-box.textContent=message;
-box.style.display="block";
-
-clearTimeout(toastTimer);
-
-toastTimer=setTimeout(function(){
-box.style.display="none";
-},1800);
-
-}
-
-
-/* ================= STARTUP ================= */
-
-window.addEventListener("load",function(){
-
-if(localStorage.getItem("nig_logged")==="1"){
-
-openApp();
-
-}else{
-
-document.getElementById("auth").style.display="flex";
-document.getElementById("app").style.display="none";
-document.getElementById("bottomNav").style.display="none";
-
-}
-
-});
-
-</script>
-
-</body>
-  </html>
+<nav
+class="bottom"
+id="bottomNav"
+>
+
+<button
+class="active"
+onclick="go('home',this)"
+>
+
+<span>
+⌂
+</span>
+
+Hom
