@@ -10,7 +10,7 @@
 
 body{
 margin:0;
-background:#f3f6f4;
+background:#f2f6f4;
 font-family:Arial,sans-serif;
 color:#17221c
 }
@@ -22,13 +22,14 @@ max-width:430px;
 margin:auto;
 min-height:100vh;
 background:#fff;
-padding-bottom:76px
+padding-bottom:78px
 }
 
-/* LOGIN */
+/* ================= LOGIN ================= */
+
 .auth{
 min-height:100vh;
-padding:25px 20px;
+padding:22px 18px;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -38,9 +39,9 @@ background:linear-gradient(135deg,#087443,#18a66a)
 .auth-box{
 width:100%;
 background:#fff;
-border-radius:24px;
-padding:28px 22px;
-box-shadow:0 15px 40px #0005
+border-radius:25px;
+padding:27px 20px;
+box-shadow:0 18px 45px #0004
 }
 
 .logo{
@@ -54,13 +55,13 @@ color:#087443
 text-align:center;
 font-size:13px;
 color:#718078;
-margin:8px 0 25px
+margin:8px 0 24px
 }
 
 .tabs{
 display:grid;
 grid-template-columns:1fr 1fr;
-background:#eef6f1;
+background:#edf5f1;
 padding:4px;
 border-radius:12px;
 margin-bottom:20px
@@ -68,31 +69,36 @@ margin-bottom:20px
 
 .tabs button{
 border:0;
-padding:11px;
+padding:12px;
 border-radius:9px;
 background:transparent;
 font-weight:700;
+font-size:14px;
 color:#68756e
 }
 
 .tabs button.active{
 background:#087443;
-color:#fff
+color:white
 }
 
+.auth-form{display:none}
+.auth-form.active{display:block}
+
 .form-title{
-font-size:21px;
+font-size:22px;
 font-weight:800;
-margin-bottom:15px
+margin-bottom:14px
 }
 
 input{
 width:100%;
 padding:14px;
-border:1px solid #dfe7e2;
+border:1px solid #dce5df;
 border-radius:11px;
 margin:7px 0 12px;
-outline:none
+outline:none;
+font-size:14px
 }
 
 input:focus{
@@ -105,10 +111,9 @@ border:0;
 border-radius:11px;
 padding:14px;
 background:#087443;
-color:#fff;
+color:white;
 font-weight:800;
-font-size:15px;
-margin-top:5px
+font-size:15px
 }
 
 .small-note{
@@ -119,33 +124,68 @@ text-align:center;
 margin-top:15px
 }
 
-.auth-form{display:none}
-.auth-form.active{display:block}
+/* ================= HEADER ================= */
 
-/* APP */
 header{
 background:linear-gradient(135deg,#087443,#18a66a);
-color:#fff;
-padding:22px 18px;
-border-radius:0 0 22px 22px
+color:white;
+padding:20px 18px 23px;
+border-radius:0 0 24px 24px
+}
+
+.header-row{
+display:flex;
+justify-content:space-between;
+align-items:center
 }
 
 .brand{
-font-size:22px;
+font-size:21px;
 font-weight:800
+}
+
+.profile-btn{
+width:38px;
+height:38px;
+border:0;
+border-radius:50%;
+background:#ffffff2b;
+color:white;
+font-size:19px
 }
 
 .sub{
 opacity:.85;
 font-size:12px;
-margin-top:5px
+margin-top:4px
+}
+
+.balance-label{
+margin-top:20px;
+font-size:12px;
+opacity:.85
 }
 
 .balance{
-margin-top:20px;
-font-size:30px;
-font-weight:800
+font-size:31px;
+font-weight:800;
+margin-top:3px
 }
+
+.balance-row{
+display:flex;
+justify-content:space-between;
+align-items:end
+}
+
+.demo-badge{
+font-size:10px;
+background:#ffffff26;
+padding:6px 9px;
+border-radius:20px
+}
+
+/* ================= COMMON ================= */
 
 .section{
 padding:18px
@@ -158,33 +198,24 @@ margin-bottom:12px
 }
 
 .card{
-background:#fff;
-border:1px solid #e7ece9;
+background:white;
+border:1px solid #e5ebe7;
 border-radius:16px;
 padding:15px;
 margin-bottom:12px;
-box-shadow:0 4px 15px #0000000a
+box-shadow:0 4px 16px #0000000a
 }
 
-.plan{
+.row{
 display:flex;
 justify-content:space-between;
-gap:12px
-}
-
-.plan h3{
-margin:0 0 8px
+align-items:center;
+gap:10px
 }
 
 .muted{
 color:#718078;
 font-size:12px
-}
-
-.price{
-font-size:20px;
-font-weight:800;
-color:#087443
 }
 
 .btn{
@@ -201,23 +232,210 @@ background:#eaf6ef;
 color:#087443
 }
 
+/* ================= HOME ================= */
+
+.welcome{
+font-size:14px;
+color:#718078;
+margin-bottom:15px
+}
+
+.quick-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:8px;
+margin-bottom:20px
+}
+
+.quick{
+background:#f5faf7;
+border:1px solid #e5eee8;
+border-radius:13px;
+padding:11px 5px;
+text-align:center
+}
+
+.quick-icon{
+font-size:21px;
+display:block;
+margin-bottom:5px
+}
+
+.quick-text{
+font-size:10px;
+font-weight:700;
+color:#405149
+}
+
+.notice{
+background:#fff8e6;
+border:1px solid #f1dfaa;
+color:#735b16;
+padding:12px;
+border-radius:13px;
+font-size:12px;
+line-height:1.5;
+margin-bottom:18px
+}
+
+.summary{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+margin-bottom:20px
+}
+
+.stat{
+background:#f6faf8;
+border-radius:13px;
+padding:13px
+}
+
+.stat-label{
+font-size:11px;
+color:#718078
+}
+
+.stat b{
+display:block;
+font-size:18px;
+margin-top:6px
+}
+
+.plan{
+display:flex;
+justify-content:space-between;
+gap:12px
+}
+
+.plan h3{
+margin:0 0 6px;
+font-size:16px
+}
+
+.price{
+font-size:20px;
+font-weight:800;
+color:#087443
+}
+
+.plan-info{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:7px;
+margin:13px 0
+}
+
+.info-box{
+background:#f7faf8;
+border-radius:9px;
+padding:8px
+}
+
+.info-box small{
+display:block;
+font-size:10px;
+color:#718078
+}
+
+.info-box b{
+font-size:12px
+}
+
+.coming{
+opacity:.75
+}
+
+/* ================= TEAM ================= */
+
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:10px
 }
 
-.stat{
-background:#f7faf8;
-border-radius:12px;
-padding:13px
+.member{
+display:flex;
+justify-content:space-between;
+align-items:center
 }
 
-.stat b{
-display:block;
-font-size:19px;
-margin-top:5px
+.status{
+font-size:10px;
+background:#eaf6ef;
+color:#087443;
+padding:5px 8px;
+border-radius:20px;
+font-weight:700
 }
+
+/* ================= SHARE ================= */
+
+.qr{
+width:175px;
+height:175px;
+margin:15px auto;
+background:
+repeating-linear-gradient(
+45deg,
+#111 0 4px,
+#fff 4px 8px
+);
+border:10px solid white;
+box-shadow:0 0 0 1px #ddd
+}
+
+.ref-code{
+font-size:22px;
+color:#087443
+}
+
+/* ================= DEVICES ================= */
+
+.device-icon{
+width:42px;
+height:42px;
+border-radius:12px;
+background:#eaf6ef;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:21px
+}
+
+/* ================= MY ================= */
+
+.account-actions{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px
+}
+
+.menu-item{
+padding:14px 0;
+border-bottom:1px solid #edf0ee;
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:14px
+}
+
+.menu-item:last-child{
+border-bottom:0
+}
+
+.logout{
+margin-top:15px;
+width:100%;
+padding:13px;
+border:1px solid #ffd7d7;
+background:#fff3f3;
+color:#c33;
+border-radius:11px;
+font-weight:700
+}
+
+/* ================= NAV ================= */
 
 .nav{
 position:fixed;
@@ -226,7 +444,7 @@ left:50%;
 transform:translateX(-50%);
 width:min(430px,100%);
 height:68px;
-background:#fff;
+background:white;
 border-top:1px solid #e5ebe7;
 display:grid;
 grid-template-columns:repeat(5,1fr);
@@ -236,7 +454,7 @@ z-index:5
 .nav button{
 border:0;
 background:none;
-font-size:11px;
+font-size:10px;
 color:#68756e
 }
 
@@ -254,24 +472,6 @@ margin-bottom:3px
 .page{display:none}
 .page.active{display:block}
 
-.row{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:10px
-}
-
-.qr{
-width:170px;
-height:170px;
-margin:15px auto;
-background:repeating-linear-gradient(
-45deg,#111 0 4px,#fff 4px 8px
-);
-border:10px solid #fff;
-box-shadow:0 0 0 1px #ddd
-}
-
 .toast{
 position:fixed;
 left:50%;
@@ -286,33 +486,13 @@ font-size:13px;
 z-index:9;
 white-space:nowrap
 }
-
-.notice{
-background:#fff8e6;
-border:1px solid #f1dfaa;
-color:#735b16;
-padding:12px;
-border-radius:12px;
-font-size:12px;
-line-height:1.5
-}
-
-.logout{
-margin-top:15px;
-width:100%;
-padding:13px;
-border:1px solid #ffd7d7;
-background:#fff3f3;
-color:#c33;
-border-radius:11px;
-font-weight:700
-}
 </style>
 </head>
 
 <body>
 
-<!-- LOGIN / REGISTER -->
+<!-- ================= AUTH ================= -->
+
 <div id="auth" class="auth">
 
 <div class="auth-box">
@@ -324,20 +504,27 @@ Secure Demo Platform
 </div>
 
 <div class="tabs">
-<button id="loginTab" class="active" onclick="showAuth('login')">
+
+<button id="loginTab"
+class="active"
+onclick="showAuth('login')">
 Login
 </button>
 
-<button id="registerTab" onclick="showAuth('register')">
+<button id="registerTab"
+onclick="showAuth('register')">
 Register
 </button>
+
 </div>
 
+<!-- LOGIN -->
 
-<!-- LOGIN FORM -->
 <div id="loginForm" class="auth-form active">
 
-<div class="form-title">Welcome Back</div>
+<div class="form-title">
+Welcome Back
+</div>
 
 <input
 id="loginMobile"
@@ -356,11 +543,13 @@ Login
 
 </div>
 
+<!-- REGISTER -->
 
-<!-- REGISTER FORM -->
 <div id="registerForm" class="auth-form">
 
-<div class="form-title">Create Account</div>
+<div class="form-title">
+Create Account
+</div>
 
 <input
 id="regName"
@@ -399,11 +588,15 @@ investment returns or guaranteed profits are processed.
 </div>
 
 
-<!-- MAIN WEBSITE -->
+<!-- ================= WEBSITE ================= -->
+
 <div id="website" class="app" style="display:none">
 
 <header>
 
+<div class="header-row">
+
+<div>
 <div class="brand">
 🎩 Nivesh India Grow
 </div>
@@ -411,31 +604,132 @@ investment returns or guaranteed profits are processed.
 <div class="sub">
 Mobile Platform
 </div>
+</div>
+
+<button class="profile-btn"
+onclick="go('my')">
+👤
+</button>
+
+</div>
+
+<div class="balance-label">
+Available Demo Balance
+</div>
+
+<div class="balance-row">
 
 <div class="balance">
 ₹12,850
 </div>
 
-<div class="sub">
-Demo balance · No real money
+<div class="demo-badge">
+DEMO
+</div>
+
 </div>
 
 </header>
 
 
-<!-- HOME -->
+<!-- ================= HOME ================= -->
+
 <main id="home" class="page active">
 
 <section class="section">
 
-<div class="notice">
-Demo/educational interface only. No real deposits,
-withdrawals, investment returns or guaranteed profits
-are processed here.
+<div class="welcome">
+Welcome back 👋
+<br>
+<span class="muted">
+Manage your demo account from one place.
+</span>
 </div>
 
-<div class="title" style="margin-top:18px">
-Investment Plans
+<!-- QUICK ACTIONS -->
+
+<div class="quick-grid">
+
+<div class="quick"
+onclick="toast('Recharge is demo only')">
+<span class="quick-icon">💳</span>
+<span class="quick-text">Recharge</span>
+</div>
+
+<div class="quick"
+onclick="toast('Withdraw is demo only')">
+<span class="quick-icon">💸</span>
+<span class="quick-text">Withdraw</span>
+</div>
+
+<div class="quick"
+onclick="go('share')">
+<span class="quick-icon">🔗</span>
+<span class="quick-text">Invite</span>
+</div>
+
+<div class="quick"
+onclick="go('devices')">
+<span class="quick-icon">📱</span>
+<span class="quick-text">Devices</span>
+</div>
+
+</div>
+
+
+<!-- NOTICE -->
+
+<div class="notice">
+<b>📢 Announcement</b><br>
+Welcome to Nivesh India Grow. This interface is
+currently running in demo mode for testing and
+presentation purposes.
+</div>
+
+
+<!-- SUMMARY -->
+
+<div class="title">
+Account Summary
+</div>
+
+<div class="summary">
+
+<div class="stat">
+<div class="stat-label">
+Total Income
+</div>
+<b>₹3,250</b>
+</div>
+
+<div class="stat">
+<div class="stat-label">
+Active Plans
+</div>
+<b>01</b>
+</div>
+
+<div class="stat">
+<div class="stat-label">
+Team Size
+</div>
+<b>24</b>
+</div>
+
+<div class="stat">
+<div class="stat-label">
+Referral Code
+</div>
+<b>NIG2026</b>
+</div>
+
+</div>
+
+
+<!-- PLANS -->
+
+<div class="title">
+Featured Plans
 </div>
 
 
@@ -445,9 +739,11 @@ Investment Plans
 
 <div>
 <h3>Starter</h3>
+
 <div class="muted">
 Illustrative plan · 7 days
 </div>
+
 </div>
 
 <div class="price">
@@ -456,14 +752,23 @@ Illustrative plan · 7 days
 
 </div>
 
-<p class="muted">
-Daily illustrative figure: ₹50 ·
-Total illustrative: ₹1,350
-</p>
+<div class="plan-info">
+
+<div class="info-box">
+<small>Daily illustrative</small>
+<b>₹50</b>
+</div>
+
+<div class="info-box">
+<small>Total illustrative</small>
+<b>₹1,350</b>
+</div>
+
+</div>
 
 <button class="btn"
 onclick="toast('Demo plan selected')">
-Plan Details
+View Plan
 </button>
 
 </div>
@@ -475,9 +780,11 @@ Plan Details
 
 <div>
 <h3>Growth</h3>
+
 <div class="muted">
 Illustrative plan · 15 days
 </div>
+
 </div>
 
 <div class="price">
@@ -486,31 +793,44 @@ Illustrative plan · 15 days
 
 </div>
 
-<p class="muted">
-Daily illustrative figure: ₹300 ·
-Total illustrative: ₹9,500
-</p>
+<div class="plan-info">
+
+<div class="info-box">
+<small>Daily illustrative</small>
+<b>₹300</b>
+</div>
+
+<div class="info-box">
+<small>Total illustrative</small>
+<b>₹9,500</b>
+</div>
+
+</div>
 
 <button class="btn"
 onclick="toast('Demo plan selected')">
-Plan Details
+View Plan
 </button>
 
 </div>
 
 
-<div class="card">
+<div class="card coming">
 
 <div class="plan">
 
 <div>
 <h3>Premium</h3>
+
 <div class="muted">
 Coming Soon
 </div>
+
 </div>
 
-<div class="price">—</div>
+<div class="price">
+—
+</div>
 
 </div>
 
@@ -521,68 +841,82 @@ Coming Soon
 
 </div>
 
+
+<div class="notice">
+<b>Demo Notice:</b>
+The figures displayed above are illustrative only.
+No real deposits, withdrawals, investment returns
+or guaranteed profits are processed by this demo.
+</div>
+
 </section>
 
 </main>
 
 
-<!-- TEAM -->
+<!-- ================= TEAM ================= -->
+
 <main id="team" class="page">
 
 <section class="section">
 
-<div class="title">Team</div>
+<div class="title">
+My Team
+</div>
 
 <div class="grid">
 
 <div class="stat">
-Team Size
+<div class="stat-label">Team Size</div>
 <b>24</b>
 </div>
 
 <div class="stat">
-Level 1
+<div class="stat-label">Level 1</div>
 <b>12</b>
 </div>
 
 <div class="stat">
-Level 2
+<div class="stat-label">Level 2</div>
 <b>8</b>
 </div>
 
 <div class="stat">
-Level 3
+<div class="stat-label">Level 3</div>
 <b>4</b>
 </div>
 
 </div>
 
 <div class="title" style="margin-top:20px">
-Demo Team
+Recent Members
 </div>
 
-<div class="card row">
-<span>
-Member 001<br>
+<div class="card member">
+<div>
+<b>Member 001</b>
+<br>
 <small class="muted">Level 1</small>
-</span>
-<b>Active</b>
+</div>
+<span class="status">ACTIVE</span>
 </div>
 
-<div class="card row">
-<span>
-Member 002<br>
+<div class="card member">
+<div>
+<b>Member 002</b>
+<br>
 <small class="muted">Level 2</small>
-</span>
-<b>Active</b>
+</div>
+<span class="status">ACTIVE</span>
 </div>
 
-<div class="card row">
-<span>
-Member 003<br>
+<div class="card member">
+<div>
+<b>Member 003</b>
+<br>
 <small class="muted">Level 3</small>
-</span>
-<b>Active</b>
+</div>
+<span class="status">ACTIVE</span>
 </div>
 
 </section>
@@ -590,7 +924,8 @@ Member 003<br>
 </main>
 
 
-<!-- SHARE -->
+<!-- ================= SHARE ================= -->
+
 <main id="share" class="page">
 
 <section class="section">
@@ -603,14 +938,16 @@ Share & Referral
 
 <div class="qr"></div>
 
-<h3>Demo Referral Code</h3>
+<div class="muted">
+Your Demo Referral Code
+</div>
 
+<div class="ref-code">
 <b id="code">NIG2026</b>
-
-<br>
+</div>
 
 <button class="btn"
-style="margin-top:12px"
+style="margin-top:13px"
 onclick="copyCode()">
 Copy Code
 </button>
@@ -621,7 +958,7 @@ Copy Code
 <div class="card">
 
 <div class="muted">
-Referral Link
+Demo Referral Link
 </div>
 
 <input
@@ -641,24 +978,44 @@ Copy Link
 </main>
 
 
-<!-- DEVICES -->
+<!-- ================= DEVICES ================= -->
+
 <main id="devices" class="page">
 
 <section class="section">
 
 <div class="title">
-Devices
+My Devices
 </div>
 
 <div class="card">
 
 <div class="row">
+
+<div class="row">
+
+<div class="device-icon">
+📱
+</div>
+
+<div>
 <b>Starter Demo</b>
-<span class="muted">ACTIVE</span>
+<br>
+<small class="muted">
+7 Days
+</small>
+</div>
+
+</div>
+
+<span class="status">
+ACTIVE
+</span>
+
 </div>
 
 <p class="muted">
-Demo amount: ₹1,000 · 7 days
+Demo amount: ₹1,000
 </p>
 
 <button class="btn light"
@@ -672,12 +1029,31 @@ Details
 <div class="card">
 
 <div class="row">
+
+<div class="row">
+
+<div class="device-icon">
+📦
+</div>
+
+<div>
 <b>Old Demo Plan</b>
-<span class="muted">EXPIRED</span>
+<br>
+<small class="muted">
+Expired
+</small>
+</div>
+
+</div>
+
+<span class="muted">
+EXPIRED
+</span>
+
 </div>
 
 <p class="muted">
-Demo record only
+Demo record only.
 </p>
 
 <button class="btn light"
@@ -692,7 +1068,8 @@ Details
 </main>
 
 
-<!-- MY -->
+<!-- ================= MY ================= -->
+
 <main id="my" class="page">
 
 <section class="section">
@@ -703,15 +1080,19 @@ My Account
 
 <div class="card">
 
-<div class="grid">
+<div class="summary">
 
 <div class="stat">
+<div class="stat-label">
 Balance
+</div>
 <b>₹12,850</b>
 </div>
 
 <div class="stat">
+<div class="stat-label">
 Total Income
+</div>
 <b>₹3,250</b>
 </div>
 
@@ -720,7 +1101,7 @@ Total Income
 </div>
 
 
-<div class="grid">
+<div class="account-actions">
 
 <button class="btn"
 onclick="toast('Demo only — Recharge unavailable')">
@@ -747,57 +1128,53 @@ Bank
 
 <div class="card" style="margin-top:15px">
 
-<div class="row"
+<div class="menu-item"
 onclick="toast('Personal Information')">
-Personal Information <b>›</b>
+<span>👤 Personal Information</span>
+<b>›</b>
 </div>
 
-<hr>
-
-<div class="row"
+<div class="menu-item"
 onclick="toast('Income Details')">
-Income Details <b>›</b>
+<span>📊 Income Details</span>
+<b>›</b>
 </div>
 
-<hr>
-
-<div class="row"
+<div class="menu-item"
 onclick="toast('Recharge Details')">
-Recharge Details <b>›</b>
+<span>💳 Recharge Details</span>
+<b>›</b>
 </div>
 
-<hr>
-
-<div class="row"
+<div class="menu-item"
 onclick="toast('Withdrawal Details')">
-Withdrawal Details <b>›</b>
+<span>💸 Withdrawal Details</span>
+<b>›</b>
 </div>
 
-<hr>
-
-<div class="row"
+<div class="menu-item"
 onclick="toast('About Us')">
-About Us <b>›</b>
+<span>ℹ️ About Us</span>
+<b>›</b>
 </div>
 
-<hr>
-
-<div class="row"
-onclick="toast('Download')">
-Download <b>›</b>
+<div class="menu-item"
+onclick="toast('Download section')">
+<span>⬇️ Download</span>
+<b>›</b>
 </div>
 
-<hr>
-
-<div class="row"
+<div class="menu-item"
 onclick="toast('Language: English')">
-Language <b>›</b>
+<span>🌐 Language</span>
+<b>›</b>
 </div>
 
 </div>
 
 
-<button class="logout" onclick="logout()">
+<button class="logout"
+onclick="logout()">
 Log Out
 </button>
 
@@ -806,7 +1183,8 @@ Log Out
 </main>
 
 
-<!-- BOTTOM NAV -->
+<!-- ================= NAV ================= -->
+
 <nav class="nav">
 
 <button class="active"
@@ -844,7 +1222,7 @@ My
 
 <script>
 
-/* AUTH */
+/* ================= AUTH ================= */
 
 function showAuth(type){
 
@@ -866,28 +1244,24 @@ document.getElementById("registerTab")
 function register(){
 
 let name=document.getElementById("regName").value.trim();
+
 let mobile=document.getElementById("regMobile").value.trim();
+
 let password=document.getElementById("regPassword").value.trim();
 
 if(!name || !mobile || !password){
 
 toast("Please fill all required fields");
-return;
 
+return;
 }
 
-if(mobile.length!==10){
+if(!/^[0-9]{10}$/.test(mobile)){
 
 toast("Enter valid 10 digit mobile");
+
 return;
-
 }
-
-/*
-Demo only:
-This stores a demo account in the browser.
-It is NOT secure authentication.
-*/
 
 localStorage.setItem(
 "nig_demo_user",
@@ -901,7 +1275,9 @@ password:password
 toast("Registration successful");
 
 setTimeout(function(){
+
 showAuth("login");
+
 },800);
 
 }
@@ -909,23 +1285,32 @@ showAuth("login");
 
 function login(){
 
-let mobile=document.getElementById("loginMobile").value.trim();
-let password=document.getElementById("loginPassword").value.trim();
+let mobile=document
+.getElementById("loginMobile")
+.value.trim();
 
-let user=localStorage.getItem("nig_demo_user");
+let password=document
+.getElementById("loginPassword")
+.value.trim();
 
-if(!user){
+let saved=localStorage.getItem("nig_demo_user");
+
+if(!saved){
 
 toast("Please register first");
-return;
 
+return;
 }
 
-user=JSON.parse(user);
+let user=JSON.parse(saved);
 
-if(user.mobile===mobile && user.password===password){
+if(user.mobile===mobile &&
+user.password===password){
 
-localStorage.setItem("nig_logged_in","yes");
+localStorage.setItem(
+"nig_logged_in",
+"yes"
+);
 
 openWebsite();
 
@@ -940,8 +1325,11 @@ toast("Mobile number or password incorrect");
 
 function openWebsite(){
 
-document.getElementById("auth").style.display="none";
-document.getElementById("website").style.display="block";
+document.getElementById("auth")
+.style.display="none";
+
+document.getElementById("website")
+.style.display="block";
 
 }
 
@@ -950,28 +1338,33 @@ function logout(){
 
 localStorage.removeItem("nig_logged_in");
 
-document.getElementById("website").style.display="none";
-document.getElementById("auth").style.display="flex";
+document.getElementById("website")
+.style.display="none";
+
+document.getElementById("auth")
+.style.display="flex";
 
 showAuth("login");
-
-toast("Logged out");
 
 }
 
 
-/* NAVIGATION */
+/* ================= NAVIGATION ================= */
 
 function go(id,btn){
 
 document.querySelectorAll(".page")
-.forEach(p=>p.classList.remove("active"));
+.forEach(function(p){
+p.classList.remove("active");
+});
 
 document.getElementById(id)
 .classList.add("active");
 
 document.querySelectorAll(".nav button")
-.forEach(b=>b.classList.remove("active"));
+.forEach(function(b){
+b.classList.remove("active");
+});
 
 if(btn){
 btn.classList.add("active");
@@ -982,23 +1375,26 @@ window.scrollTo(0,0);
 }
 
 
-/* TOAST */
+/* ================= TOAST ================= */
 
 function toast(msg){
 
 let t=document.getElementById("toast");
 
 t.textContent=msg;
+
 t.style.display="block";
 
 setTimeout(function(){
+
 t.style.display="none";
+
 },1800);
 
 }
 
 
-/* COPY */
+/* ================= COPY ================= */
 
 function copyCode(){
 
@@ -1022,12 +1418,16 @@ toast("Demo link copied");
 }
 
 
-/* SESSION */
+/* ================= SESSION ================= */
 
 window.onload=function(){
 
-if(localStorage.getItem("nig_logged_in")==="yes"){
+if(
+localStorage.getItem("nig_logged_in")==="yes"
+){
+
 openWebsite();
+
 }
 
 };
@@ -1035,4 +1435,4 @@ openWebsite();
 </script>
 
 </body>
-  </html>
+</html>
