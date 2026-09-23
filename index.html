@@ -79,7 +79,7 @@ color:#68756e
 
 .tabs button.active{
 background:#087443;
-color:white
+color:#fff
 }
 
 .auth-form{display:none}
@@ -111,7 +111,7 @@ border:0;
 border-radius:11px;
 padding:14px;
 background:#087443;
-color:white;
+color:#fff;
 font-weight:800;
 font-size:15px
 }
@@ -128,7 +128,7 @@ margin-top:15px
 
 header{
 background:linear-gradient(135deg,#087443,#18a66a);
-color:white;
+color:#fff;
 padding:20px 18px 23px;
 border-radius:0 0 24px 24px
 }
@@ -150,7 +150,7 @@ height:38px;
 border:0;
 border-radius:50%;
 background:#ffffff2b;
-color:white;
+color:#fff;
 font-size:19px
 }
 
@@ -198,7 +198,7 @@ margin-bottom:12px
 }
 
 .card{
-background:white;
+background:#fff;
 border:1px solid #e5ebe7;
 border-radius:16px;
 padding:15px;
@@ -223,7 +223,7 @@ border:0;
 border-radius:10px;
 padding:10px 14px;
 background:#087443;
-color:white;
+color:#fff;
 font-weight:700
 }
 
@@ -348,25 +348,194 @@ opacity:.75
 
 /* ================= TEAM ================= */
 
-.grid{
+.team-hero{
+background:linear-gradient(135deg,#087443,#18a66a);
+color:#fff;
+border-radius:18px;
+padding:18px;
+margin-bottom:15px
+}
+
+.team-hero-title{
+font-size:13px;
+opacity:.85
+}
+
+.team-hero-number{
+font-size:32px;
+font-weight:800;
+margin-top:4px
+}
+
+.team-hero-sub{
+font-size:11px;
+opacity:.8;
+margin-top:3px
+}
+
+.team-stats{
 display:grid;
-grid-template-columns:1fr 1fr;
+grid-template-columns:repeat(3,1fr);
+gap:8px;
+margin-top:15px
+}
+
+.team-stat{
+background:#ffffff18;
+border:1px solid #ffffff22;
+border-radius:11px;
+padding:9px;
+text-align:center
+}
+
+.team-stat b{
+display:block;
+font-size:17px;
+margin-bottom:3px
+}
+
+.team-stat span{
+font-size:10px;
+opacity:.85
+}
+
+.team-levels{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:8px;
+margin-bottom:18px
+}
+
+.level-card{
+border:1px solid #e5ebe7;
+border-radius:13px;
+padding:12px;
+text-align:center;
+background:#fff
+}
+
+.level-card .level-icon{
+font-size:20px;
+margin-bottom:5px
+}
+
+.level-card b{
+display:block;
+font-size:19px;
+color:#087443
+}
+
+.level-card span{
+font-size:10px;
+color:#718078
+}
+
+.filter-bar{
+display:flex;
+gap:7px;
+overflow-x:auto;
+margin-bottom:14px;
+padding-bottom:3px
+}
+
+.filter-btn{
+border:1px solid #dfe8e2;
+background:#fff;
+color:#617068;
+border-radius:20px;
+padding:8px 14px;
+font-size:11px;
+font-weight:700;
+white-space:nowrap
+}
+
+.filter-btn.active{
+background:#087443;
+border-color:#087443;
+color:#fff
+}
+
+.member-card{
+background:#fff;
+border:1px solid #e5ebe7;
+border-radius:15px;
+padding:13px;
+margin-bottom:10px
+}
+
+.member-left{
+display:flex;
+align-items:center;
 gap:10px
 }
 
-.member{
-display:flex;
-justify-content:space-between;
-align-items:center
-}
-
-.status{
-font-size:10px;
+.member-avatar{
+width:42px;
+height:42px;
+border-radius:50%;
 background:#eaf6ef;
 color:#087443;
-padding:5px 8px;
-border-radius:20px;
-font-weight:700
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:800
+}
+
+.member-name{
+font-size:13px;
+font-weight:800
+}
+
+.member-info{
+font-size:10px;
+color:#718078;
+margin-top:3px
+}
+
+.member-right{
+text-align:right
+}
+
+.level-badge{
+font-size:9px;
+font-weight:800;
+color:#087443;
+background:#eaf6ef;
+padding:5px 7px;
+border-radius:15px
+}
+
+.member-status{
+font-size:9px;
+color:#718078;
+margin-top:5px
+}
+
+.activity{
+display:flex;
+gap:10px;
+align-items:flex-start;
+padding:10px 0;
+border-bottom:1px solid #edf0ee
+}
+
+.activity:last-child{
+border-bottom:0
+}
+
+.activity-icon{
+width:34px;
+height:34px;
+border-radius:10px;
+background:#eaf6ef;
+display:flex;
+align-items:center;
+justify-content:center
+}
+
+.activity-text{
+font-size:12px;
+line-height:1.4
 }
 
 /* ================= SHARE ================= */
@@ -444,7 +613,7 @@ left:50%;
 transform:translateX(-50%);
 width:min(430px,100%);
 height:68px;
-background:white;
+background:#fff;
 border-top:1px solid #e5ebe7;
 display:grid;
 grid-template-columns:repeat(5,1fr);
@@ -469,8 +638,13 @@ font-size:21px;
 margin-bottom:3px
 }
 
-.page{display:none}
-.page.active{display:block}
+.page{
+display:none
+}
+
+.page.active{
+display:block
+}
 
 .toast{
 position:fixed;
@@ -478,7 +652,7 @@ left:50%;
 bottom:82px;
 transform:translateX(-50%);
 background:#17221c;
-color:white;
+color:#fff;
 padding:10px 16px;
 border-radius:20px;
 display:none;
@@ -518,8 +692,6 @@ Register
 
 </div>
 
-<!-- LOGIN -->
-
 <div id="loginForm" class="auth-form active">
 
 <div class="form-title">
@@ -542,8 +714,6 @@ Login
 </button>
 
 </div>
-
-<!-- REGISTER -->
 
 <div id="registerForm" class="auth-form">
 
@@ -646,8 +816,6 @@ Manage your demo account from one place.
 </span>
 </div>
 
-<!-- QUICK ACTIONS -->
-
 <div class="quick-grid">
 
 <div class="quick"
@@ -676,18 +844,12 @@ onclick="go('devices')">
 
 </div>
 
-
-<!-- NOTICE -->
-
 <div class="notice">
 <b>📢 Announcement</b><br>
 Welcome to Nivesh India Grow. This interface is
 currently running in demo mode for testing and
 presentation purposes.
 </div>
-
-
-<!-- SUMMARY -->
 
 <div class="title">
 Account Summary
@@ -725,13 +887,9 @@ Referral Code
 
 </div>
 
-
-<!-- PLANS -->
-
 <div class="title">
 Featured Plans
 </div>
-
 
 <div class="card">
 
@@ -841,7 +999,6 @@ Coming Soon
 
 </div>
 
-
 <div class="notice">
 <b>Demo Notice:</b>
 The figures displayed above are illustrative only.
@@ -864,59 +1021,410 @@ or guaranteed profits are processed by this demo.
 My Team
 </div>
 
-<div class="grid">
+<div class="team-hero">
 
-<div class="stat">
-<div class="stat-label">Team Size</div>
-<b>24</b>
+<div class="team-hero-title">
+Total Team Members
 </div>
 
-<div class="stat">
-<div class="stat-label">Level 1</div>
+<div class="team-hero-number">
+24
+</div>
+
+<div class="team-hero-sub">
+Demo team statistics
+</div>
+
+<div class="team-stats">
+
+<div class="team-stat">
 <b>12</b>
+<span>LV1</span>
 </div>
 
-<div class="stat">
-<div class="stat-label">Level 2</div>
+<div class="team-stat">
 <b>8</b>
+<span>LV2</span>
 </div>
 
-<div class="stat">
-<div class="stat-label">Level 3</div>
+<div class="team-stat">
 <b>4</b>
+<span>LV3</span>
 </div>
 
 </div>
+
+</div>
+
+
+<div class="title">
+Team Levels
+</div>
+
+<div class="team-levels">
+
+<div class="level-card">
+<div class="level-icon">🥇</div>
+<b>12</b>
+<span>Level 1</span>
+</div>
+
+<div class="level-card">
+<div class="level-icon">🥈</div>
+<b>8</b>
+<span>Level 2</span>
+</div>
+
+<div class="level-card">
+<div class="level-icon">🥉</div>
+<b>4</b>
+<span>Level 3</span>
+</div>
+
+</div>
+
+
+<div class="title">
+Team Members
+</div>
+
+<div class="filter-bar">
+
+<button class="filter-btn active"
+onclick="filterTeam('all',this)">
+All
+</button>
+
+<button class="filter-btn"
+onclick="filterTeam('1',this)">
+LV1
+</button>
+
+<button class="filter-btn"
+onclick="filterTeam('2',this)">
+LV2
+</button>
+
+<button class="filter-btn"
+onclick="filterTeam('3',this)">
+LV3
+</button>
+
+</div>
+
+
+<div id="teamMembers">
+
+
+<div class="member-card team-member"
+data-level="1">
+
+<div class="row">
+
+<div class="member-left">
+
+<div class="member-avatar">
+M1
+</div>
+
+<div>
+
+<div class="member-name">
+Member 001
+</div>
+
+<div class="member-info">
+Joined recently · Level 1
+</div>
+
+</div>
+
+</div>
+
+<div class="member-right">
+
+<div class="level-badge">
+LV1
+</div>
+
+<div class="member-status">
+● Active
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="member-card team-member"
+data-level="1">
+
+<div class="row">
+
+<div class="member-left">
+
+<div class="member-avatar">
+M2
+</div>
+
+<div>
+
+<div class="member-name">
+Member 002
+</div>
+
+<div class="member-info">
+Joined recently · Level 1
+</div>
+
+</div>
+
+</div>
+
+<div class="member-right">
+
+<div class="level-badge">
+LV1
+</div>
+
+<div class="member-status">
+● Active
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="member-card team-member"
+data-level="2">
+
+<div class="row">
+
+<div class="member-left">
+
+<div class="member-avatar">
+M3
+</div>
+
+<div>
+
+<div class="member-name">
+Member 003
+</div>
+
+<div class="member-info">
+Joined recently · Level 2
+</div>
+
+</div>
+
+</div>
+
+<div class="member-right">
+
+<div class="level-badge">
+LV2
+</div>
+
+<div class="member-status">
+● Active
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="member-card team-member"
+data-level="2">
+
+<div class="row">
+
+<div class="member-left">
+
+<div class="member-avatar">
+M4
+</div>
+
+<div>
+
+<div class="member-name">
+Member 004
+</div>
+
+<div class="member-info">
+Joined recently · Level 2
+</div>
+
+</div>
+
+</div>
+
+<div class="member-right">
+
+<div class="level-badge">
+LV2
+</div>
+
+<div class="member-status">
+● Active
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="member-card team-member"
+data-level="3">
+
+<div class="row">
+
+<div class="member-left">
+
+<div class="member-avatar">
+M5
+</div>
+
+<div>
+
+<div class="member-name">
+Member 005
+</div>
+
+<div class="member-info">
+Joined recently · Level 3
+</div>
+
+</div>
+
+</div>
+
+<div class="member-right">
+
+<div class="level-badge">
+LV3
+</div>
+
+<div class="member-status">
+● Active
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="member-card team-member"
+data-level="3">
+
+<div class="row">
+
+<div class="member-left">
+
+<div class="member-avatar">
+M6
+</div>
+
+<div>
+
+<div class="member-name">
+Member 006
+</div>
+
+<div class="member-info">
+Joined recently · Level 3
+</div>
+
+</div>
+
+</div>
+
+<div class="member-right">
+
+<div class="level-badge">
+LV3
+</div>
+
+<div class="member-status">
+● Active
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 
 <div class="title" style="margin-top:20px">
-Recent Members
+Team Activity
 </div>
 
-<div class="card member">
-<div>
-<b>Member 001</b>
-<br>
-<small class="muted">Level 1</small>
-</div>
-<span class="status">ACTIVE</span>
+<div class="card">
+
+<div class="activity">
+
+<div class="activity-icon">
+👤
 </div>
 
-<div class="card member">
-<div>
-<b>Member 002</b>
+<div class="activity-text">
+<b>Member 001</b> joined the demo team.
 <br>
-<small class="muted">Level 2</small>
-</div>
-<span class="status">ACTIVE</span>
+<span class="muted">Recently</span>
 </div>
 
-<div class="card member">
-<div>
-<b>Member 003</b>
-<br>
-<small class="muted">Level 3</small>
 </div>
-<span class="status">ACTIVE</span>
+
+<div class="activity">
+
+<div class="activity-icon">
+📈
+</div>
+
+<div class="activity-text">
+Team statistics updated.
+<br>
+<span class="muted">Demo activity</span>
+</div>
+
+</div>
+
+<div class="activity">
+
+<div class="activity-icon">
+🔗
+</div>
+
+<div class="activity-text">
+Referral system is available in demo mode.
+<br>
+<span class="muted">Demo activity</span>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="notice">
+<b>Demo Notice:</b>
+Team members and statistics shown here are
+illustrative demo data only.
 </div>
 
 </section>
@@ -971,6 +1479,12 @@ onclick="copyLink()">
 Copy Link
 </button>
 
+</div>
+
+<div class="notice">
+<b>Referral Demo:</b><br>
+This referral section is for interface testing only.
+No real commission or payout is processed.
 </div>
 
 </section>
@@ -1116,323 +1630,4 @@ Withdraw
 <button class="btn light"
 onclick="go('devices')">
 Devices
-</button>
-
-<button class="btn light"
-onclick="toast('Bank section is demo only')">
-Bank
-</button>
-
-</div>
-
-
-<div class="card" style="margin-top:15px">
-
-<div class="menu-item"
-onclick="toast('Personal Information')">
-<span>👤 Personal Information</span>
-<b>›</b>
-</div>
-
-<div class="menu-item"
-onclick="toast('Income Details')">
-<span>📊 Income Details</span>
-<b>›</b>
-</div>
-
-<div class="menu-item"
-onclick="toast('Recharge Details')">
-<span>💳 Recharge Details</span>
-<b>›</b>
-</div>
-
-<div class="menu-item"
-onclick="toast('Withdrawal Details')">
-<span>💸 Withdrawal Details</span>
-<b>›</b>
-</div>
-
-<div class="menu-item"
-onclick="toast('About Us')">
-<span>ℹ️ About Us</span>
-<b>›</b>
-</div>
-
-<div class="menu-item"
-onclick="toast('Download section')">
-<span>⬇️ Download</span>
-<b>›</b>
-</div>
-
-<div class="menu-item"
-onclick="toast('Language: English')">
-<span>🌐 Language</span>
-<b>›</b>
-</div>
-
-</div>
-
-
-<button class="logout"
-onclick="logout()">
-Log Out
-</button>
-
-</section>
-
-</main>
-
-
-<!-- ================= NAV ================= -->
-
-<nav class="nav">
-
-<button class="active"
-onclick="go('home',this)">
-<span>⌂</span>
-Home
-</button>
-
-<button onclick="go('team',this)">
-<span>👥</span>
-Team
-</button>
-
-<button onclick="go('share',this)">
-<span>↗</span>
-Share
-</button>
-
-<button onclick="go('devices',this)">
-<span>▣</span>
-Devices
-</button>
-
-<button onclick="go('my',this)">
-<span>☻</span>
-My
-</button>
-
-</nav>
-
-<div id="toast" class="toast"></div>
-
-</div>
-
-
-<script>
-
-/* ================= AUTH ================= */
-
-function showAuth(type){
-
-document.getElementById("loginForm")
-.classList.toggle("active",type==="login");
-
-document.getElementById("registerForm")
-.classList.toggle("active",type==="register");
-
-document.getElementById("loginTab")
-.classList.toggle("active",type==="login");
-
-document.getElementById("registerTab")
-.classList.toggle("active",type==="register");
-
-}
-
-
-function register(){
-
-let name=document.getElementById("regName").value.trim();
-
-let mobile=document.getElementById("regMobile").value.trim();
-
-let password=document.getElementById("regPassword").value.trim();
-
-if(!name || !mobile || !password){
-
-toast("Please fill all required fields");
-
-return;
-}
-
-if(!/^[0-9]{10}$/.test(mobile)){
-
-toast("Enter valid 10 digit mobile");
-
-return;
-}
-
-localStorage.setItem(
-"nig_demo_user",
-JSON.stringify({
-name:name,
-mobile:mobile,
-password:password
-})
-);
-
-toast("Registration successful");
-
-setTimeout(function(){
-
-showAuth("login");
-
-},800);
-
-}
-
-
-function login(){
-
-let mobile=document
-.getElementById("loginMobile")
-.value.trim();
-
-let password=document
-.getElementById("loginPassword")
-.value.trim();
-
-let saved=localStorage.getItem("nig_demo_user");
-
-if(!saved){
-
-toast("Please register first");
-
-return;
-}
-
-let user=JSON.parse(saved);
-
-if(user.mobile===mobile &&
-user.password===password){
-
-localStorage.setItem(
-"nig_logged_in",
-"yes"
-);
-
-openWebsite();
-
-}else{
-
-toast("Mobile number or password incorrect");
-
-}
-
-}
-
-
-function openWebsite(){
-
-document.getElementById("auth")
-.style.display="none";
-
-document.getElementById("website")
-.style.display="block";
-
-}
-
-
-function logout(){
-
-localStorage.removeItem("nig_logged_in");
-
-document.getElementById("website")
-.style.display="none";
-
-document.getElementById("auth")
-.style.display="flex";
-
-showAuth("login");
-
-}
-
-
-/* ================= NAVIGATION ================= */
-
-function go(id,btn){
-
-document.querySelectorAll(".page")
-.forEach(function(p){
-p.classList.remove("active");
-});
-
-document.getElementById(id)
-.classList.add("active");
-
-document.querySelectorAll(".nav button")
-.forEach(function(b){
-b.classList.remove("active");
-});
-
-if(btn){
-btn.classList.add("active");
-}
-
-window.scrollTo(0,0);
-
-}
-
-
-/* ================= TOAST ================= */
-
-function toast(msg){
-
-let t=document.getElementById("toast");
-
-t.textContent=msg;
-
-t.style.display="block";
-
-setTimeout(function(){
-
-t.style.display="none";
-
-},1800);
-
-}
-
-
-/* ================= COPY ================= */
-
-function copyCode(){
-
-navigator.clipboard?.writeText(
-document.getElementById("code").textContent
-);
-
-toast("Demo code copied");
-
-}
-
-
-function copyLink(){
-
-navigator.clipboard?.writeText(
-document.getElementById("link").value
-);
-
-toast("Demo link copied");
-
-}
-
-
-/* ================= SESSION ================= */
-
-window.onload=function(){
-
-if(
-localStorage.getItem("nig_logged_in")==="yes"
-){
-
-openWebsite();
-
-}
-
-};
-
-</script>
-
-</body>
-    </html>
+</butto
