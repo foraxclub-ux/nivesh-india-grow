@@ -1137,35 +1137,171 @@ Bank
 
 <div class="row">
 <span>About Us</span>
-<span>›</span>
+<!-- ================= MY ================= -->
+
+<main id="my" class="page">
+
+<section class="section">
+
+<div class="title">My Account</div>
+
+<!-- PROFILE CARD -->
+<div class="card" style="
+background:linear-gradient(135deg,#0f172a,#2563eb);
+color:white;
+">
+
+<div style="display:flex;align-items:center;gap:14px;">
+
+<div style="
+width:58px;
+height:58px;
+border-radius:50%;
+background:rgba(255,255,255,.15);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:25px;
+font-weight:900;
+">
+N
+</div>
+
+<div>
+<div style="font-size:18px;font-weight:900;">
+Nivesh User
+</div>
+
+<div style="font-size:12px;color:#dbeafe;margin-top:3px;">
+Username: DemoUser
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- BALANCE -->
+<div class="grid">
+
+<div class="stat">
+<div class="muted">Available Balance</div>
+<b>₹12,850</b>
+</div>
+
+<div class="stat">
+<div class="muted">Total Income</div>
+<b>₹3,250</b>
+</div>
+
+</div>
+
+
+<!-- QUICK ACTIONS -->
+<div class="title">Quick Actions</div>
+
+<div class="grid">
+
+<div class="card" style="text-align:center;">
+<div style="font-size:25px;">💰</div>
+<b>Recharge</b>
+<div class="muted">Demo only</div>
+</div>
+
+<div class="card" style="text-align:center;">
+<div style="font-size:25px;">🏦</div>
+<b>Withdraw</b>
+<div class="muted">Demo only</div>
+</div>
+
+<div class="card" style="text-align:center;">
+<div style="font-size:25px;">📱</div>
+<b>Devices</b>
+<div class="muted">View devices</div>
+</div>
+
+<div class="card" style="text-align:center;">
+<div style="font-size:25px;">🏧</div>
+<b>Bank</b>
+<div class="muted">Coming soon</div>
+</div>
+
+</div>
+
+
+<!-- ACCOUNT DETAILS -->
+<div class="title">Account Details</div>
+
+<div class="card">
+
+<div class="row">
+<span>Personal Information</span>
+<b>›</b>
+</div>
+
+<div class="row">
+<span>Income Details</span>
+<b>›</b>
+</div>
+
+<div class="row">
+<span>Recharge Details</span>
+<b>›</b>
+</div>
+
+<div class="row">
+<span>Withdrawal Details</span>
+<b>›</b>
+</div>
+
+</div>
+
+
+<!-- OTHER -->
+<div class="title">Other</div>
+
+<div class="card">
+
+<div class="row">
+<span>About Us</span>
+<b>›</b>
+</div>
+
+<div class="row">
+<span>Download App</span>
+<b>›</b>
 </div>
 
 <div class="row">
 <span>Language</span>
-<span>English</span>
+<b>English</b>
 </div>
 
-</div>
-
-
-<div class="card">
-
-<button class="btn red" onclick="logout()">
+<div class="row" onclick="logoutUser()" style="cursor:pointer;">
+<span style="color:#dc2626;font-weight:800;">
 Log Out
-</button>
+</span>
+<b style="color:#dc2626;">›</b>
+</div>
 
 </div>
 
 
+<!-- DEMO NOTICE -->
 <div class="notice">
-<b>Demo Account</b><br>
-This website currently uses local demo authentication.
-No real money or financial transaction is processed.
+
+<b>Demo Account Notice</b><br><br>
+
+This account page is currently for interface testing only.
+Balances, income, recharge, withdrawal and other financial values shown here are illustrative.
+
 </div>
 
 </section>
 
-</main>
+  </main>
 
 
 <!-- ================= BOTTOM NAV ================= -->
