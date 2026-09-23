@@ -2,800 +2,403 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nivesh India Grow</title>
 
 <style>
 *{box-sizing:border-box}
-
 body{
 margin:0;
-background:#f2f6f4;
-font-family:Arial,sans-serif;
-color:#17221c
-}
-
-button,input{font-family:inherit}
-
-.app{
-max-width:430px;
-margin:auto;
-min-height:100vh;
-background:#fff;
+font-family:Arial,Helvetica,sans-serif;
+background:#f5f7fb;
+color:#172033;
 padding-bottom:78px
 }
+button,input{font:inherit}
+button{cursor:pointer}
 
-/* ================= LOGIN ================= */
-
-.auth{
-min-height:100vh;
-padding:22px 18px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:linear-gradient(135deg,#087443,#18a66a)
-}
-
-.auth-box{
-width:100%;
-background:#fff;
-border-radius:25px;
-padding:27px 20px;
-box-shadow:0 18px 45px #0004
-}
-
-.logo{
-text-align:center;
-font-size:27px;
-font-weight:800;
-color:#087443
-}
-
-.auth-sub{
-text-align:center;
-font-size:13px;
-color:#718078;
-margin:8px 0 24px
-}
-
-.tabs{
-display:grid;
-grid-template-columns:1fr 1fr;
-background:#edf5f1;
-padding:4px;
-border-radius:12px;
-margin-bottom:20px
-}
-
-.tabs button{
-border:0;
-padding:12px;
-border-radius:9px;
-background:transparent;
-font-weight:700;
-font-size:14px;
-color:#68756e
-}
-
-.tabs button.active{
-background:#087443;
-color:#fff
-}
-
-.auth-form{display:none}
-.auth-form.active{display:block}
-
-.form-title{
-font-size:22px;
-font-weight:800;
-margin-bottom:14px
-}
-
-input{
-width:100%;
-padding:14px;
-border:1px solid #dce5df;
-border-radius:11px;
-margin:7px 0 12px;
-outline:none;
-font-size:14px
-}
-
-input:focus{
-border-color:#087443
-}
-
-.main-btn{
-width:100%;
-border:0;
-border-radius:11px;
-padding:14px;
-background:#087443;
-color:#fff;
-font-weight:800;
-font-size:15px
-}
-
-.small-note{
-font-size:11px;
-line-height:1.5;
-color:#718078;
-text-align:center;
-margin-top:15px
-}
-
-/* ================= HEADER ================= */
-
-header{
-background:linear-gradient(135deg,#087443,#18a66a);
-color:#fff;
-padding:20px 18px 23px;
+.top{
+background:linear-gradient(135deg,#0f172a,#1d4ed8);
+color:white;
+padding:18px 16px 22px;
 border-radius:0 0 24px 24px
 }
-
-.header-row{
-display:flex;
-justify-content:space-between;
-align-items:center
-}
-
 .brand{
 font-size:21px;
 font-weight:800
 }
-
-.profile-btn{
-width:38px;
-height:38px;
-border:0;
-border-radius:50%;
-background:#ffffff2b;
-color:#fff;
-font-size:19px
+.muted{
+color:#64748b;
+font-size:13px
 }
+.top .muted{color:#cbd5e1}
 
-.sub{
-opacity:.85;
-font-size:12px;
-margin-top:4px
+.page{display:none}
+.page.active{display:block}
+
+.section{
+padding:18px 15px
 }
-
-.balance-label{
-margin-top:20px;
-font-size:12px;
-opacity:.85
+.title{
+font-size:21px;
+font-weight:800;
+margin-bottom:15px
+}
+.card{
+background:white;
+border-radius:18px;
+padding:16px;
+margin-bottom:13px;
+box-shadow:0 5px 18px rgba(15,23,42,.07)
 }
 
 .balance{
-font-size:31px;
-font-weight:800;
-margin-top:3px
+margin-top:15px;
+background:rgba(255,255,255,.12);
+border:1px solid rgba(255,255,255,.18);
+padding:16px;
+border-radius:17px
+}
+.balance strong{
+font-size:27px
 }
 
-.balance-row{
-display:flex;
-justify-content:space-between;
-align-items:end
+.btn{
+border:0;
+width:100%;
+padding:13px;
+border-radius:12px;
+background:#2563eb;
+color:white;
+font-weight:700
+}
+.btn.light{
+background:#eff6ff;
+color:#2563eb
+}
+.btn.red{
+background:#fee2e2;
+color:#dc2626
 }
 
-.demo-badge{
-font-size:10px;
-background:#ffffff26;
-padding:6px 9px;
-border-radius:20px
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px
 }
-
-/* ================= COMMON ================= */
-
-.section{
-padding:18px
-}
-
-.title{
-font-size:18px;
-font-weight:800;
-margin-bottom:12px
-}
-
-.card{
-background:#fff;
-border:1px solid #e5ebe7;
+.stat{
+background:white;
 border-radius:16px;
 padding:15px;
+box-shadow:0 4px 14px rgba(15,23,42,.06)
+}
+.stat b{
+font-size:20px
+}
+
+.plan{
+border:1px solid #e2e8f0;
+border-radius:17px;
+padding:16px;
 margin-bottom:12px;
-box-shadow:0 4px 16px #0000000a
+background:white
+}
+.plan-head{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:12px
+}
+.badge{
+background:#dbeafe;
+color:#1d4ed8;
+padding:6px 9px;
+border-radius:20px;
+font-size:11px;
+font-weight:800
 }
 
 .row{
 display:flex;
 justify-content:space-between;
-align-items:center;
-gap:10px
+padding:10px 0;
+border-bottom:1px solid #f1f5f9;
+font-size:14px
 }
-
-.muted{
-color:#718078;
-font-size:12px
-}
-
-.btn{
-border:0;
-border-radius:10px;
-padding:10px 14px;
-background:#087443;
-color:#fff;
-font-weight:700
-}
-
-.btn.light{
-background:#eaf6ef;
-color:#087443
-}
-
-/* ================= HOME ================= */
-
-.welcome{
-font-size:14px;
-color:#718078;
-margin-bottom:15px
-}
-
-.quick-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:8px;
-margin-bottom:20px
-}
-
-.quick{
-background:#f5faf7;
-border:1px solid #e5eee8;
-border-radius:13px;
-padding:11px 5px;
-text-align:center
-}
-
-.quick-icon{
-font-size:21px;
-display:block;
-margin-bottom:5px
-}
-
-.quick-text{
-font-size:10px;
-font-weight:700;
-color:#405149
-}
+.row:last-child{border-bottom:0}
 
 .notice{
-background:#fff8e6;
-border:1px solid #f1dfaa;
-color:#735b16;
-padding:12px;
-border-radius:13px;
+background:#fff7ed;
+border:1px solid #fed7aa;
+color:#9a3412;
+padding:14px;
+border-radius:14px;
 font-size:12px;
 line-height:1.5;
-margin-bottom:18px
+margin-bottom:13px
 }
 
-.summary{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
-margin-bottom:20px
+.bottom{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+height:70px;
+background:white;
+border-top:1px solid #e5e7eb;
+display:none;
+grid-template-columns:repeat(5,1fr);
+z-index:50
 }
-
-.stat{
-background:#f6faf8;
-border-radius:13px;
-padding:13px
-}
-
-.stat-label{
+.bottom button{
+border:0;
+background:white;
 font-size:11px;
-color:#718078
+color:#64748b
 }
-
-.stat b{
+.bottom button.active{
+color:#2563eb;
+font-weight:800
+}
+.bottom span{
 display:block;
-font-size:18px;
-margin-top:6px
-}
-
-.plan{
-display:flex;
-justify-content:space-between;
-gap:12px
-}
-
-.plan h3{
-margin:0 0 6px;
-font-size:16px
-}
-
-.price{
 font-size:20px;
-font-weight:800;
-color:#087443
-}
-
-.plan-info{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:7px;
-margin:13px 0
-}
-
-.info-box{
-background:#f7faf8;
-border-radius:9px;
-padding:8px
-}
-
-.info-box small{
-display:block;
-font-size:10px;
-color:#718078
-}
-
-.info-box b{
-font-size:12px
-}
-
-.coming{
-opacity:.75
-}
-
-/* ================= TEAM ================= */
-
-.team-hero{
-background:linear-gradient(135deg,#087443,#18a66a);
-color:#fff;
-border-radius:18px;
-padding:18px;
-margin-bottom:15px
-}
-
-.team-hero-title{
-font-size:13px;
-opacity:.85
-}
-
-.team-hero-number{
-font-size:32px;
-font-weight:800;
-margin-top:4px
-}
-
-.team-hero-sub{
-font-size:11px;
-opacity:.8;
-margin-top:3px
-}
-
-.team-stats{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:8px;
-margin-top:15px
-}
-
-.team-stat{
-background:#ffffff18;
-border:1px solid #ffffff22;
-border-radius:11px;
-padding:9px;
-text-align:center
-}
-
-.team-stat b{
-display:block;
-font-size:17px;
 margin-bottom:3px
 }
 
-.team-stat span{
-font-size:10px;
-opacity:.85
+/* LOGIN */
+.auth{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px;
+background:linear-gradient(145deg,#0f172a,#1d4ed8)
 }
-
-.team-levels{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:8px;
-margin-bottom:18px
+.auth-box{
+width:100%;
+max-width:410px;
+background:white;
+padding:25px;
+border-radius:24px;
+box-shadow:0 20px 50px rgba(0,0,0,.2)
 }
-
-.level-card{
-border:1px solid #e5ebe7;
-border-radius:13px;
-padding:12px;
+.auth-logo{
 text-align:center;
-background:#fff
-}
-
-.level-card .level-icon{
-font-size:20px;
+font-size:25px;
+font-weight:900;
 margin-bottom:5px
 }
-
-.level-card b{
-display:block;
-font-size:19px;
-color:#087443
+.auth-sub{
+text-align:center;
+color:#64748b;
+font-size:13px;
+margin-bottom:22px
 }
-
-.level-card span{
-font-size:10px;
-color:#718078
+.auth input{
+width:100%;
+padding:14px;
+border:1px solid #dbe3ee;
+border-radius:12px;
+margin-bottom:12px;
+outline:none
 }
-
-.filter-bar{
-display:flex;
-gap:7px;
-overflow-x:auto;
-margin-bottom:14px;
-padding-bottom:3px
+.auth input:focus{
+border-color:#2563eb
 }
-
-.filter-btn{
-border:1px solid #dfe8e2;
-background:#fff;
-color:#617068;
-border-radius:20px;
-padding:8px 14px;
-font-size:11px;
+.auth-link{
+text-align:center;
+margin-top:15px;
+font-size:13px;
+color:#2563eb;
 font-weight:700;
-white-space:nowrap
+cursor:pointer
+}
+.auth-msg{
+font-size:12px;
+color:#dc2626;
+margin-bottom:10px;
+display:none
 }
 
-.filter-btn.active{
-background:#087443;
-border-color:#087443;
-color:#fff
+/* TEAM */
+.team-hero{
+background:linear-gradient(135deg,#111827,#2563eb);
+color:white;
+border-radius:20px;
+padding:20px;
+margin-bottom:14px
 }
-
-.member-card{
-background:#fff;
-border:1px solid #e5ebe7;
+.team-hero b{
+font-size:30px
+}
+.level{
 border-radius:15px;
-padding:13px;
-margin-bottom:10px
+padding:14px;
+background:#f8fafc;
+border:1px solid #e2e8f0
 }
-
+.member{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:13px 0;
+border-bottom:1px solid #eef2f7
+}
+.member:last-child{border-bottom:0}
+.avatar{
+width:40px;
+height:40px;
+border-radius:50%;
+background:#dbeafe;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:800;
+color:#1d4ed8
+}
 .member-left{
 display:flex;
 align-items:center;
 gap:10px
 }
-
-.member-avatar{
-width:42px;
-height:42px;
-border-radius:50%;
-background:#eaf6ef;
-color:#087443;
+.filter{
 display:flex;
-align-items:center;
-justify-content:center;
-font-weight:800
+gap:7px;
+overflow:auto;
+margin-bottom:12px
+}
+.filter button{
+white-space:nowrap;
+border:1px solid #dbe3ee;
+background:white;
+padding:8px 13px;
+border-radius:20px;
+font-size:12px
+}
+.filter button.active{
+background:#2563eb;
+color:white;
+border-color:#2563eb
 }
 
-.member-name{
-font-size:13px;
-font-weight:800
-}
-
-.member-info{
-font-size:10px;
-color:#718078;
-margin-top:3px
-}
-
-.member-right{
-text-align:right
-}
-
-.level-badge{
-font-size:9px;
-font-weight:800;
-color:#087443;
-background:#eaf6ef;
-padding:5px 7px;
-border-radius:15px
-}
-
-.member-status{
-font-size:9px;
-color:#718078;
-margin-top:5px
-}
-
-.activity{
-display:flex;
-gap:10px;
-align-items:flex-start;
-padding:10px 0;
-border-bottom:1px solid #edf0ee
-}
-
-.activity:last-child{
-border-bottom:0
-}
-
-.activity-icon{
-width:34px;
-height:34px;
-border-radius:10px;
-background:#eaf6ef;
-display:flex;
-align-items:center;
-justify-content:center
-}
-
-.activity-text{
-font-size:12px;
-line-height:1.4
-}
-
-/* ================= SHARE ================= */
-
+/* SHARE */
 .qr{
-width:175px;
-height:175px;
-margin:15px auto;
+width:150px;
+height:150px;
+margin:auto;
+border:8px solid white;
 background:
-repeating-linear-gradient(
-45deg,
-#111 0 4px,
-#fff 4px 8px
-);
-border:10px solid white;
+repeating-linear-gradient(0deg,#111 0 5px,#fff 5px 10px),
+repeating-linear-gradient(90deg,transparent 0 5px,#111 5px 10px);
 box-shadow:0 0 0 1px #ddd
 }
-
 .ref-code{
-font-size:22px;
-color:#087443
-}
-
-/* ================= DEVICES ================= */
-
-.device-icon{
-width:42px;
-height:42px;
+font-size:24px;
+letter-spacing:2px;
+background:#f1f5f9;
+padding:12px;
 border-radius:12px;
-background:#eaf6ef;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:21px
+margin-top:8px
 }
 
-/* ================= MY ================= */
-
-.account-actions{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px
-}
-
-.menu-item{
-padding:14px 0;
-border-bottom:1px solid #edf0ee;
-display:flex;
-justify-content:space-between;
-align-items:center;
-font-size:14px
-}
-
-.menu-item:last-child{
-border-bottom:0
-}
-
-.logout{
-margin-top:15px;
-width:100%;
-padding:13px;
-border:1px solid #ffd7d7;
-background:#fff3f3;
-color:#c33;
-border-radius:11px;
-font-weight:700
-}
-
-/* ================= NAV ================= */
-
-.nav{
-position:fixed;
-bottom:0;
-left:50%;
-transform:translateX(-50%);
-width:min(430px,100%);
-height:68px;
-background:#fff;
-border-top:1px solid #e5ebe7;
-display:grid;
-grid-template-columns:repeat(5,1fr);
-z-index:5
-}
-
-.nav button{
-border:0;
-background:none;
-font-size:10px;
-color:#68756e
-}
-
-.nav button.active{
-color:#087443;
-font-weight:800
-}
-
-.nav span{
-display:block;
-font-size:21px;
-margin-bottom:3px
-}
-
-.page{
-display:none
-}
-
-.page.active{
-display:block
-}
-
+/* TOAST */
 .toast{
 position:fixed;
 left:50%;
-bottom:82px;
+bottom:85px;
 transform:translateX(-50%);
-background:#17221c;
-color:#fff;
-padding:10px 16px;
-border-radius:20px;
-display:none;
+background:#111827;
+color:white;
+padding:11px 16px;
+border-radius:10px;
 font-size:13px;
-z-index:9;
-white-space:nowrap
+display:none;
+z-index:100
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================= AUTH ================= -->
+<!-- ================= LOGIN ================= -->
 
 <div id="auth" class="auth">
 
 <div class="auth-box">
 
-<div class="logo">🎩 Nivesh India Grow</div>
+<div class="auth-logo">
+Nivesh India Grow
+</div>
 
 <div class="auth-sub">
-Secure Demo Platform
+Secure Demo Portal
 </div>
 
-<div class="tabs">
+<div id="loginBox">
 
-<button id="loginTab"
-class="active"
-onclick="showAuth('login')">
+<input id="loginUser" type="text" placeholder="Username">
+
+<input id="loginPass" type="password" placeholder="Password">
+
+<div id="loginMsg" class="auth-msg"></div>
+
+<button class="btn" onclick="loginUser()">
 Login
 </button>
 
-<button id="registerTab"
-onclick="showAuth('register')">
-Register
-</button>
+<div class="auth-link" onclick="showRegister()">
+Don't have an account? Register
+</div>
 
 </div>
 
-<div id="loginForm" class="auth-form active">
 
-<div class="form-title">
-Welcome Back
-</div>
+<div id="registerBox" style="display:none">
 
-<input
-id="loginMobile"
-type="tel"
-placeholder="Mobile Number"
-maxlength="10">
+<input id="regName" type="text" placeholder="Full Name">
 
-<input
-id="loginPassword"
-type="password"
-placeholder="Password">
+<input id="regUser" type="text" placeholder="Create Username">
 
-<button class="main-btn" onclick="login()">
-Login
-</button>
+<input id="regPass" type="password" placeholder="Create Password">
 
-</div>
+<input id="regPass2" type="password" placeholder="Confirm Password">
 
-<div id="registerForm" class="auth-form">
+<div id="regMsg" class="auth-msg"></div>
 
-<div class="form-title">
-Create Account
-</div>
-
-<input
-id="regName"
-type="text"
-placeholder="Full Name">
-
-<input
-id="regMobile"
-type="tel"
-placeholder="Mobile Number"
-maxlength="10">
-
-<input
-id="regPassword"
-type="password"
-placeholder="Create Password">
-
-<input
-id="regInvite"
-type="text"
-placeholder="Invite Code (Optional)"
-value="NIG2026">
-
-<button class="main-btn" onclick="register()">
+<button class="btn" onclick="registerUser()">
 Create Account
 </button>
 
-</div>
-
-<div class="small-note">
-Demo interface only. No real deposits, withdrawals,
-investment returns or guaranteed profits are processed.
+<div class="auth-link" onclick="showLogin()">
+Already have an account? Login
 </div>
 
 </div>
+
+</div>
 </div>
 
 
-<!-- ================= WEBSITE ================= -->
+<!-- ================= APP ================= -->
 
-<div id="website" class="app" style="display:none">
+<div id="app" style="display:none">
 
-<header>
+<header class="top">
 
-<div class="header-row">
-
-<div>
 <div class="brand">
-🎩 Nivesh India Grow
+Nivesh India Grow
 </div>
 
-<div class="sub">
-Mobile Platform
+<div class="muted">
+Welcome, <span id="welcomeName">User</span>
 </div>
-</div>
-
-<button class="profile-btn"
-onclick="go('my')">
-👤
-</button>
-
-</div>
-
-<div class="balance-label">
-Available Demo Balance
-</div>
-
-<div class="balance-row">
 
 <div class="balance">
-₹12,850
-</div>
 
-<div class="demo-badge">
-DEMO
-</div>
+<div class="muted">Demo Balance</div>
+
+<strong>₹12,850</strong>
 
 </div>
 
@@ -808,124 +411,97 @@ DEMO
 
 <section class="section">
 
-<div class="welcome">
-Welcome back 👋
-<br>
-<span class="muted">
-Manage your demo account from one place.
-</span>
-</div>
-
-<div class="quick-grid">
-
-<div class="quick"
-onclick="toast('Recharge is demo only')">
-<span class="quick-icon">💳</span>
-<span class="quick-text">Recharge</span>
-</div>
-
-<div class="quick"
-onclick="toast('Withdraw is demo only')">
-<span class="quick-icon">💸</span>
-<span class="quick-text">Withdraw</span>
-</div>
-
-<div class="quick"
-onclick="go('share')">
-<span class="quick-icon">🔗</span>
-<span class="quick-text">Invite</span>
-</div>
-
-<div class="quick"
-onclick="go('devices')">
-<span class="quick-icon">📱</span>
-<span class="quick-text">Devices</span>
-</div>
-
-</div>
-
-<div class="notice">
-<b>📢 Announcement</b><br>
-Welcome to Nivesh India Grow. This interface is
-currently running in demo mode for testing and
-presentation purposes.
-</div>
-
 <div class="title">
-Account Summary
+Dashboard
 </div>
 
-<div class="summary">
+<div class="grid">
 
 <div class="stat">
-<div class="stat-label">
-Total Income
-</div>
+<div class="muted">Total Income</div>
 <b>₹3,250</b>
 </div>
 
 <div class="stat">
-<div class="stat-label">
-Active Plans
-</div>
-<b>01</b>
-</div>
-
-<div class="stat">
-<div class="stat-label">
-Team Size
-</div>
+<div class="muted">Team Members</div>
 <b>24</b>
 </div>
 
-<div class="stat">
-<div class="stat-label">
-Referral Code
-</div>
-<b>NIG2026</b>
 </div>
 
+<br>
+
+<div class="notice">
+<b>Demo Mode</b><br>
+All amounts shown on this website are illustrative only.
+No real investment, return or payout is processed.
 </div>
 
 <div class="title">
-Featured Plans
+Available Plans
 </div>
 
-<div class="card">
 
 <div class="plan">
 
+<div class="plan-head">
 <div>
-<h3>Starter</h3>
-
-<div class="muted">
-Illustrative plan · 7 days
+<b>Starter Plan</b>
+<div class="muted">7 Days</div>
 </div>
 
+<span class="badge">DEMO</span>
 </div>
 
-<div class="price">
-₹1,000
+<div class="row">
+<span>Price</span>
+<b>₹1,000</b>
 </div>
 
-</div>
-
-<div class="plan-info">
-
-<div class="info-box">
-<small>Daily illustrative</small>
+<div class="row">
+<span>Daily Figure</span>
 <b>₹50</b>
 </div>
 
-<div class="info-box">
-<small>Total illustrative</small>
+<div class="row">
+<span>Illustrative Total</span>
 <b>₹1,350</b>
 </div>
 
+<button class="btn light" onclick="toast('Demo plan selected')">
+View Plan
+</button>
+
 </div>
 
-<button class="btn"
-onclick="toast('Demo plan selected')">
+
+<div class="plan">
+
+<div class="plan-head">
+<div>
+<b>Growth Plan</b>
+<div class="muted">15 Days</div>
+</div>
+
+<span class="badge">DEMO</span>
+</div>
+
+<div class="row">
+<span>Price</span>
+<b>₹5,000</b>
+</div>
+
+<div class="row">
+<span>Daily Figure</span>
+<b>₹300</b>
+</div>
+
+<div class="row">
+<span>Illustrative Total</span>
+<b>₹9,500</b>
+</div>
+
+<button class="btn light" onclick="toast('Demo plan selected')">
 View Plan
 </button>
 
@@ -934,76 +510,13 @@ View Plan
 
 <div class="card">
 
-<div class="plan">
+<b>Announcement</b>
 
-<div>
-<h3>Growth</h3>
+<p class="muted">
+Welcome to Nivesh India Grow demo portal.
+More features will be added after business verification.
+</p>
 
-<div class="muted">
-Illustrative plan · 15 days
-</div>
-
-</div>
-
-<div class="price">
-₹5,000
-</div>
-
-</div>
-
-<div class="plan-info">
-
-<div class="info-box">
-<small>Daily illustrative</small>
-<b>₹300</b>
-</div>
-
-<div class="info-box">
-<small>Total illustrative</small>
-<b>₹9,500</b>
-</div>
-
-</div>
-
-<button class="btn"
-onclick="toast('Demo plan selected')">
-View Plan
-</button>
-
-</div>
-
-
-<div class="card coming">
-
-<div class="plan">
-
-<div>
-<h3>Premium</h3>
-
-<div class="muted">
-Coming Soon
-</div>
-
-</div>
-
-<div class="price">
-—
-</div>
-
-</div>
-
-<button class="btn light"
-onclick="toast('Coming Soon')">
-Coming Soon
-</button>
-
-</div>
-
-<div class="notice">
-<b>Demo Notice:</b>
-The figures displayed above are illustrative only.
-No real deposits, withdrawals, investment returns
-or guaranteed profits are processed by this demo.
 </div>
 
 </section>
@@ -1023,62 +536,68 @@ My Team
 
 <div class="team-hero">
 
-<div class="team-hero-title">
+<div class="muted" style="color:#dbeafe">
 Total Team Members
 </div>
 
-<div class="team-hero-number">
-24
-</div>
+<b>24</b>
 
-<div class="team-hero-sub">
+<div style="margin-top:5px;font-size:12px;color:#dbeafe">
 Demo team statistics
 </div>
 
-<div class="team-stats">
+</div>
 
-<div class="team-stat">
+
+<div class="grid">
+
+<div class="stat">
+<div class="muted">LV1</div>
 <b>12</b>
-<span>LV1</span>
 </div>
 
-<div class="team-stat">
+<div class="stat">
+<div class="muted">LV2</div>
 <b>8</b>
-<span>LV2</span>
 </div>
 
-<div class="team-stat">
+<div class="stat">
+<div class="muted">LV3</div>
 <b>4</b>
-<span>LV3</span>
+</div>
+
+<div class="stat">
+<div class="muted">Active</div>
+<b>18</b>
 </div>
 
 </div>
 
-</div>
-
+<br>
 
 <div class="title">
 Team Levels
 </div>
 
-<div class="team-levels">
+<div class="card">
 
-<div class="level-card">
-<div class="level-icon">🥇</div>
-<b>12</b>
-<span>Level 1</span>
+<div class="level">
+<b>LV1</b>
+<div class="muted">12 Demo Members</div>
 </div>
 
-<div class="level-card">
-<div class="level-icon">🥈</div>
-<b>8</b>
-<span>Level 2</span>
+<br>
+
+<div class="level">
+<b>LV2</b>
+<div class="muted">8 Demo Members</div>
 </div>
 
-<div class="level-card">
-<div class="level-icon">🥉</div>
-<b>4</b>
-<span>Level 3</span>
+<br>
+
+<div class="level">
+<b>LV3</b>
+<div class="muted">4 Demo Members</div>
 </div>
 
 </div>
@@ -1088,343 +607,106 @@ Team Levels
 Team Members
 </div>
 
-<div class="filter-bar">
+<div class="filter">
 
-<button class="filter-btn active"
-onclick="filterTeam('all',this)">
+<button class="active" onclick="filterTeam('all',this)">
 All
 </button>
 
-<button class="filter-btn"
-onclick="filterTeam('1',this)">
+<button onclick="filterTeam('1',this)">
 LV1
 </button>
 
-<button class="filter-btn"
-onclick="filterTeam('2',this)">
+<button onclick="filterTeam('2',this)">
 LV2
 </button>
 
-<button class="filter-btn"
-onclick="filterTeam('3',this)">
+<button onclick="filterTeam('3',this)">
 LV3
 </button>
 
 </div>
 
-
-<div id="teamMembers">
-
-
-<div class="member-card team-member"
-data-level="1">
-
-<div class="row">
-
-<div class="member-left">
-
-<div class="member-avatar">
-M1
-</div>
-
-<div>
-
-<div class="member-name">
-Member 001
-</div>
-
-<div class="member-info">
-Joined recently · Level 1
-</div>
-
-</div>
-
-</div>
-
-<div class="member-right">
-
-<div class="level-badge">
-LV1
-</div>
-
-<div class="member-status">
-● Active
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="member-card team-member"
-data-level="1">
-
-<div class="row">
-
-<div class="member-left">
-
-<div class="member-avatar">
-M2
-</div>
-
-<div>
-
-<div class="member-name">
-Member 002
-</div>
-
-<div class="member-info">
-Joined recently · Level 1
-</div>
-
-</div>
-
-</div>
-
-<div class="member-right">
-
-<div class="level-badge">
-LV1
-</div>
-
-<div class="member-status">
-● Active
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="member-card team-member"
-data-level="2">
-
-<div class="row">
-
-<div class="member-left">
-
-<div class="member-avatar">
-M3
-</div>
-
-<div>
-
-<div class="member-name">
-Member 003
-</div>
-
-<div class="member-info">
-Joined recently · Level 2
-</div>
-
-</div>
-
-</div>
-
-<div class="member-right">
-
-<div class="level-badge">
-LV2
-</div>
-
-<div class="member-status">
-● Active
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="member-card team-member"
-data-level="2">
-
-<div class="row">
-
-<div class="member-left">
-
-<div class="member-avatar">
-M4
-</div>
-
-<div>
-
-<div class="member-name">
-Member 004
-</div>
-
-<div class="member-info">
-Joined recently · Level 2
-</div>
-
-</div>
-
-</div>
-
-<div class="member-right">
-
-<div class="level-badge">
-LV2
-</div>
-
-<div class="member-status">
-● Active
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="member-card team-member"
-data-level="3">
-
-<div class="row">
-
-<div class="member-left">
-
-<div class="member-avatar">
-M5
-</div>
-
-<div>
-
-<div class="member-name">
-Member 005
-</div>
-
-<div class="member-info">
-Joined recently · Level 3
-</div>
-
-</div>
-
-</div>
-
-<div class="member-right">
-
-<div class="level-badge">
-LV3
-</div>
-
-<div class="member-status">
-● Active
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="member-card team-member"
-data-level="3">
-
-<div class="row">
-
-<div class="member-left">
-
-<div class="member-avatar">
-M6
-</div>
-
-<div>
-
-<div class="member-name">
-Member 006
-</div>
-
-<div class="member-info">
-Joined recently · Level 3
-</div>
-
-</div>
-
-</div>
-
-<div class="member-right">
-
-<div class="level-badge">
-LV3
-</div>
-
-<div class="member-status">
-● Active
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="title" style="margin-top:20px">
-Team Activity
-</div>
 
 <div class="card">
 
-<div class="activity">
-
-<div class="activity-icon">
-👤
+<div class="member" data-level="1">
+<div class="member-left">
+<div class="avatar">A</div>
+<div>
+<b>Member A</b>
+<div class="muted">LV1 • Active</div>
+</div>
+</div>
+<span class="badge">LV1</span>
 </div>
 
-<div class="activity-text">
-<b>Member 001</b> joined the demo team.
-<br>
-<span class="muted">Recently</span>
+
+<div class="member" data-level="1">
+<div class="member-left">
+<div class="avatar">B</div>
+<div>
+<b>Member B</b>
+<div class="muted">LV1 • Active</div>
+</div>
+</div>
+<span class="badge">LV1</span>
 </div>
 
+
+<div class="member" data-level="2">
+<div class="member-left">
+<div class="avatar">C</div>
+<div>
+<b>Member C</b>
+<div class="muted">LV2 • Active</div>
+</div>
+</div>
+<span class="badge">LV2</span>
 </div>
 
-<div class="activity">
 
-<div class="activity-icon">
-📈
+<div class="member" data-level="2">
+<div class="member-left">
+<div class="avatar">D</div>
+<div>
+<b>Member D</b>
+<div class="muted">LV2 • Active</div>
+</div>
+</div>
+<span class="badge">LV2</span>
 </div>
 
-<div class="activity-text">
-Team statistics updated.
-<br>
-<span class="muted">Demo activity</span>
+
+<div class="member" data-level="3">
+<div class="member-left">
+<div class="avatar">E</div>
+<div>
+<b>Member E</b>
+<div class="muted">LV3 • Active</div>
+</div>
+</div>
+<span class="badge">LV3</span>
 </div>
 
+
+<div class="member" data-level="3">
+<div class="member-left">
+<div class="avatar">F</div>
+<div>
+<b>Member F</b>
+<div class="muted">LV3 • Active</div>
 </div>
-
-<div class="activity">
-
-<div class="activity-icon">
-🔗
 </div>
-
-<div class="activity-text">
-Referral system is available in demo mode.
-<br>
-<span class="muted">Demo activity</span>
-</div>
-
+<span class="badge">LV3</span>
 </div>
 
 </div>
 
 
 <div class="notice">
-<b>Demo Notice:</b>
-Team members and statistics shown here are
-illustrative demo data only.
+<b>Demo Team Notice</b><br>
+Team members and statistics shown here are sample data for interface testing.
 </div>
 
 </section>
@@ -1444,19 +726,13 @@ Share & Referral
 
 <div class="card" style="text-align:center">
 
-<div style="
-font-size:16px;
-font-weight:800;
-margin-bottom:6px;
-">
-Invite & Grow
-</div>
+<b>Invite & Grow</b>
 
 <div class="muted">
 Share your demo referral code
 </div>
 
-<div class="qr" style="margin:18px auto;"></div>
+<div class="qr" style="margin:18px auto"></div>
 
 <div class="muted">
 Your Referral Code
@@ -1466,10 +742,7 @@ Your Referral Code
 <b id="code">NIG2026</b>
 </div>
 
-<button
-class="btn"
-style="margin-top:13px"
-onclick="copyCode()">
+<button class="btn" style="margin-top:13px" onclick="copyCode()">
 Copy Referral Code
 </button>
 
@@ -1478,15 +751,9 @@ Copy Referral Code
 
 <div class="card">
 
-<div style="
-font-size:16px;
-font-weight:800;
-margin-bottom:8px;
-">
-Referral Link
-</div>
+<b>Referral Link</b>
 
-<div class="muted" style="margin-bottom:8px;">
+<div class="muted" style="margin:8px 0">
 Share this demo link with your friends
 </div>
 
@@ -1494,20 +761,9 @@ Share this demo link with your friends
 id="link"
 readonly
 value="https://example.com/nivesh-india-grow"
-style="
-width:100%;
-box-sizing:border-box;
-padding:13px;
-border:1px solid #e5e7eb;
-border-radius:12px;
-font-size:13px;
-background:#f8fafc;
-margin-bottom:10px;
-">
+style="width:100%;padding:13px;border:1px solid #e5e7eb;border-radius:12px;background:#f8fafc;margin-bottom:10px">
 
-<button
-class="btn light"
-onclick="copyLink()">
+<button class="btn light" onclick="copyLink()">
 Copy Referral Link
 </button>
 
@@ -1516,13 +772,7 @@ Copy Referral Link
 
 <div class="card">
 
-<div style="
-font-size:16px;
-font-weight:800;
-margin-bottom:12px;
-">
-Referral Information
-</div>
+<b>Referral Information</b>
 
 <div class="row">
 <span>Referral Code</span>
@@ -1530,10 +780,8 @@ Referral Information
 </div>
 
 <div class="row">
-<span>Referral Status</span>
-<b style="color:#16a34a;">
-Active
-</b>
+<span>Status</span>
+<b style="color:#16a34a">Active</b>
 </div>
 
 <div class="row">
@@ -1545,44 +793,14 @@ Active
 
 
 <div class="notice">
-
 <b>Demo Referral Notice</b><br><br>
-
-This referral section is currently for interface
-testing and demonstration only.
-
-No real commission, investment return,
-withdrawal or payout is processed.
-
-</div>
-
-
-<div class="card" style="text-align:center">
-
-<div style="
-font-size:15px;
-font-weight:800;
-margin-bottom:6px;
-">
-Share Nivesh India Grow
-</div>
-
-<div class="muted" style="margin-bottom:13px;">
-Copy your referral link and share it anywhere.
-</div>
-
-<button
-class="btn"
-onclick="copyLink()">
-Share / Copy Link
-</button>
-
+This referral section is for interface testing only.
+No real commission, investment return, withdrawal or payout is processed.
 </div>
 
 </section>
 
 </main>
-
 
 
 <!-- ================= DEVICES ================= -->
@@ -1595,40 +813,32 @@ Share / Copy Link
 My Devices
 </div>
 
+<div class="notice">
+<b>Demo Mode</b><br>
+Device and investment records shown here are sample data.
+</div>
+
 <div class="card">
 
 <div class="row">
+<span>Starter Plan</span>
+<b>Active</b>
+</div>
 
 <div class="row">
-
-<div class="device-icon">
-📱
+<span>Purchase Value</span>
+<b>₹1,000</b>
 </div>
 
-<div>
-<b>Starter Demo</b>
-<br>
-<small class="muted">
-7 Days
-</small>
+<div class="row">
+<span>Duration</span>
+<b>7 Days</b>
 </div>
 
+<div class="row">
+<span>Status</span>
+<b style="color:#16a34a">Active</b>
 </div>
-
-<span class="status">
-ACTIVE
-</span>
-
-</div>
-
-<p class="muted">
-Demo amount: ₹1,000
-</p>
-
-<button class="btn light"
-onclick="toast('Demo device details')">
-Details
-</button>
 
 </div>
 
@@ -1636,37 +846,24 @@ Details
 <div class="card">
 
 <div class="row">
+<span>Growth Plan</span>
+<b>Demo</b>
+</div>
 
 <div class="row">
-
-<div class="device-icon">
-📦
+<span>Purchase Value</span>
+<b>₹5,000</b>
 </div>
 
-<div>
-<b>Old Demo Plan</b>
-<br>
-<small class="muted">
-Expired
-</small>
+<div class="row">
+<span>Duration</span>
+<b>15 Days</b>
 </div>
 
+<div class="row">
+<span>Status</span>
+<b style="color:#64748b">Coming Soon</b>
 </div>
-
-<span class="muted">
-EXPIRED
-</span>
-
-</div>
-
-<p class="muted">
-Demo record only.
-</p>
-
-<button class="btn light"
-onclick="toast('Demo device details')">
-Details
-</button>
 
 </div>
 
@@ -1685,42 +882,411 @@ Details
 My Account
 </div>
 
+
 <div class="card">
 
-<div class="summary">
-
-<div class="stat">
-<div class="stat-label">
-Balance
+<div class="row">
+<span>Username</span>
+<b id="profileUser">User</b>
 </div>
+
+<div class="row">
+<span>Balance</span>
 <b>₹12,850</b>
 </div>
 
-<div class="stat">
-<div class="stat-label">
-Total Income
-</div>
+<div class="row">
+<span>Total Income</span>
 <b>₹3,250</b>
 </div>
 
 </div>
 
-</div>
 
+<div class="card">
 
-<div class="account-actions">
-
-<button class="btn"
-onclick="toast('Demo only — Recharge unavailable')">
+<button class="btn light" onclick="toast('Recharge is available in demo mode only')">
 Recharge
 </button>
 
-<button class="btn"
-onclick="toast('Demo only — Withdraw unavailable')">
+<br><br>
+
+<button class="btn light" onclick="toast('Withdrawal is available in demo mode only')">
 Withdraw
 </button>
 
-<button class="btn light"
-onclick="go('devices')">
+<br><br>
+
+<button class="btn light" onclick="go('devices')">
 Devices
-</butto
+</button>
+
+<br><br>
+
+<button class="btn light" onclick="toast('Bank section coming soon')">
+Bank
+</button>
+
+</div>
+
+
+<div class="card">
+
+<div class="row">
+<span>Personal Information</span>
+<span>›</span>
+</div>
+
+<div class="row">
+<span>Income Details</span>
+<span>›</span>
+</div>
+
+<div class="row">
+<span>Recharge Details</span>
+<span>›</span>
+</div>
+
+<div class="row">
+<span>Withdrawal Details</span>
+<span>›</span>
+</div>
+
+<div class="row">
+<span>About Us</span>
+<span>›</span>
+</div>
+
+<div class="row">
+<span>Language</span>
+<span>English</span>
+</div>
+
+</div>
+
+
+<div class="card">
+
+<button class="btn red" onclick="logout()">
+Log Out
+</button>
+
+</div>
+
+
+<div class="notice">
+<b>Demo Account</b><br>
+This website currently uses local demo authentication.
+No real money or financial transaction is processed.
+</div>
+
+</section>
+
+</main>
+
+
+<!-- ================= BOTTOM NAV ================= -->
+
+<nav class="bottom" id="bottomNav">
+
+<button class="active" onclick="go('home',this)">
+<span>⌂</span>
+Home
+</button>
+
+<button onclick="go('team',this)">
+<span>👥</span>
+Team
+</button>
+
+<button onclick="go('share',this)">
+<span>↗</span>
+Share
+</button>
+
+<button onclick="go('devices',this)">
+<span>▣</span>
+Devices
+</button>
+
+<button onclick="go('my',this)">
+<span>●</span>
+My
+</button>
+
+</nav>
+
+</div>
+
+
+<div id="toastBox" class="toast"></div>
+
+
+<script>
+
+/* ================= AUTH ================= */
+
+function showRegister(){
+
+document.getElementById("loginBox").style.display="none";
+document.getElementById("registerBox").style.display="block";
+
+}
+
+function showLogin(){
+
+document.getElementById("registerBox").style.display="none";
+document.getElementById("loginBox").style.display="block";
+
+}
+
+function registerUser(){
+
+let name=document.getElementById("regName").value.trim();
+let user=document.getElementById("regUser").value.trim();
+let pass=document.getElementById("regPass").value;
+let pass2=document.getElementById("regPass2").value;
+let msg=document.getElementById("regMsg");
+
+msg.style.display="none";
+
+if(!name || !user || !pass || !pass2){
+
+msg.textContent="Please fill all fields.";
+msg.style.display="block";
+return;
+
+}
+
+if(pass!==pass2){
+
+msg.textContent="Passwords do not match.";
+msg.style.display="block";
+return;
+
+}
+
+localStorage.setItem("nig_user",user);
+localStorage.setItem("nig_pass",pass);
+localStorage.setItem("nig_name",name);
+
+toast("Account created successfully");
+
+showLogin();
+
+document.getElementById("loginUser").value=user;
+
+}
+
+
+function loginUser(){
+
+let user=document.getElementById("loginUser").value.trim();
+let pass=document.getElementById("loginPass").value;
+let msg=document.getElementById("loginMsg");
+
+msg.style.display="none";
+
+let savedUser=localStorage.getItem("nig_user");
+let savedPass=localStorage.getItem("nig_pass");
+
+if(!savedUser){
+
+msg.textContent="No account found. Please register first.";
+msg.style.display="block";
+return;
+
+}
+
+if(user!==savedUser || pass!==savedPass){
+
+msg.textContent="Incorrect username or password.";
+msg.style.display="block";
+return;
+
+}
+
+localStorage.setItem("nig_logged","1");
+
+openApp();
+
+}
+
+
+function openApp(){
+
+let name=localStorage.getItem("nig_name") || "User";
+let user=localStorage.getItem("nig_user") || "User";
+
+document.getElementById("auth").style.display="none";
+document.getElementById("app").style.display="block";
+document.getElementById("bottomNav").style.display="grid";
+
+document.getElementById("welcomeName").textContent=name;
+document.getElementById("profileUser").textContent=user;
+
+}
+
+
+function logout(){
+
+localStorage.removeItem("nig_logged");
+
+document.getElementById("app").style.display="none";
+document.getElementById("bottomNav").style.display="none";
+document.getElementById("auth").style.display="flex";
+
+document.getElementById("loginPass").value="";
+
+showLogin();
+
+toast("Logged out successfully");
+
+}
+
+
+/* ================= PAGE NAVIGATION ================= */
+
+function go(id,btn){
+
+document.querySelectorAll(".page").forEach(function(page){
+page.classList.remove("active");
+});
+
+let page=document.getElementById(id);
+
+if(page){
+page.classList.add("active");
+}
+
+if(btn){
+
+document.querySelectorAll(".bottom button").forEach(function(b){
+b.classList.remove("active");
+});
+
+btn.classList.add("active");
+
+}else{
+
+document.querySelectorAll(".bottom button").forEach(function(b){
+b.classList.remove("active");
+});
+
+let buttons=document.querySelectorAll(".bottom button");
+
+let ids=["home","team","share","devices","my"];
+
+let index=ids.indexOf(id);
+
+if(index>=0){
+buttons[index].classList.add("active");
+}
+
+}
+
+window.scrollTo(0,0);
+
+}
+
+
+/* ================= TEAM FILTER ================= */
+
+function filterTeam(level,btn){
+
+document.querySelectorAll(".filter button").forEach(function(b){
+b.classList.remove("active");
+});
+
+btn.classList.add("active");
+
+document.querySelectorAll(".member").forEach(function(member){
+
+if(level==="all"){
+member.style.display="flex";
+}else{
+member.style.display=
+member.getAttribute("data-level")===level
+?"flex"
+:"none";
+}
+
+});
+
+}
+
+
+/* ================= COPY ================= */
+
+function copyCode(){
+
+let code=document.getElementById("code").textContent;
+
+if(navigator.clipboard){
+
+navigator.clipboard.writeText(code);
+
+}
+
+toast("Referral code copied");
+
+}
+
+
+function copyLink(){
+
+let link=document.getElementById("link").value;
+
+if(navigator.clipboard){
+
+navigator.clipboard.writeText(link);
+
+}
+
+toast("Referral link copied");
+
+}
+
+
+/* ================= TOAST ================= */
+
+let toastTimer;
+
+function toast(message){
+
+let box=document.getElementById("toastBox");
+
+box.textContent=message;
+box.style.display="block";
+
+clearTimeout(toastTimer);
+
+toastTimer=setTimeout(function(){
+box.style.display="none";
+},1800);
+
+}
+
+
+/* ================= STARTUP ================= */
+
+window.addEventListener("load",function(){
+
+if(localStorage.getItem("nig_logged")==="1"){
+
+openApp();
+
+}else{
+
+document.getElementById("auth").style.display="flex";
+document.getElementById("app").style.display="none";
+document.getElementById("bottomNav").style.display="none";
+
+}
+
+});
+
+</script>
+
+</body>
+  </html>
