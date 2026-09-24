@@ -455,6 +455,311 @@ button{cursor:pointer}
   max-width:90%;
   text-align:center
 }
+/* ================================
+   NIVESH INDIA GROW — OCEAN THEME
+   Paste this BEFORE </style>
+================================ */
+
+:root{
+  --ocean:#0b8fa3;
+  --ocean-dark:#056b7b;
+  --ocean-deep:#073b4c;
+  --ocean-soft:#e8f8fa;
+  --ocean-pale:#f3fbfc;
+  --ocean-border:#c8e9ee;
+  --white:#ffffff;
+  --text:#17343d;
+  --muted:#71878e;
+  --shadow:0 8px 24px rgba(5,107,123,.12);
+}
+
+/* PAGE */
+body{
+  background:
+    radial-gradient(circle at 10% 0%,rgba(11,143,163,.12),transparent 28%),
+    linear-gradient(180deg,#f3fbfc 0%,#eef9fa 100%) !important;
+  color:var(--text) !important;
+}
+
+/* HEADER */
+.top{
+  background:linear-gradient(135deg,var(--ocean-deep),var(--ocean)) !important;
+  box-shadow:0 6px 20px rgba(5,107,123,.22) !important;
+}
+
+/* BALANCE AREA */
+.balance,
+.balance-card,
+.wallet-card{
+  background:linear-gradient(135deg,var(--ocean-deep),var(--ocean)) !important;
+  border:none !important;
+  box-shadow:var(--shadow) !important;
+  color:white !important;
+}
+
+/* ALL CARDS */
+.card,
+.stat,
+.plan,
+.profile-card,
+.info-card,
+.device-card,
+.team-card,
+.share-card{
+  background:#fff !important;
+  border:1px solid var(--ocean-border) !important;
+  box-shadow:var(--shadow) !important;
+  border-radius:18px !important;
+}
+
+/* PLAN CARDS */
+.plan{
+  position:relative;
+  overflow:hidden;
+}
+
+.plan::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:4px;
+  background:linear-gradient(90deg,var(--ocean-dark),#18b8c7);
+}
+
+/* TEXT */
+h1,h2,h3,h4,
+.title,
+.heading{
+  color:var(--ocean-deep) !important;
+}
+
+.muted,
+.sub,
+.small,
+.description{
+  color:var(--muted) !important;
+}
+
+/* BUTTONS */
+button,
+.btn,
+.primary-btn{
+  background:linear-gradient(135deg,var(--ocean-dark),var(--ocean)) !important;
+  color:#fff !important;
+  border:none !important;
+  box-shadow:0 5px 14px rgba(11,143,163,.20) !important;
+  transition:.2s ease !important;
+}
+
+button:hover,
+.btn:hover,
+.primary-btn:hover{
+  transform:translateY(-1px);
+}
+
+button:active,
+.btn:active{
+  transform:scale(.98);
+}
+
+/* LIGHT BUTTONS */
+.light-btn,
+.secondary-btn,
+.copy-btn{
+  background:var(--ocean-soft) !important;
+  color:var(--ocean-dark) !important;
+  border:1px solid var(--ocean-border) !important;
+}
+
+/* BADGES */
+.badge,
+.tag,
+.status{
+  background:var(--ocean-soft) !important;
+  color:var(--ocean-dark) !important;
+  border:1px solid var(--ocean-border) !important;
+}
+
+/* NOTICE */
+.notice,
+.announcement,
+.alert{
+  background:linear-gradient(135deg,#e8f8fa,#f7fdfe) !important;
+  border:1px solid var(--ocean-border) !important;
+  color:var(--ocean-deep) !important;
+}
+
+/* TEAM HERO */
+.team-hero,
+.team-header{
+  background:linear-gradient(135deg,var(--ocean-deep),var(--ocean)) !important;
+  color:#fff !important;
+  box-shadow:var(--shadow) !important;
+}
+
+/* TEAM AVATAR */
+.avatar{
+  background:linear-gradient(135deg,var(--ocean),#18b8c7) !important;
+  color:#fff !important;
+}
+
+/* FILTER BUTTONS */
+.filter button,
+.filter-btn{
+  background:#fff !important;
+  color:var(--ocean-dark) !important;
+  border:1px solid var(--ocean-border) !important;
+}
+
+.filter button.active,
+.filter-btn.active{
+  background:var(--ocean) !important;
+  color:#fff !important;
+}
+
+/* SHARE / QR */
+.qr,
+.qr-box{
+  background:#fff !important;
+  border:2px solid var(--ocean-border) !important;
+  box-shadow:var(--shadow) !important;
+}
+
+/* INPUTS */
+input,
+select,
+textarea{
+  border:1px solid var(--ocean-border) !important;
+  background:#fff !important;
+  color:var(--text) !important;
+  border-radius:12px !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  outline:none !important;
+  border-color:var(--ocean) !important;
+  box-shadow:0 0 0 3px rgba(11,143,163,.10) !important;
+}
+
+/* BOTTOM NAVIGATION */
+.bottom-nav,
+.bottom,
+nav.bottom{
+  background:rgba(255,255,255,.96) !important;
+  border-top:1px solid var(--ocean-border) !important;
+  box-shadow:0 -5px 20px rgba(5,107,123,.10) !important;
+  backdrop-filter:blur(12px) !important;
+}
+
+.bottom-nav button,
+.bottom button,
+nav.bottom button{
+  background:transparent !important;
+  color:#789097 !important;
+  box-shadow:none !important;
+}
+
+.bottom-nav button.active,
+.bottom button.active,
+nav.bottom button.active{
+  color:var(--ocean) !important;
+}
+
+.bottom-nav button.active svg,
+.bottom button.active svg{
+  color:var(--ocean) !important;
+  fill:rgba(11,143,163,.12) !important;
+}
+
+/* LOGIN SCREEN */
+.login,
+.login-page,
+.auth{
+  background:
+    radial-gradient(circle at 20% 10%,rgba(255,255,255,.18),transparent 25%),
+    linear-gradient(135deg,var(--ocean-deep),var(--ocean)) !important;
+}
+
+/* PROFILE */
+.profile-card{
+  background:linear-gradient(135deg,#fff,#f3fbfc) !important;
+}
+
+/* QUICK ACTIONS */
+.quick-action{
+  background:#fff !important;
+  border:1px solid var(--ocean-border) !important;
+  color:var(--ocean-deep) !important;
+  box-shadow:0 5px 15px rgba(5,107,123,.08) !important;
+}
+
+/* ICONS */
+.icon,
+.action-icon{
+  color:var(--ocean) !important;
+}
+
+/* PROGRESS */
+.progress{
+  background:#dff1f4 !important;
+}
+
+.progress-bar{
+  background:linear-gradient(90deg,var(--ocean-dark),#18b8c7) !important;
+}
+
+/* LINKS */
+a{
+  color:var(--ocean-dark);
+}
+
+/* TOAST */
+.toast{
+  background:var(--ocean-deep) !important;
+  color:#fff !important;
+  box-shadow:0 8px 25px rgba(0,0,0,.18) !important;
+}
+
+/* ACTIVE EFFECT */
+.card,
+.plan,
+.stat,
+.quick-action,
+.device-card{
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+
+.card:hover,
+.plan:hover,
+.stat:hover,
+.quick-action:hover,
+.device-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 28px rgba(5,107,123,.15) !important;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  body{
+    font-size:14px;
+  }
+
+  .card,
+  .plan,
+  .stat,
+  .profile-card,
+  .device-card{
+    border-radius:16px !important;
+  }
+
+  .bottom-nav{
+    padding-bottom:env(safe-area-inset-bottom);
+  }
+}
 </style>
 </head>
 
