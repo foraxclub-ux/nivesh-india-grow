@@ -71,10 +71,123 @@ body{min-height:100vh;background:linear-gradient(145deg,#073b4c 0%,#087f8c 46%,#
  <div class="section-head"><h3>Announcement</h3></div><div class="card">Plan figures are displayed as provided for this website. Actual financial transactions and returns require the appropriate backend and legal setup.</div>
 </div></main>
 
-<main id="team" class="page"><div class="wrap"><div class="title">My Team</div><div class="subtitle">Team overview and member levels</div>
- <div class="stats"><div class="stat"><b>24</b><span>Team Size</span></div><div class="stat"><b>12</b><span>LV1</span></div><div class="stat"><b>8</b><span>LV2</span></div></div>
- <div class="team-tabs"><button type="button" class="tab active" onclick="filterTeam('all',this)">All</button><button type="button" class="tab" onclick="filterTeam('LV1',this)">LV1</button><button type="button" class="tab" onclick="filterTeam('LV2',this)">LV2</button><button type="button" class="tab" onclick="filterTeam('LV3',this)">LV3</button></div>
- <div id="members"></div></div></main>
+<main id="team" class="page">
+<div class="wrap">
+
+<div class="title">My Team</div>
+<div class="subtitle">Referral, commission and team overview</div>
+
+<div class="card" style="margin-bottom:14px">
+  <h3 style="margin-top:0">My Referral</h3>
+
+  <div style="font-size:13px;color:#789096;margin-bottom:7px">
+    Referral Code
+  </div>
+
+  <div class="codebox">
+    <input id="teamRefCode" readonly>
+    <button type="button" class="copy" onclick="copyText('teamRefCode')">Copy</button>
+  </div>
+
+  <div style="font-size:13px;color:#789096;margin:16px 0 7px">
+    Referral Link
+  </div>
+
+  <div class="codebox">
+    <input id="teamRefLink" readonly>
+    <button type="button" class="copy" onclick="copyText('teamRefLink')">Copy</button>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat">
+    <b id="teamSize">0</b>
+    <span>Team Size</span>
+  </div>
+
+  <div class="stat">
+    <b id="lv1Count">0</b>
+    <span>LV1</span>
+  </div>
+
+  <div class="stat">
+    <b id="lv2Count">0</b>
+    <span>LV2</span>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat">
+    <b id="lv3Count">0</b>
+    <span>LV3</span>
+  </div>
+
+  <div class="stat">
+    <b id="commission">₹0</b>
+    <span>Commission</span>
+  </div>
+
+  <div class="stat">
+    <b id="salaryBonus">₹0</b>
+    <span>Salary Bonus</span>
+  </div>
+</div>
+
+<div class="card" style="margin-bottom:14px">
+  <h3 style="margin-top:0">Commission</h3>
+  <p class="subtitle" style="margin-bottom:0">
+    Qualifying referral deposits are eligible for the configured 10% commission.
+  </p>
+</div>
+
+<div class="card" style="margin-bottom:14px">
+  <h3 style="margin-top:0">Monthly Salary Bonus</h3>
+
+  <div class="plan-grid">
+    <div>
+      <small>Required Members</small>
+      <b>50</b>
+    </div>
+
+    <div>
+      <small>Current Members</small>
+      <b id="bonusMembers">0</b>
+    </div>
+
+    <div>
+      <small>Bonus</small>
+      <b>₹10,000</b>
+    </div>
+  </div>
+
+  <div class="progress">
+    <span id="bonusProgress" style="width:0%"></span>
+  </div>
+
+  <div class="device-foot">
+    <span id="bonusStatus">0 / 50 members</span>
+    <span>Monthly</span>
+  </div>
+</div>
+
+<div class="team-tabs">
+  <button type="button" class="tab active"
+    onclick="filterTeam('all',this)">All</button>
+
+  <button type="button" class="tab"
+    onclick="filterTeam('LV1',this)">LV1</button>
+
+  <button type="button" class="tab"
+    onclick="filterTeam('LV2',this)">LV2</button>
+
+  <button type="button" class="tab"
+    onclick="filterTeam('LV3',this)">LV3</button>
+</div>
+
+<div id="members"></div>
+
+</div>
+</main>
 
 <main id="share" class="page"><div class="wrap"><div class="title">Share</div><div class="subtitle">Your referral information</div>
  <div class="card share-card"><div class="qr" aria-label="QR placeholder"></div><h3>Referral Code</h3><div class="codebox"><input id="refCode" value="NIG2026" readonly><button type="button" class="copy" onclick="copyText('refCode')">Copy</button></div><h3 style="margin-top:20px">Referral Link</h3><div class="codebox"><input id="refLink" readonly><button type="button" class="copy" onclick="copyText('refLink')">Copy</button></div><p class="note">This page displays referral information only. Tracking requires a server-side system.</p></div>
