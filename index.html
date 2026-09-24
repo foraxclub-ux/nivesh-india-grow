@@ -6,71 +6,926 @@
 <meta name="theme-color" content="#073b4c">
 <meta name="description" content="Nivesh India Grow account management platform">
 <title>Nivesh India Grow</title>
+
 <style>
-*{box-sizing:border-box}html,body{margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;background:#eef8fa;color:#073b4c}button,input{font:inherit}button{cursor:pointer;border:0}.hidden{display:none!important}
-body{min-height:100vh;background:linear-gradient(145deg,#073b4c 0%,#087f8c 46%,#11a8b5 100%)}
-.auth{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px 18px}
-.auth-card{width:min(100%,480px);background:rgba(255,255,255,.98);border-radius:34px;padding:34px 28px 30px;box-shadow:0 25px 70px rgba(0,0,0,.24)}
-.brand{text-align:center;margin-bottom:28px}.brand h1{font-size:38px;line-height:1.05;margin:0 0 12px;font-weight:800;letter-spacing:-1.4px}.brand p{margin:0;color:#789096;font-size:18px}
-.auth-title{font-size:30px;margin:26px 0 8px;font-weight:800}.auth-sub{color:#789096;font-size:17px;margin:0 0 25px}.field{margin:17px 0}.field label{display:block;font-size:17px;font-weight:700;margin-bottom:9px}.field input{width:100%;height:62px;border:2px solid #d7e8ea;border-radius:20px;padding:0 18px;outline:none;background:#fbfeff;color:#073b4c}.field input:focus{border-color:#1295a3;box-shadow:0 0 0 4px rgba(18,149,163,.1)}
-.primary{width:100%;height:62px;border-radius:20px;background:linear-gradient(135deg,#087f8c,#0ea7b5);color:white;font-weight:800;font-size:20px;box-shadow:0 12px 28px rgba(8,127,140,.24);margin-top:8px}.switch{text-align:center;margin-top:22px;color:#789096;font-size:16px}.switch button{background:none;color:#087f8c;font-weight:800;padding:0}
-.app{display:none;min-height:100vh;padding-bottom:86px;background:#f2fbfc}.top{position:sticky;top:0;z-index:10;background:linear-gradient(135deg,#073b4c,#087f8c);color:white;padding:18px 18px 20px;box-shadow:0 5px 20px rgba(0,0,0,.14)}.top-row{display:flex;align-items:center;justify-content:space-between;gap:12px}.top h2{margin:0;font-size:22px}.welcome{font-size:13px;opacity:.8;margin-top:4px}.avatar{width:44px;height:44px;border-radius:50%;background:#fff;color:#087f8c;display:grid;place-items:center;font-weight:800;font-size:18px}
-.page{display:none;padding:18px}.page.active{display:block}.wrap{max-width:760px;margin:auto}.title{font-size:27px;font-weight:800;margin:6px 0 18px}.subtitle{color:#789096;margin:-8px 0 18px}
-.hero{background:linear-gradient(135deg,#087f8c,#10a9b5);color:#fff;border-radius:26px;padding:22px;box-shadow:0 12px 28px rgba(8,127,140,.2);margin-bottom:16px}.hero .small{opacity:.8;font-size:13px}.hero .money{font-size:34px;font-weight:800;margin-top:5px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}.stat,.card,.device,.profile{background:white;border-radius:20px;padding:17px;box-shadow:0 6px 22px rgba(7,59,76,.07);border:1px solid #e0eff1}.stat b{display:block;font-size:21px;margin-bottom:5px}.stat span{font-size:12px;color:#789096}
-.section-head{display:flex;justify-content:space-between;align-items:center;margin:22px 0 12px}.section-head h3{margin:0;font-size:20px}.link{background:none;color:#087f8c;font-weight:700}
-.plans{display:grid;gap:13px}.plan{background:#fff;border:1px solid #e0eff1;border-radius:22px;padding:18px;box-shadow:0 6px 22px rgba(7,59,76,.06)}.plan-top{display:flex;justify-content:space-between;gap:12px}.plan h3{margin:0 0 7px}.price{font-size:24px;font-weight:800}.badge{display:inline-block;background:#e6f7f8;color:#087f8c;padding:6px 9px;border-radius:999px;font-size:11px;font-weight:800}.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}.plan-grid div{background:#f3fafb;border-radius:14px;padding:10px}.plan-grid small{display:block;color:#789096;font-size:10px}.plan-grid b{font-size:14px}.note{font-size:11px;color:#789096;margin-top:11px}
-.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.menu-card{background:#fff;border-radius:20px;padding:18px;border:1px solid #e0eff1;box-shadow:0 6px 22px rgba(7,59,76,.06);font-weight:700}.menu-card small{display:block;color:#789096;font-weight:400;margin-top:5px}
-.team-tabs{display:flex;gap:8px;overflow:auto;margin-bottom:14px}.tab{white-space:nowrap;background:#fff;border:1px solid #dcecee;padding:10px 14px;border-radius:999px;color:#52747b;font-weight:700}.tab.active{background:#087f8c;color:#fff;border-color:#087f8c}.member{display:flex;align-items:center;gap:12px;background:#fff;padding:14px;border-radius:18px;margin:9px 0;border:1px solid #e0eff1}.member-icon{width:40px;height:40px;border-radius:50%;background:#e6f7f8;color:#087f8c;display:grid;place-items:center;font-weight:800}.member-info{flex:1}.member-info b{display:block}.member-info small{color:#789096}.status{font-size:11px;padding:5px 8px;border-radius:999px;background:#e7f8ed;color:#23804a}
-.qr{width:180px;height:180px;margin:10px auto 18px;border-radius:18px;background:repeating-linear-gradient(45deg,#073b4c 0 4px,#fff 4px 8px);border:10px solid white;box-shadow:0 6px 20px rgba(0,0,0,.12)}.share-card{text-align:center}.codebox{display:flex;gap:8px}.codebox input{flex:1;height:52px;border:2px solid #dcecee;border-radius:14px;padding:0 12px;background:#f9fdfe;color:#073b4c;font-weight:700}.copy{height:52px;padding:0 15px;border-radius:14px;background:#087f8c;color:#fff;font-weight:700}
-.device{margin:12px 0}.device-row{display:flex;justify-content:space-between;gap:10px}.device h3{margin:0 0 6px}.device p{margin:0;color:#789096;font-size:13px}.progress{height:9px;background:#e5f0f2;border-radius:20px;overflow:hidden;margin:15px 0 7px}.progress span{display:block;height:100%;background:#0b97a5;border-radius:20px}.device-foot{display:flex;justify-content:space-between;font-size:12px;color:#789096}.coming{background:#fff6df;color:#956d15;padding:6px 9px;border-radius:999px;font-size:11px;font-weight:800}
-.profile{display:flex;align-items:center;gap:13px}.profile .avatar{background:#e6f7f8}.profile-info{flex:1}.profile-info b{font-size:18px}.profile-info small{color:#789096}.balance-card{margin-top:12px;background:linear-gradient(135deg,#073b4c,#087f8c);color:#fff;border-radius:22px;padding:18px}.balance-row{display:flex;justify-content:space-between}.balance-row div{font-size:12px;opacity:.8}.balance-row b{display:block;font-size:24px;opacity:1;margin-top:4px}.actions{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}.action{background:#fff;border:1px solid #e0eff1;border-radius:17px;padding:14px 8px;text-align:center;font-weight:700;color:#073b4c}.action small{display:block;color:#789096;font-weight:400;margin-top:4px;font-size:10px}.logout{width:100%;height:54px;border-radius:17px;background:#ffe9e9;color:#b33b3b;font-weight:800;margin-top:14px}
-.bottom{position:fixed;bottom:0;left:0;right:0;height:72px;background:rgba(255,255,255,.98);border-top:1px solid #dcecee;display:none;grid-template-columns:repeat(5,1fr);z-index:30;box-shadow:0 -8px 24px rgba(7,59,76,.08)}.nav{background:none;color:#789096;font-size:11px;padding:8px 2px}.nav span{display:block;font-size:22px;line-height:25px}.nav.active{color:#087f8c;font-weight:800}
-.modal{position:fixed;inset:0;background:rgba(0,30,38,.55);display:none;align-items:flex-end;justify-content:center;z-index:50;padding:15px}.modal-box{width:min(100%,520px);background:#fff;border-radius:26px 26px 12px 12px;padding:22px}.modal-box h3{margin:0 0 15px}.close{float:right;background:#edf7f8;border-radius:50%;width:34px;height:34px;color:#087f8c;font-size:20px}.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%) translateY(20px);background:#073b4c;color:#fff;padding:12px 16px;border-radius:13px;z-index:100;opacity:0;pointer-events:none;transition:.25s;max-width:90%;text-align:center;font-size:14px}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-@media(max-width:420px){.auth-card{padding:30px 20px 25px}.brand h1{font-size:33px}.auth-title{font-size:27px}.stats{gap:7px}.stat{padding:13px 8px}.stat b{font-size:18px}.plan-grid{gap:5px}.actions{gap:7px}}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;background:#eef8fa;color:#073b4c}
+button,input{font:inherit}
+button{cursor:pointer;border:0}
+.hidden{display:none!important}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(145deg,#073b4c 0%,#087f8c 46%,#11a8b5 100%)
+}
+
+.auth{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:28px 18px
+}
+
+.auth-card{
+  width:min(100%,480px);
+  background:rgba(255,255,255,.98);
+  border-radius:34px;
+  padding:34px 28px 30px;
+  box-shadow:0 25px 70px rgba(0,0,0,.24)
+}
+
+.brand{text-align:center;margin-bottom:28px}
+.brand h1{
+  font-size:38px;
+  line-height:1.05;
+  margin:0 0 12px;
+  font-weight:800;
+  letter-spacing:-1.4px
+}
+.brand p{margin:0;color:#789096;font-size:18px}
+
+.auth-title{font-size:30px;margin:26px 0 8px;font-weight:800}
+.auth-sub{color:#789096;font-size:17px;margin:0 0 25px}
+
+.field{margin:17px 0}
+.field label{
+  display:block;
+  font-size:17px;
+  font-weight:700;
+  margin-bottom:9px
+}
+.field input{
+  width:100%;
+  height:62px;
+  border:2px solid #d7e8ea;
+  border-radius:20px;
+  padding:0 18px;
+  outline:none;
+  background:#fbfeff;
+  color:#073b4c
+}
+.field input:focus{
+  border-color:#1295a3;
+  box-shadow:0 0 0 4px rgba(18,149,163,.1)
+}
+
+.primary{
+  width:100%;
+  height:62px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#087f8c,#0ea7b5);
+  color:white;
+  font-weight:800;
+  font-size:20px;
+  box-shadow:0 12px 28px rgba(8,127,140,.24);
+  margin-top:8px
+}
+
+.switch{
+  text-align:center;
+  margin-top:22px;
+  color:#789096;
+  font-size:16px
+}
+.switch button{
+  background:none;
+  color:#087f8c;
+  font-weight:800;
+  padding:0
+}
+
+.app{
+  display:none;
+  min-height:100vh;
+  padding-bottom:86px;
+  background:#f2fbfc
+}
+
+.top{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:linear-gradient(135deg,#073b4c,#087f8c);
+  color:white;
+  padding:18px 18px 20px;
+  box-shadow:0 5px 20px rgba(0,0,0,.14)
+}
+
+.top-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px
+}
+
+.top h2{margin:0;font-size:22px}
+.welcome{font-size:13px;opacity:.8;margin-top:4px}
+
+.avatar{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:#fff;
+  color:#087f8c;
+  display:grid;
+  place-items:center;
+  font-weight:800;
+  font-size:18px
+}
+
+.page{display:none;padding:18px}
+.page.active{display:block}
+.wrap{max-width:760px;margin:auto}
+
+.title{
+  font-size:27px;
+  font-weight:800;
+  margin:6px 0 18px
+}
+
+.subtitle{
+  color:#789096;
+  margin:-8px 0 18px
+}
+
+.hero{
+  background:linear-gradient(135deg,#087f8c,#10a9b5);
+  color:#fff;
+  border-radius:26px;
+  padding:22px;
+  box-shadow:0 12px 28px rgba(8,127,140,.2);
+  margin-bottom:16px
+}
+
+.hero .small{opacity:.8;font-size:13px}
+.hero .money{font-size:34px;font-weight:800;margin-top:5px}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-bottom:16px
+}
+
+.stat,.card,.device,.profile{
+  background:white;
+  border-radius:20px;
+  padding:17px;
+  box-shadow:0 6px 22px rgba(7,59,76,.07);
+  border:1px solid #e0eff1
+}
+
+.stat b{
+  display:block;
+  font-size:21px;
+  margin-bottom:5px
+}
+
+.stat span{
+  font-size:12px;
+  color:#789096
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:22px 0 12px
+}
+
+.section-head h3{margin:0;font-size:20px}
+
+.link{
+  background:none;
+  color:#087f8c;
+  font-weight:700
+}
+
+.plans{
+  display:grid;
+  gap:13px
+}
+
+.plan{
+  background:#fff;
+  border:1px solid #e0eff1;
+  border-radius:22px;
+  padding:18px;
+  box-shadow:0 6px 22px rgba(7,59,76,.06)
+}
+
+.plan-top{
+  display:flex;
+  justify-content:space-between;
+  gap:12px
+}
+
+.plan h3{margin:0 0 7px}
+.price{font-size:24px;font-weight:800}
+
+.badge{
+  display:inline-block;
+  background:#e6f7f8;
+  color:#087f8c;
+  padding:6px 9px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:800;
+  height:max-content
+}
+
+.plan-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  margin-top:14px
+}
+
+.plan-grid div{
+  background:#f3fafb;
+  border-radius:14px;
+  padding:10px
+}
+
+.plan-grid small{
+  display:block;
+  color:#789096;
+  font-size:10px
+}
+
+.plan-grid b{font-size:14px}
+
+.note{
+  font-size:11px;
+  color:#789096;
+  margin-top:11px
+}
+
+.grid2{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px
+}
+
+.menu-card{
+  background:#fff;
+  border-radius:20px;
+  padding:18px;
+  border:1px solid #e0eff1;
+  box-shadow:0 6px 22px rgba(7,59,76,.06);
+  font-weight:700
+}
+
+.menu-card small{
+  display:block;
+  color:#789096;
+  font-weight:400;
+  margin-top:5px
+}
+
+.team-tabs{
+  display:flex;
+  gap:8px;
+  overflow:auto;
+  margin-bottom:14px
+}
+
+.tab{
+  white-space:nowrap;
+  background:#fff;
+  border:1px solid #dcecee;
+  padding:10px 14px;
+  border-radius:999px;
+  color:#52747b;
+  font-weight:700
+}
+
+.tab.active{
+  background:#087f8c;
+  color:#fff;
+  border-color:#087f8c
+}
+
+.member{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  background:#fff;
+  padding:14px;
+  border-radius:18px;
+  margin:9px 0;
+  border:1px solid #e0eff1
+}
+
+.member-icon{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:#e6f7f8;
+  color:#087f8c;
+  display:grid;
+  place-items:center;
+  font-weight:800
+}
+
+.member-info{flex:1}
+.member-info b{display:block}
+.member-info small{color:#789096}
+
+.status{
+  font-size:11px;
+  padding:5px 8px;
+  border-radius:999px;
+  background:#e7f8ed;
+  color:#23804a
+}
+
+.qr{
+  width:180px;
+  height:180px;
+  margin:10px auto 18px;
+  border-radius:18px;
+  background:repeating-linear-gradient(45deg,#073b4c 0 4px,#fff 4px 8px);
+  border:10px solid white;
+  box-shadow:0 6px 20px rgba(0,0,0,.12)
+}
+
+.share-card{text-align:center}
+
+.codebox{display:flex;gap:8px}
+
+.codebox input{
+  flex:1;
+  height:52px;
+  border:2px solid #dcecee;
+  border-radius:14px;
+  padding:0 12px;
+  background:#f9fdfe;
+  color:#073b4c;
+  font-weight:700
+}
+
+.copy{
+  height:52px;
+  padding:0 15px;
+  border-radius:14px;
+  background:#087f8c;
+  color:#fff;
+  font-weight:700
+}
+
+.device{margin:12px 0}
+
+.device-row{
+  display:flex;
+  justify-content:space-between;
+  gap:10px
+}
+
+.device h3{margin:0 0 6px}
+.device p{margin:0;color:#789096;font-size:13px}
+
+.progress{
+  height:9px;
+  background:#e5f0f2;
+  border-radius:20px;
+  overflow:hidden;
+  margin:15px 0 7px
+}
+
+.progress span{
+  display:block;
+  height:100%;
+  background:#0b97a5;
+  border-radius:20px
+}
+
+.device-foot{
+  display:flex;
+  justify-content:space-between;
+  font-size:12px;
+  color:#789096
+}
+
+.coming{
+  background:#fff6df;
+  color:#956d15;
+  padding:6px 9px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:800;
+  height:max-content
+}
+
+.pending{
+  background:#eaf4ff;
+  color:#2871a8;
+  padding:6px 9px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:800;
+  height:max-content
+}
+
+.profile{
+  display:flex;
+  align-items:center;
+  gap:13px
+}
+
+.profile .avatar{background:#e6f7f8}
+
+.profile-info{flex:1}
+.profile-info b{font-size:18px}
+.profile-info small{color:#789096}
+
+.balance-card{
+  margin-top:12px;
+  background:linear-gradient(135deg,#073b4c,#087f8c);
+  color:#fff;
+  border-radius:22px;
+  padding:18px
+}
+
+.balance-row{
+  display:flex;
+  justify-content:space-between
+}
+
+.balance-row div{
+  font-size:12px;
+  opacity:.8
+}
+
+.balance-row b{
+  display:block;
+  font-size:24px;
+  opacity:1;
+  margin-top:4px
+}
+
+.actions{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin:12px 0
+}
+
+.action{
+  background:#fff;
+  border:1px solid #e0eff1;
+  border-radius:17px;
+  padding:14px 8px;
+  text-align:center;
+  font-weight:700;
+  color:#073b4c
+}
+
+.action small{
+  display:block;
+  color:#789096;
+  font-weight:400;
+  margin-top:4px;
+  font-size:10px
+}
+
+.logout{
+  width:100%;
+  height:54px;
+  border-radius:17px;
+  background:#ffe9e9;
+  color:#b33b3b;
+  font-weight:800;
+  margin-top:14px
+}
+
+.empty-device{
+  background:#fff;
+  border:1px dashed #c8dfe2;
+  border-radius:22px;
+  padding:28px 18px;
+  text-align:center;
+  color:#789096;
+  margin-top:12px
+}
+
+.empty-device h3{
+  color:#073b4c;
+  margin:0 0 7px
+}
+
+.bottom{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  height:72px;
+  background:rgba(255,255,255,.98);
+  border-top:1px solid #dcecee;
+  display:none;
+  grid-template-columns:repeat(5,1fr);
+  z-index:30;
+  box-shadow:0 -8px 24px rgba(7,59,76,.08)
+}
+
+.nav{
+  background:none;
+  color:#789096;
+  font-size:11px;
+  padding:8px 2px
+}
+
+.nav span{
+  display:block;
+  font-size:22px;
+  line-height:25px
+}
+
+.nav.active{
+  color:#087f8c;
+  font-weight:800
+}
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,30,38,.55);
+  display:none;
+  align-items:flex-end;
+  justify-content:center;
+  z-index:50;
+  padding:15px
+}
+
+.modal-box{
+  width:min(100%,520px);
+  background:#fff;
+  border-radius:26px 26px 12px 12px;
+  padding:22px
+}
+
+.modal-box h3{margin:0 0 15px}
+
+.close{
+  float:right;
+  background:#edf7f8;
+  border-radius:50%;
+  width:34px;
+  height:34px;
+  color:#087f8c;
+  font-size:20px
+}
+
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:90px;
+  transform:translateX(-50%) translateY(20px);
+  background:#073b4c;
+  color:#fff;
+  padding:12px 16px;
+  border-radius:13px;
+  z-index:100;
+  opacity:0;
+  pointer-events:none;
+  transition:.25s;
+  max-width:90%;
+  text-align:center;
+  font-size:14px
+}
+
+.toast.show{
+  opacity:1;
+  transform:translateX(-50%) translateY(0)
+}
+
+@media(max-width:420px){
+  .auth-card{padding:30px 20px 25px}
+  .brand h1{font-size:33px}
+  .auth-title{font-size:27px}
+  .stats{gap:7px}
+  .stat{padding:13px 8px}
+  .stat b{font-size:18px}
+  .plan-grid{gap:5px}
+  .actions{gap:7px}
+}
 </style>
 </head>
+
 <body>
+
 <section id="auth" class="auth">
  <div class="auth-card">
-  <div class="brand"><h1>Nivesh India Grow</h1><p>Secure account management platform</p></div>
+
+  <div class="brand">
+   <h1>Nivesh India Grow</h1>
+   <p>Secure account management platform</p>
+  </div>
+
   <div id="loginBox">
-   <h2 class="auth-title">Welcome Back</h2><p class="auth-sub">Login to continue to your account.</p>
-   <div class="field"><label>Mobile / Username</label><input id="loginUser" autocomplete="username" placeholder="Enter mobile or username"></div>
-   <div class="field"><label>Password</label><input id="loginPass" type="password" autocomplete="current-password" placeholder="Enter password"></div>
+   <h2 class="auth-title">Welcome Back</h2>
+   <p class="auth-sub">Login to continue to your account.</p>
+
+   <div class="field">
+    <label>Mobile / Username</label>
+    <input id="loginUser" autocomplete="username" placeholder="Enter mobile or username">
+   </div>
+
+   <div class="field">
+    <label>Password</label>
+    <input id="loginPass" type="password" autocomplete="current-password" placeholder="Enter password">
+   </div>
+
    <button type="button" class="primary" id="loginBtn">Login</button>
-   <div class="switch">Don't have an account? <button type="button" id="showRegisterBtn">Create Account</button></div>
+
+   <div class="switch">
+    Don't have an account?
+    <button type="button" id="showRegisterBtn">Create Account</button>
+   </div>
   </div>
+
   <div id="registerBox" class="hidden">
-   <h2 class="auth-title">Create Account</h2><p class="auth-sub">Create your account to continue.</p>
-   <div class="field"><label>Full Name</label><input id="regName" autocomplete="name" placeholder="Enter full name"></div>
-   <div class="field"><label>Mobile / Username</label><input id="regUser" autocomplete="username" placeholder="Enter mobile or username"></div>
-   <div class="field"><label>Password</label><input id="regPass" type="password" autocomplete="new-password" placeholder="Create password"></div>
-   <div class="field"><label>Confirm Password</label><input id="regPass2" type="password" autocomplete="new-password" placeholder="Confirm password"></div>
+   <h2 class="auth-title">Create Account</h2>
+   <p class="auth-sub">Create your account to continue.</p>
+
+   <div class="field">
+    <label>Full Name</label>
+    <input id="regName" autocomplete="name" placeholder="Enter full name">
+   </div>
+
+   <div class="field">
+    <label>Mobile / Username</label>
+    <input id="regUser" autocomplete="username" placeholder="Enter mobile or username">
+   </div>
+
+   <div class="field">
+    <label>Password</label>
+    <input id="regPass" type="password" autocomplete="new-password" placeholder="Create password">
+   </div>
+
+   <div class="field">
+    <label>Confirm Password</label>
+    <input id="regPass2" type="password" autocomplete="new-password" placeholder="Confirm password">
+   </div>
+
    <button type="button" class="primary" id="registerBtn">Create Account</button>
-   <div class="switch">Already have an account? <button type="button" id="showLoginBtn">Login</button></div>
+
+   <div class="switch">
+    Already have an account?
+    <button type="button" id="showLoginBtn">Login</button>
+   </div>
   </div>
+
  </div>
 </section>
 
+
 <div id="app" class="app">
-<header class="top"><div class="top-row"><div><h2>Nivesh India Grow</h2><div id="welcome" class="welcome">Welcome</div></div><div id="avatar" class="avatar">N</div></div></header>
 
-<main id="home" class="page active"><div class="wrap">
- <div class="title">Home</div>
- <div class="hero"><div class="small">Available Balance</div><div class="money" id="balance">₹0</div></div>
- <div class="stats"><div class="stat"><b id="income">₹0</b><span>Total Income</span></div><div class="stat"><b id="teamCount">0</b><span>Team Members</span></div><div class="stat"><b>Active</b><span>Account</span></div></div>
- <div class="section-head"><h3>Investment Plans</h3></div>
- <div class="plans">
-  <div class="plan"><div class="plan-top"><div><h3>Level 1 Investment</h3><div class="price">₹2,500</div></div><span class="badge">60 Days</span></div><div class="plan-grid"><div><small>Buy Price</small><b>₹2,500</b></div><div><small>Day Income</small><b>₹100</b></div><div><small>Total Revenue</small><b>₹6,000</b></div></div></div>
-  <div class="plan"><div class="plan-top"><div><h3>Level 2 Investment</h3><div class="price">₹3,500</div></div><span class="badge">60 Days</span></div><div class="plan-grid"><div><small>Buy Price</small><b>₹3,500</b></div><div><small>Day Income</small><b>₹150</b></div><div><small>Total Revenue</small><b>₹9,000</b></div></div></div>
-  <div class="plan"><div class="plan-top"><div><h3>Level 3 Investment</h3><div class="price">₹7,000</div></div><span class="badge">60 Days</span></div><div class="plan-grid"><div><small>Buy Price</small><b>₹7,000</b></div><div><small>Day Income</small><b>₹350</b></div><div><small>Total Revenue</small><b>₹21,000</b></div></div></div>
-  <div class="plan"><div class="plan-top"><div><h3>Level 4 Investment</h3><div class="price">₹15,000</div></div><span class="badge">60 Days</span></div><div class="plan-grid"><div><small>Buy Price</small><b>₹15,000</b></div><div><small>Day Income</small><b>₹800</b></div><div><small>Total Revenue</small><b>₹48,000</b></div></div></div>
-  <div class="plan"><div class="plan-top"><div><h3>Level 5 Investment</h3><div class="price">₹30,000</div></div><span class="badge">60 Days</span></div><div class="plan-grid"><div><small>Buy Price</small><b>₹30,000</b></div><div><small>Day Income</small><b>₹1,500</b></div><div><small>Total Revenue</small><b>₹90,000</b></div></div></div>
+<header class="top">
+ <div class="top-row">
+  <div>
+   <h2>Nivesh India Grow</h2>
+   <div id="welcome" class="welcome">Welcome</div>
+  </div>
+  <div id="avatar" class="avatar">N</div>
  </div>
- <div class="section-head"><h3>Announcement</h3></div><div class="card">Plan figures are displayed as provided for this website. Actual financial transactions and returns require the appropriate backend and legal setup.</div>
-</div></main>
+</header>
 
+
+<!-- HOME -->
+<main id="home" class="page active">
+<div class="wrap">
+
+ <div class="title">Home</div>
+
+ <div class="hero">
+  <div class="small">Available Balance</div>
+  <div class="money" id="balance">₹0</div>
+ </div>
+
+ <div class="stats">
+  <div class="stat">
+   <b id="income">₹0</b>
+   <span>Total Income</span>
+  </div>
+
+  <div class="stat">
+   <b id="teamCount">0</b>
+   <span>Team Members</span>
+  </div>
+
+  <div class="stat">
+   <b>Active</b>
+   <span>Account</span>
+  </div>
+ </div>
+
+
+ <div class="section-head">
+  <h3>Investment Plans</h3>
+ </div>
+
+
+ <div class="plans">
+
+  <!-- LEVEL 1 -->
+  <div class="plan">
+   <div class="plan-top">
+    <div>
+     <h3>Level 1 Investment</h3>
+     <div class="price">₹2,500</div>
+    </div>
+    <span class="badge">60 Days</span>
+   </div>
+
+   <div class="plan-grid">
+    <div>
+     <small>Buy Price</small>
+     <b>₹2,500</b>
+    </div>
+
+    <div>
+     <small>Day Income</small>
+     <b>₹100</b>
+    </div>
+
+    <div>
+     <small>Total Revenue</small>
+     <b>₹6,000</b>
+    </div>
+   </div>
+
+   <button type="button"
+     class="primary"
+     style="margin-top:14px"
+     onclick="buyPlan(1,2500,100,6000,60)">
+     Buy Level 1
+   </button>
+  </div>
+
+
+  <!-- LEVEL 2 -->
+  <div class="plan">
+   <div class="plan-top">
+    <div>
+     <h3>Level 2 Investment</h3>
+     <div class="price">₹3,500</div>
+    </div>
+    <span class="badge">60 Days</span>
+   </div>
+
+   <div class="plan-grid">
+    <div>
+     <small>Buy Price</small>
+     <b>₹3,500</b>
+    </div>
+
+    <div>
+     <small>Day Income</small>
+     <b>₹150</b>
+    </div>
+
+    <div>
+     <small>Total Revenue</small>
+     <b>₹9,000</b>
+    </div>
+   </div>
+
+   <button type="button"
+     class="primary"
+     style="margin-top:14px"
+     onclick="buyPlan(2,3500,150,9000,60)">
+     Buy Level 2
+   </button>
+  </div>
+
+
+  <!-- LEVEL 3 -->
+  <div class="plan">
+   <div class="plan-top">
+    <div>
+     <h3>Level 3 Investment</h3>
+     <div class="price">₹7,000</div>
+    </div>
+    <span class="badge">60 Days</span>
+   </div>
+
+   <div class="plan-grid">
+    <div>
+     <small>Buy Price</small>
+     <b>₹7,000</b>
+    </div>
+
+    <div>
+     <small>Day Income</small>
+     <b>₹350</b>
+    </div>
+
+    <div>
+     <small>Total Revenue</small>
+     <b>₹21,000</b>
+    </div>
+   </div>
+
+   <button type="button"
+     class="primary"
+     style="margin-top:14px"
+     onclick="buyPlan(3,7000,350,21000,60)">
+     Buy Level 3
+   </button>
+  </div>
+
+
+  <!-- LEVEL 4 -->
+  <div class="plan">
+   <div class="plan-top">
+    <div>
+     <h3>Level 4 Investment</h3>
+     <div class="price">₹15,000</div>
+    </div>
+    <span class="badge">60 Days</span>
+   </div>
+
+   <div class="plan-grid">
+    <div>
+     <small>Buy Price</small>
+     <b>₹15,000</b>
+    </div>
+
+    <div>
+     <small>Day Income</small>
+     <b>₹800</b>
+    </div>
+
+    <div>
+     <small>Total Revenue</small>
+     <b>₹48,000</b>
+    </div>
+   </div>
+
+   <button type="button"
+     class="primary"
+     style="margin-top:14px"
+     onclick="buyPlan(4,15000,800,48000,60)">
+     Buy Level 4
+   </button>
+  </div>
+
+
+  <!-- LEVEL 5 -->
+  <div class="plan">
+   <div class="plan-top">
+    <div>
+     <h3>Level 5 Investment</h3>
+     <div class="price">₹30,000</div>
+    </div>
+    <span class="badge">60 Days</span>
+   </div>
+
+   <div class="plan-grid">
+    <div>
+     <small>Buy Price</small>
+     <b>₹30,000</b>
+    </div>
+
+    <div>
+     <small>Day Income</small>
+     <b>₹1,500</b>
+    </div>
+
+    <div>
+     <small>Total Revenue</small>
+     <b>₹90,000</b>
+    </div>
+   </div>
+
+   <button type="button"
+     class="primary"
+     style="margin-top:14px"
+     onclick="buyPlan(5,30000,1500,90000,60)">
+     Buy Level 5
+   </button>
+  </div>
+
+ </div>
+
+
+ <div class="section-head">
+  <h3>Announcement</h3>
+ </div>
+
+ <div class="card">
+  Plan figures are displayed as provided for this website.
+  Actual financial transactions and returns require the appropriate backend and legal setup.
+ </div>
+
+</div>
+</main>
+
+
+<!-- TEAM -->
 <main id="team" class="page">
 <div class="wrap">
 
@@ -78,110 +933,146 @@ body{min-height:100vh;background:linear-gradient(145deg,#073b4c 0%,#087f8c 46%,#
 <div class="subtitle">Referral, commission and team overview</div>
 
 <div class="card" style="margin-bottom:14px">
-  <h3 style="margin-top:0">My Referral</h3>
 
-  <div style="font-size:13px;color:#789096;margin-bottom:7px">
-    Referral Code
-  </div>
+ <h3 style="margin-top:0">My Referral</h3>
 
-  <div class="codebox">
-    <input id="teamRefCode" readonly>
-    <button type="button" class="copy" onclick="copyText('teamRefCode')">Copy</button>
-  </div>
+ <div style="font-size:13px;color:#789096;margin-bottom:7px">
+  Referral Code
+ </div>
 
-  <div style="font-size:13px;color:#789096;margin:16px 0 7px">
-    Referral Link
-  </div>
+ <div class="codebox">
+  <input id="teamRefCode" readonly>
+  <button type="button" class="copy" onclick="copyText('teamRefCode')">
+   Copy
+  </button>
+ </div>
 
-  <div class="codebox">
-    <input id="teamRefLink" readonly>
-    <button type="button" class="copy" onclick="copyText('teamRefLink')">Copy</button>
-  </div>
+ <div style="font-size:13px;color:#789096;margin:16px 0 7px">
+  Referral Link
+ </div>
+
+ <div class="codebox">
+  <input id="teamRefLink" readonly>
+  <button type="button" class="copy" onclick="copyText('teamRefLink')">
+   Copy
+  </button>
+ </div>
+
 </div>
+
 
 <div class="stats">
-  <div class="stat">
-    <b id="teamSize">0</b>
-    <span>Team Size</span>
-  </div>
 
-  <div class="stat">
-    <b id="lv1Count">0</b>
-    <span>LV1</span>
-  </div>
+ <div class="stat">
+  <b id="teamSize">0</b>
+  <span>Team Size</span>
+ </div>
 
-  <div class="stat">
-    <b id="lv2Count">0</b>
-    <span>LV2</span>
-  </div>
+ <div class="stat">
+  <b id="lv1Count">0</b>
+  <span>LV1</span>
+ </div>
+
+ <div class="stat">
+  <b id="lv2Count">0</b>
+  <span>LV2</span>
+ </div>
+
 </div>
+
 
 <div class="stats">
-  <div class="stat">
-    <b id="lv3Count">0</b>
-    <span>LV3</span>
-  </div>
 
-  <div class="stat">
-    <b id="commission">₹0</b>
-    <span>Commission</span>
-  </div>
+ <div class="stat">
+  <b id="lv3Count">0</b>
+  <span>LV3</span>
+ </div>
 
-  <div class="stat">
-    <b id="salaryBonus">₹0</b>
-    <span>Salary Bonus</span>
-  </div>
+ <div class="stat">
+  <b id="commission">₹0</b>
+  <span>Commission</span>
+ </div>
+
+ <div class="stat">
+  <b id="salaryBonus">₹0</b>
+  <span>Salary Bonus</span>
+ </div>
+
 </div>
+
 
 <div class="card" style="margin-bottom:14px">
-  <h3 style="margin-top:0">Commission</h3>
-  <p class="subtitle" style="margin-bottom:0">
-    Qualifying referral deposits are eligible for the configured 10% commission.
-  </p>
+
+ <h3 style="margin-top:0">Commission</h3>
+
+ <p class="subtitle" style="margin-bottom:0">
+  Qualifying referral deposits are eligible for the configured 10% commission.
+ </p>
+
 </div>
+
 
 <div class="card" style="margin-bottom:14px">
-  <h3 style="margin-top:0">Monthly Salary Bonus</h3>
 
-  <div class="plan-grid">
-    <div>
-      <small>Required Members</small>
-      <b>50</b>
-    </div>
+ <h3 style="margin-top:0">Monthly Salary Bonus</h3>
 
-    <div>
-      <small>Current Members</small>
-      <b id="bonusMembers">0</b>
-    </div>
+ <div class="plan-grid">
 
-    <div>
-      <small>Bonus</small>
-      <b>₹10,000</b>
-    </div>
+  <div>
+   <small>Required Members</small>
+   <b>50</b>
   </div>
 
-  <div class="progress">
-    <span id="bonusProgress" style="width:0%"></span>
+  <div>
+   <small>Current Members</small>
+   <b id="bonusMembers">0</b>
   </div>
 
-  <div class="device-foot">
-    <span id="bonusStatus">0 / 50 members</span>
-    <span>Monthly</span>
+  <div>
+   <small>Bonus</small>
+   <b>₹10,000</b>
   </div>
+
+ </div>
+
+ <div class="progress">
+  <span id="bonusProgress" style="width:0%"></span>
+ </div>
+
+ <div class="device-foot">
+  <span id="bonusStatus">0 / 50 members</span>
+  <span>Monthly</span>
+ </div>
+
 </div>
+
 
 <div class="team-tabs">
-  <button type="button" class="tab active"
-    onclick="filterTeam('all',this)">All</button>
 
-  <button type="button" class="tab"
-    onclick="filterTeam('LV1',this)">LV1</button>
+ <button type="button"
+   class="tab active"
+   onclick="filterTeam('all',this)">
+   All
+ </button>
 
-  <button type="button" class="tab"
-    onclick="filterTeam('LV2',this)">LV2</button>
+ <button type="button"
+   class="tab"
+   onclick="filterTeam('LV1',this)">
+   LV1
+ </button>
 
-  <button type="button" class="tab"
-    onclick="filterTeam('LV3',this)">LV3</button>
+ <button type="button"
+   class="tab"
+   onclick="filterTeam('LV2',this)">
+   LV2
+ </button>
+
+ <button type="button"
+   class="tab"
+   onclick="filterTeam('LV3',this)">
+   LV3
+ </button>
+
 </div>
 
 <div id="members"></div>
@@ -189,112 +1080,1143 @@ body{min-height:100vh;background:linear-gradient(145deg,#073b4c 0%,#087f8c 46%,#
 </div>
 </main>
 
-<main id="share" class="page"><div class="wrap"><div class="title">Share</div><div class="subtitle">Your referral information</div>
- <div class="card share-card"><div class="qr" aria-label="QR placeholder"></div><h3>Referral Code</h3><div class="codebox"><input id="refCode" value="NIG2026" readonly><button type="button" class="copy" onclick="copyText('refCode')">Copy</button></div><h3 style="margin-top:20px">Referral Link</h3><div class="codebox"><input id="refLink" readonly><button type="button" class="copy" onclick="copyText('refLink')">Copy</button></div><p class="note">This page displays referral information only. Tracking requires a server-side system.</p></div>
- </div></main>
 
-<main id="devices" class="page"><div class="wrap"><div class="title">My Devices</div><div class="subtitle">Active and available plans</div>
- <div class="device"><div class="device-row"><div><h3>Starter Plan</h3><p>7 day plan</p></div><span class="badge">Active</span></div><div class="progress"><span style="width:65%"></span></div><div class="device-foot"><span>Progress 65%</span><span>₹1,000</span></div></div>
- <div class="device"><div class="device-row"><div><h3>Growth Plan</h3><p>15 day plan</p></div><span class="coming">Coming Soon</span></div><div class="progress"><span style="width:0%"></span></div><div class="device-foot"><span>Not activated</span><span>₹5,000</span></div></div>
- </div></main>
+<!-- SHARE -->
+<main id="share" class="page">
+<div class="wrap">
 
-<main id="my" class="page"><div class="wrap"><div class="title">My Account</div>
- <div class="profile"><div id="profileAvatar" class="avatar">N</div><div class="profile-info"><b id="profileName">User</b><small id="profileUser">Username</small></div></div>
- <div class="balance-card"><div class="balance-row"><div>Balance<b id="myBalance">₹0</b></div><div>Total Income<b id="myIncome">₹0</b></div></div></div>
- <div class="actions"><button type="button" class="action" onclick="openModal('Recharge')">₹<small>Recharge</small></button><button type="button" class="action" onclick="toast('Withdrawal module needs a real backend and payment setup.')">↗<small>Withdraw</small></button><button type="button" class="action" onclick="showPage('devices')">▣<small>Devices</small></button></div>
- <div class="section-head"><h3>Account</h3></div><div class="grid2"><button type="button" class="menu-card" onclick="toast('Personal information is stored locally in this frontend.')">Personal Information<small>Profile details</small></button><button type="button" class="menu-card" onclick="toast('Income details will appear here after backend integration.')">Income Details<small>Income history</small></button><button type="button" class="menu-card" onclick="toast('Recharge details need backend integration.')">Recharge Details<small>Recharge history</small></button><button type="button" class="menu-card" onclick="toast('Withdrawal details need backend integration.')">Withdrawal Details<small>Withdrawal history</small></button><button type="button" class="menu-card" onclick="toast('About Nivesh India Grow')">About Us<small>Platform information</small></button><button type="button" class="menu-card" onclick="downloadApp()">Download<small>App package</small></button></div>
- <button type="button" class="logout" onclick="logout()">Log Out</button>
- </div></main>
+ <div class="title">Share</div>
+ <div class="subtitle">Your referral information</div>
 
-<nav class="bottom" id="bottomNav"><button type="button" class="nav active" onclick="showPage('home',this)"><span>⌂</span>Home</button><button type="button" class="nav" onclick="showPage('team',this)"><span>♙</span>Team</button><button type="button" class="nav" onclick="showPage('share',this)"><span>↗</span>Share</button><button type="button" class="nav" onclick="showPage('devices',this)"><span>▣</span>Devices</button><button type="button" class="nav" onclick="showPage('my',this)"><span>●</span>My</button></nav>
+ <div class="card share-card">
+
+  <div class="qr" aria-label="QR placeholder"></div>
+
+  <h3>Referral Code</h3>
+
+  <div class="codebox">
+   <input id="refCode" value="NIG2026" readonly>
+   <button type="button" class="copy" onclick="copyText('refCode')">
+    Copy
+   </button>
+  </div>
+
+  <h3 style="margin-top:20px">Referral Link</h3>
+
+  <div class="codebox">
+   <input id="refLink" readonly>
+   <button type="button" class="copy" onclick="copyText('refLink')">
+    Copy
+   </button>
+  </div>
+
+  <p class="note">
+   This page displays referral information only.
+   Tracking requires a server-side system.
+  </p>
+
+ </div>
+
+</div>
+</main>
+
+
+<!-- DEVICES -->
+<main id="devices" class="page">
+<div class="wrap">
+
+ <div class="title">My Devices</div>
+
+ <div class="subtitle">
+  Your purchased plans
+ </div>
+
+ <div id="devicesList"></div>
+
+</div>
+</main>
+
+
+<!-- MY ACCOUNT -->
+<main id="my" class="page">
+<div class="wrap">
+
+ <div class="title">My Account</div>
+
+ <div class="profile">
+  <div id="profileAvatar" class="avatar">N</div>
+
+  <div class="profile-info">
+   <b id="profileName">User</b>
+   <small id="profileUser">Username</small>
+  </div>
+ </div>
+
+
+ <div class="balance-card">
+
+  <div class="balance-row">
+
+   <div>
+    Balance
+    <b id="myBalance">₹0</b>
+   </div>
+
+   <div>
+    Total Income
+    <b id="myIncome">₹0</b>
+   </div>
+
+  </div>
+
+ </div>
+
+
+ <div class="actions">
+
+  <button type="button"
+    class="action"
+    onclick="openModal('Recharge')">
+    ₹
+    <small>Recharge</small>
+  </button>
+
+  <button type="button"
+    class="action"
+    onclick="toast('Withdrawal module needs a real backend and payment setup.')">
+    ↗
+    <small>Withdraw</small>
+  </button>
+
+  <button type="button"
+    class="action"
+    onclick="showPage('devices')">
+    ▣
+    <small>Devices</small>
+  </button>
+
+ </div>
+
+
+ <div class="section-head">
+  <h3>Account</h3>
+ </div>
+
+
+ <div class="grid2">
+
+  <button type="button"
+    class="menu-card"
+    onclick="toast('Personal information is stored locally in this frontend.')">
+    Personal Information
+    <small>Profile details</small>
+  </button>
+
+  <button type="button"
+    class="menu-card"
+    onclick="toast('Income details will appear here after backend integration.')">
+    Income Details
+    <small>Income history</small>
+  </button>
+
+  <button type="button"
+    class="menu-card"
+    onclick="toast('Recharge details need backend integration.')">
+    Recharge Details
+    <small>Recharge history</small>
+  </button>
+
+  <button type="button"
+    class="menu-card"
+    onclick="toast('Withdrawal details need backend integration.')">
+    Withdrawal Details
+    <small>Withdrawal history</small>
+  </button>
+
+  <button type="button"
+    class="menu-card"
+    onclick="toast('About Nivesh India Grow')">
+    About Us
+    <small>Platform information</small>
+  </button>
+
+  <button type="button"
+    class="menu-card"
+    onclick="downloadApp()">
+    Download
+    <small>App package</small>
+  </button>
+
+ </div>
+
+
+ <button type="button"
+   class="logout"
+   onclick="logout()">
+   Log Out
+ </button>
+
+</div>
+</main>
+
+
+<!-- BOTTOM NAV -->
+<nav class="bottom" id="bottomNav">
+
+ <button type="button"
+   class="nav active"
+   onclick="showPage('home',this)">
+   <span>⌂</span>
+   Home
+ </button>
+
+ <button type="button"
+   class="nav"
+   onclick="showPage('team',this)">
+   <span>♙</span>
+   Team
+ </button>
+
+ <button type="button"
+   class="nav"
+   onclick="showPage('share',this)">
+   <span>↗</span>
+   Share
+ </button>
+
+ <button type="button"
+   class="nav"
+   onclick="showPage('devices',this)">
+   <span>▣</span>
+   Devices
+ </button>
+
+ <button type="button"
+   class="nav"
+   onclick="showPage('my',this)">
+   <span>●</span>
+   My
+ </button>
+
+</nav>
+
 </div>
 
-<div id="modal" class="modal"><div class="modal-box"><button type="button" class="close" onclick="closeModal()">×</button><h3 id="modalTitle">Recharge</h3><p class="subtitle">This frontend does not process real payments.</p><div class="field"><label>Amount</label><input id="rechargeAmount" type="number" min="1" placeholder="Enter amount"></div><button type="button" class="primary" onclick="submitRecharge()">Continue</button></div></div>
+
+<!-- RECHARGE MODAL -->
+<div id="modal" class="modal">
+
+ <div class="modal-box">
+
+  <button type="button"
+    class="close"
+    onclick="closeModal()">
+    ×
+  </button>
+
+  <h3 id="modalTitle">Recharge</h3>
+
+  <p class="subtitle">
+   This frontend does not process real payments.
+  </p>
+
+  <div class="field">
+   <label>Amount</label>
+   <input
+     id="rechargeAmount"
+     type="number"
+     min="1"
+     placeholder="Enter amount">
+  </div>
+
+  <button type="button"
+    class="primary"
+    onclick="submitRecharge()">
+    Continue
+  </button>
+
+ </div>
+
+</div>
+
+
 <div id="toast" class="toast"></div>
+
+
 <script>
 (function(){
- const USER_KEY='nig_user_v2', SESSION_KEY='nig_session_v2';
- window.showRegister=function(){document.getElementById('loginBox').classList.add('hidden');document.getElementById('registerBox').classList.remove('hidden')};
- window.showLogin=function(){document.getElementById('registerBox').classList.add('hidden');document.getElementById('loginBox').classList.remove('hidden')};
- function getUser(){try{return JSON.parse(localStorage.getItem(USER_KEY)||'null')}catch(e){return null}}
- window.registerUser=function(){
-   const name=document.getElementById('regName').value.trim(), user=document.getElementById('regUser').value.trim(), p=document.getElementById('regPass').value, p2=document.getElementById('regPass2').value;
-   if(!name||!user||!p||!p2)return toast('Please fill all fields.');
-   if(user.length<3)return toast('Username/mobile must be at least 3 characters.');
-   if(p.length<4)return toast('Password must be at least 4 characters.');
-   if(p!==p2)return toast('Passwords do not match.');
-   if(getUser())return toast('An account already exists on this browser. Please login.');
-const refCode='NIG'+user.replace(/[^a-zA-Z0-9]/g,'').toUpperCase().slice(0,8)+Math.floor(1000+Math.random()*9000);
-const signupRef=new URLSearchParams(location.search).get('ref')||'';
 
-const data={
-  name,
-  user,
-  password:p,
-  balance:0,
-  income:0,
-  team:0,
-  refCode:refCode,
-  commission:0,
-  salaryBonus:0,
-  referredBy:signupRef
-};
-localStorage.setItem(USER_KEY,JSON.stringify(data)); localStorage.setItem(SESSION_KEY,'1'); showApp(); toast('Account created successfully.');    
+ const USER_KEY='nig_user_v2';
+ const SESSION_KEY='nig_session_v2';
+
+
+ /* =========================
+    LOGIN / REGISTER
+ ========================= */
+
+ window.showRegister=function(){
+   document.getElementById('loginBox').classList.add('hidden');
+   document.getElementById('registerBox').classList.remove('hidden');
  };
- window.loginUser=function(){
-   const u=document.getElementById('loginUser').value.trim(), p=document.getElementById('loginPass').value, data=getUser();
-   if(!u||!p)return toast('Enter username/mobile and password.');
-   if(!data)return toast('No account found. Tap Create Account first.');
-   if(data.user!==u||data.password!==p)return toast('Incorrect username/mobile or password.');
-   localStorage.setItem(SESSION_KEY,'1'); showApp(); toast('Login successful.');
+
+
+ window.showLogin=function(){
+   document.getElementById('registerBox').classList.add('hidden');
+   document.getElementById('loginBox').classList.remove('hidden');
  };
- function showApp(){
-   const data=getUser(); if(!data){showLogin();return}
-   document.getElementById('auth').style.display='none'; document.getElementById('app').style.display='block'; document.getElementById('bottomNav').style.display='grid';
-   const initial=(data.name||'N').charAt(0).toUpperCase(); document.getElementById('welcome').textContent='Welcome, '+data.name; document.getElementById('avatar').textContent=initial; document.getElementById('profileAvatar').textContent=initial; document.getElementById('profileName').textContent=data.name; document.getElementById('profileUser').textContent=data.user;
-   const bal=Number(data.balance||0), inc=Number(data.income||0); document.getElementById('balance').textContent='₹'+bal.toLocaleString('en-IN'); document.getElementById('income').textContent='₹'+inc.toLocaleString('en-IN'); document.getElementById('teamCount').textContent=data.team||0; document.getElementById('myBalance').textContent='₹'+bal.toLocaleString('en-IN'); document.getElementById('myIncome').textContent='₹'+inc.toLocaleString('en-IN');
-const base=location.origin+location.pathname.replace(/index\.html$/,'');
-const refCode=data.refCode||'NIG'+String(data.user||'USER').replace(/[^a-zA-Z0-9]/g,'').toUpperCase().slice(0,8)+'1000';
 
-document.getElementById('refCode').value=refCode;
-document.getElementById('refLink').value=base+'?ref='+refCode;
 
-document.getElementById('teamRefCode').value=refCode;
-document.getElementById('teamRefLink').value=base+'?ref='+refCode;
-
-document.getElementById('commission').textContent='₹'+Number(data.commission||0).toLocaleString('en-IN');
-document.getElementById('salaryBonus').textContent='₹'+Number(data.salaryBonus||0).toLocaleString('en-IN');
-
-const teamSize=Number(data.team||0);
-document.getElementById('teamSize').textContent=teamSize;
-document.getElementById('bonusMembers').textContent=teamSize;
-document.getElementById('bonusStatus').textContent=teamSize+' / 50 members';
-
-const progress=Math.min((teamSize/50)*100,100);
-document.getElementById('bonusProgress').style.width=progress+'%';   
+ function getUser(){
+   try{
+     return JSON.parse(localStorage.getItem(USER_KEY)||'null');
+   }catch(e){
+     return null;
+   }
  }
- window.logout=function(){localStorage.removeItem(SESSION_KEY);document.getElementById('app').style.display='none';document.getElementById('bottomNav').style.display='none';document.getElementById('auth').style.display='flex';document.getElementById('loginUser').value='';document.getElementById('loginPass').value='';showLogin();toast('Logged out.');};
- window.showPage=function(id,btn){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.nav').forEach(x=>x.classList.remove('active'));if(btn)btn.classList.add('active');else{const b=[...document.querySelectorAll('.nav')].find(x=>x.getAttribute('onclick')&&x.getAttribute('onclick').includes("'"+id+"'"));if(b)b.classList.add('active')}window.scrollTo(0,0)};
- const demo=[['Aarav','LV1'],['Riya','LV1'],['Kabir','LV2'],['Anaya','LV2'],['Vivaan','LV3'],['Meera','LV1'],['Arjun','LV2'],['Ishita','LV3']];
- window.filterTeam=function(level,btn){document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const list=level==='all'?demo:demo.filter(x=>x[1]===level);document.getElementById('members').innerHTML=list.map(m=>'<div class="member"><div class="member-icon">'+m[0][0]+'</div><div class="member-info"><b>'+m[0]+'</b><small>'+m[1]+' • Demo team member</small></div><span class="status">Active</span></div>').join('')};
- window.copyText=function(id){const el=document.getElementById(id);const val=el.value;navigator.clipboard?.writeText(val).then(()=>toast('Copied')).catch(()=>{el.select();document.execCommand('copy');toast('Copied')})};
- window.openModal=function(title){document.getElementById('modalTitle').textContent=title;document.getElementById('modal').style.display='flex'};window.closeModal=function(){document.getElementById('modal').style.display='none'};window.submitRecharge=function(){toast('Real payment processing is not connected yet.');closeModal()};window.downloadApp=function(){toast('APK package is not attached yet. The website itself is live.')};
- let toastTimer;window.toast=function(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2600)};
+
+
+ window.registerUser=function(){
+
+   const name=document.getElementById('regName').value.trim();
+   const user=document.getElementById('regUser').value.trim();
+   const p=document.getElementById('regPass').value;
+   const p2=document.getElementById('regPass2').value;
+
+   if(!name||!user||!p||!p2)
+     return toast('Please fill all fields.');
+
+   if(user.length<3)
+     return toast('Username/mobile must be at least 3 characters.');
+
+   if(p.length<4)
+     return toast('Password must be at least 4 characters.');
+
+   if(p!==p2)
+     return toast('Passwords do not match.');
+
+   if(getUser())
+     return toast('An account already exists on this browser. Please login.');
+
+
+   const refCode=
+     'NIG'+
+     user.replace(/[^a-zA-Z0-9]/g,'')
+     .toUpperCase()
+     .slice(0,8)+
+     Math.floor(1000+Math.random()*9000);
+
+
+   const signupRef=
+     new URLSearchParams(location.search).get('ref')||'';
+
+
+   const data={
+     name:name,
+     user:user,
+     password:p,
+     balance:0,
+     income:0,
+     team:0,
+     refCode:refCode,
+     commission:0,
+     salaryBonus:0,
+     referredBy:signupRef,
+
+     /* NEW:
+        Purchased plans are stored here.
+     */
+     purchasedPlans:[]
+   };
+
+
+   localStorage.setItem(
+     USER_KEY,
+     JSON.stringify(data)
+   );
+
+   localStorage.setItem(
+     SESSION_KEY,
+     '1'
+   );
+
+   showApp();
+
+   toast('Account created successfully.');
+
+ };
+
+
+ window.loginUser=function(){
+
+   const u=document.getElementById('loginUser').value.trim();
+   const p=document.getElementById('loginPass').value;
+   const data=getUser();
+
+   if(!u||!p)
+     return toast('Enter username/mobile and password.');
+
+   if(!data)
+     return toast('No account found. Tap Create Account first.');
+
+   if(data.user!==u||data.password!==p)
+     return toast('Incorrect username/mobile or password.');
+
+   localStorage.setItem(SESSION_KEY,'1');
+
+   showApp();
+
+   toast('Login successful.');
+
+ };
+
+
+ /* =========================
+    SHOW APP
+ ========================= */
+
+ function showApp(){
+
+   const data=getUser();
+
+   if(!data){
+     showLogin();
+     return;
+   }
+
+
+   /* Old accounts ke liye */
+   if(!Array.isArray(data.purchasedPlans)){
+     data.purchasedPlans=[];
+     localStorage.setItem(
+       USER_KEY,
+       JSON.stringify(data)
+     );
+   }
+
+
+   document.getElementById('auth').style.display='none';
+
+   document.getElementById('app').style.display='block';
+
+   document.getElementById('bottomNav').style.display='grid';
+
+
+   const initial=
+     (data.name||'N')
+     .charAt(0)
+     .toUpperCase();
+
+
+   document.getElementById('welcome').textContent=
+     'Welcome, '+data.name;
+
+   document.getElementById('avatar').textContent=
+     initial;
+
+   document.getElementById('profileAvatar').textContent=
+     initial;
+
+   document.getElementById('profileName').textContent=
+     data.name;
+
+   document.getElementById('profileUser').textContent=
+     data.user;
+
+
+   const bal=Number(data.balance||0);
+   const inc=Number(data.income||0);
+
+
+   document.getElementById('balance').textContent=
+     '₹'+bal.toLocaleString('en-IN');
+
+   document.getElementById('income').textContent=
+     '₹'+inc.toLocaleString('en-IN');
+
+   document.getElementById('teamCount').textContent=
+     data.team||0;
+
+   document.getElementById('myBalance').textContent=
+     '₹'+bal.toLocaleString('en-IN');
+
+   document.getElementById('myIncome').textContent=
+     '₹'+inc.toLocaleString('en-IN');
+
+
+   /* =========================
+      REFERRAL
+   ========================= */
+
+   const base=
+     location.origin+
+     location.pathname.replace(/index\.html$/,'');
+
+
+   const refCode=
+     data.refCode||
+     'NIG'+
+     String(data.user||'USER')
+     .replace(/[^a-zA-Z0-9]/g,'')
+     .toUpperCase()
+     .slice(0,8)+
+     '1000';
+
+
+   document.getElementById('refCode').value=
+     refCode;
+
+   document.getElementById('refLink').value=
+     base+'?ref='+refCode;
+
+   document.getElementById('teamRefCode').value=
+     refCode;
+
+   document.getElementById('teamRefLink').value=
+     base+'?ref='+refCode;
+
+
+   /* =========================
+      TEAM
+   ========================= */
+
+   document.getElementById('commission').textContent=
+     '₹'+
+     Number(data.commission||0)
+     .toLocaleString('en-IN');
+
+
+   document.getElementById('salaryBonus').textContent=
+     '₹'+
+     Number(data.salaryBonus||0)
+     .toLocaleString('en-IN');
+
+
+   const teamSize=
+     Number(data.team||0);
+
+
+   document.getElementById('teamSize').textContent=
+     teamSize;
+
+   document.getElementById('bonusMembers').textContent=
+     teamSize;
+
+   document.getElementById('bonusStatus').textContent=
+     teamSize+' / 50 members';
+
+
+   const progress=
+     Math.min((teamSize/50)*100,100);
+
+
+   document.getElementById('bonusProgress').style.width=
+     progress+'%';
+
+
+   /* =========================
+      DEVICES
+   ========================= */
+
+   renderDevices();
+
+ }
+
+
+ /* =========================
+    LOGOUT
+ ========================= */
+
+ window.logout=function(){
+
+   localStorage.removeItem(SESSION_KEY);
+
+   document.getElementById('app').style.display='none';
+
+   document.getElementById('bottomNav').style.display='none';
+
+   document.getElementById('auth').style.display='flex';
+
+   document.getElementById('loginUser').value='';
+
+   document.getElementById('loginPass').value='';
+
+   showLogin();
+
+   toast('Logged out.');
+
+ };
+
+
+ /* =========================
+    PAGE NAVIGATION
+ ========================= */
+
+ window.showPage=function(id,btn){
+
+   document
+     .querySelectorAll('.page')
+     .forEach(x=>x.classList.remove('active'));
+
+   document
+     .getElementById(id)
+     .classList.add('active');
+
+
+   document
+     .querySelectorAll('.nav')
+     .forEach(x=>x.classList.remove('active'));
+
+
+   if(btn){
+
+     btn.classList.add('active');
+
+   }else{
+
+     const b=
+       [...document.querySelectorAll('.nav')]
+       .find(x=>
+         x.getAttribute('onclick') &&
+         x.getAttribute('onclick')
+         .includes("'"+id+"'")
+       );
+
+     if(b)
+       b.classList.add('active');
+   }
+
+
+   window.scrollTo(0,0);
+
+ };
+
+
+ /* =========================
+    DEMO TEAM
+ ========================= */
+
+ const demo=[
+   ['Aarav','LV1'],
+   ['Riya','LV1'],
+   ['Kabir','LV2'],
+   ['Anaya','LV2'],
+   ['Vivaan','LV3'],
+   ['Meera','LV1'],
+   ['Arjun','LV2'],
+   ['Ishita','LV3']
+ ];
+
+
+ window.filterTeam=function(level,btn){
+
+   document
+     .querySelectorAll('.tab')
+     .forEach(x=>x.classList.remove('active'));
+
+   btn.classList.add('active');
+
+
+   const list=
+     level==='all'
+     ? demo
+     : demo.filter(x=>x[1]===level);
+
+
+   document.getElementById('members').innerHTML=
+     list.map(m=>
+       '<div class="member">'+
+         '<div class="member-icon">'+m[0][0]+'</div>'+
+         '<div class="member-info">'+
+           '<b>'+m[0]+'</b>'+
+           '<small>'+m[1]+' • Demo team member</small>'+
+         '</div>'+
+         '<span class="status">Active</span>'+
+       '</div>'
+     ).join('');
+
+ };
+
+
+ /* =========================
+    BUY PLAN
+ ========================= */
+
+ window.buyPlan=function(
+   level,
+   price,
+   dayIncome,
+   totalRevenue,
+   days
+ ){
+
+   const data=getUser();
+
+
+   if(!data){
+     return toast('Please login first.');
+   }
+
+
+   if(!Array.isArray(data.purchasedPlans)){
+     data.purchasedPlans=[];
+   }
+
+
+   /* Same level duplicate purchase ko rokna */
+   const alreadyBought=
+     data.purchasedPlans.some(
+       plan=>Number(plan.level)===Number(level)
+     );
+
+
+   if(alreadyBought){
+
+     showPage('devices');
+
+     return toast(
+       'Level '+level+' is already in My Devices.'
+     );
+
+   }
+
+
+   /*
+     Frontend record only.
+     Real payment / balance deduction
+     yahan nahi kiya ja raha.
+   */
+
+   const newPlan={
+     level:Number(level),
+     price:Number(price),
+     dayIncome:Number(dayIncome),
+     totalRevenue:Number(totalRevenue),
+     days:Number(days),
+
+     progress:0,
+
+     status:'Pending',
+
+     purchasedAt:new Date().toISOString()
+   };
+
+
+   data.purchasedPlans.push(newPlan);
+
+
+   localStorage.setItem(
+     USER_KEY,
+     JSON.stringify(data)
+   );
+
+
+   renderDevices();
+
+
+   showPage('devices');
+
+
+   toast(
+     'Level '+level+' added to My Devices.'
+   );
+
+ };
+
+
+ /* =========================
+    RENDER DEVICES
+ ========================= */
+
+ window.renderDevices=function(){
+
+   const box=
+     document.getElementById('devicesList');
+
+
+   if(!box)
+     return;
+
+
+   const data=getUser();
+
+
+   if(!data){
+
+     box.innerHTML=
+       '<div class="empty-device">'+
+         '<h3>Please Login</h3>'+
+         '<div>Login to view your purchased plans.</div>'+
+       '</div>';
+
+     return;
+   }
+
+
+   const plans=
+     Array.isArray(data.purchasedPlans)
+     ? data.purchasedPlans
+     : [];
+
+
+   if(plans.length===0){
+
+     box.innerHTML=
+       '<div class="empty-device">'+
+         '<h3>No Purchased Plans</h3>'+
+         '<div>Home page se Level 1–5 me se koi plan select karein.</div>'+
+       '</div>';
+
+     return;
+   }
+
+
+   box.innerHTML=
+     plans.map(plan=>{
+
+       const progress=
+         Math.min(
+           Math.max(
+             Number(plan.progress||0),
+             0
+           ),
+           100
+         );
+
+
+       const status=
+         plan.status||'Pending';
+
+
+       let statusHtml=
+         '<span class="pending">'+
+         status+
+         '</span>';
+
+
+       if(status==='Active'){
+
+         statusHtml=
+           '<span class="badge">Active</span>';
+
+       }
+
+
+       if(status==='Completed'){
+
+         statusHtml=
+           '<span class="status">Completed</span>';
+
+       }
+
+
+       return (
+
+         '<div class="device">'+
+
+           '<div class="device-row">'+
+
+             '<div>'+
+               '<h3>Level '+
+               Number(plan.level)+
+               ' Investment</h3>'+
+
+               '<p>'+
+               Number(plan.days)+
+               ' Days • Buy Price ₹'+
+               Number(plan.price)
+               .toLocaleString('en-IN')+
+               '</p>'+
+             '</div>'+
+
+             statusHtml+
+
+           '</div>'+
+
+
+           '<div class="plan-grid">'+
+
+             '<div>'+
+               '<small>Buy Price</small>'+
+               '<b>₹'+
+               Number(plan.price)
+               .toLocaleString('en-IN')+
+               '</b>'+
+             '</div>'+
+
+             '<div>'+
+               '<small>Day Income</small>'+
+               '<b>₹'+
+               Number(plan.dayIncome)
+               .toLocaleString('en-IN')+
+               '</b>'+
+             '</div>'+
+
+             '<div>'+
+               '<small>Total Revenue</small>'+
+               '<b>₹'+
+               Number(plan.totalRevenue)
+               .toLocaleString('en-IN')+
+               '</b>'+
+             '</div>'+
+
+           '</div>'+
+
+
+           '<div class="progress">'+
+             '<span style="width:'+progress+'%"></span>'+
+           '</div>'+
+
+
+           '<div class="device-foot">'+
+             '<span>Progress '+
+             progress+
+             '%</span>'+
+
+             '<span>'+
+             Number(plan.days)+
+             ' Days'+
+             '</span>'+
+           '</div>'+
+
+         '</div>'
+
+       );
+
+     }).join('');
+
+ };
+
+
+ /* =========================
+    COPY
+ ========================= */
+
+ window.copyText=function(id){
+
+   const el=document.getElementById(id);
+
+   const val=el.value;
+
+
+   if(navigator.clipboard){
+
+     navigator.clipboard
+       .writeText(val)
+       .then(()=>toast('Copied'))
+       .catch(()=>{
+
+         el.select();
+
+         document.execCommand('copy');
+
+         toast('Copied');
+
+       });
+
+   }else{
+
+     el.select();
+
+     document.execCommand('copy');
+
+     toast('Copied');
+
+   }
+
+ };
+
+
+ /* =========================
+    MODAL
+ ========================= */
+
+ window.openModal=function(title){
+
+   document.getElementById('modalTitle').textContent=
+     title;
+
+   document.getElementById('modal').style.display=
+     'flex';
+
+ };
+
+
+ window.closeModal=function(){
+
+   document.getElementById('modal').style.display=
+     'none';
+
+ };
+
+
+ window.submitRecharge=function(){
+
+   toast(
+     'Real payment processing is not connected yet.'
+   );
+
+   closeModal();
+
+ };
+
+
+ window.downloadApp=function(){
+
+   toast(
+     'APK package is not attached yet. The website itself is live.'
+   );
+
+ };
+
+
+ /* =========================
+    TOAST
+ ========================= */
+
+ let toastTimer;
+
+
+ window.toast=function(msg){
+
+   const t=
+     document.getElementById('toast');
+
+
+   t.textContent=msg;
+
+   t.classList.add('show');
+
+
+   clearTimeout(toastTimer);
+
+
+   toastTimer=setTimeout(
+     ()=>t.classList.remove('show'),
+     2600
+   );
+
+ };
+
+
+ /* =========================
+    BOOT
+ ========================= */
+
  function boot(){
-  const showReg=document.getElementById('showRegisterBtn');
-  const showLog=document.getElementById('showLoginBtn');
-  const regBtn=document.getElementById('registerBtn');
-  const logBtn=document.getElementById('loginBtn');
-  if(showReg) showReg.addEventListener('click',function(e){e.preventDefault();showRegister();});
-  if(showLog) showLog.addEventListener('click',function(e){e.preventDefault();showLogin();});
-  if(regBtn) regBtn.addEventListener('click',function(e){e.preventDefault();registerUser();});
-  if(logBtn) logBtn.addEventListener('click',function(e){e.preventDefault();loginUser();});
-  const regLink=new URLSearchParams(location.search).get('register');
-  if(regLink==='1') showRegister();
-  const tab=document.querySelector('.tab'); if(tab) filterTeam('all',tab);
-  try{if(localStorage.getItem(SESSION_KEY)==='1'&&getUser())showApp();else{document.getElementById('auth').style.display='flex';document.getElementById('app').style.display='none';document.getElementById('bottomNav').style.display='none';}}catch(e){document.getElementById('auth').style.display='flex';}
-}
-if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',boot); else boot();
+
+   const showReg=
+     document.getElementById('showRegisterBtn');
+
+   const showLog=
+     document.getElementById('showLoginBtn');
+
+   const regBtn=
+     document.getElementById('registerBtn');
+
+   const logBtn=
+     document.getElementById('loginBtn');
+
+
+   if(showReg)
+     showReg.addEventListener(
+       'click',
+       function(e){
+         e.preventDefault();
+         showRegister();
+       }
+     );
+
+
+   if(showLog)
+     showLog.addEventListener(
+       'click',
+       function(e){
+         e.preventDefault();
+         showLogin();
+       }
+     );
+
+
+   if(regBtn)
+     regBtn.addEventListener(
+       'click',
+       function(e){
+         e.preventDefault();
+         registerUser();
+       }
+     );
+
+
+   if(logBtn)
+     logBtn.addEventListener(
+       'click',
+       function(e){
+         e.preventDefault();
+         loginUser();
+       }
+     );
+
+
+   const regLink=
+     new URLSearchParams(location.search)
+     .get('register');
+
+
+   if(regLink==='1')
+     showRegister();
+
+
+   const tab=
+     document.querySelector('.tab');
+
+
+   if(tab)
+     filterTeam('all',tab);
+
+
+   try{
+
+     if(
+       localStorage.getItem(SESSION_KEY)==='1' &&
+       getUser()
+     ){
+
+       showApp();
+
+     }else{
+
+       document.getElementById('auth').style.display='flex';
+
+       document.getElementById('app').style.display='none';
+
+       document.getElementById('bottomNav').style.display='none';
+
+     }
+
+   }catch(e){
+
+     document.getElementById('auth').style.display='flex';
+
+   }
+
+ }
+
+
+ if(document.readyState==='loading'){
+
+   document.addEventListener(
+     'DOMContentLoaded',
+     boot
+   );
+
+ }else{
+
+   boot();
+
+ }
+
 })();
 </script>
-</body></html>
+
+</body>
+</html>
