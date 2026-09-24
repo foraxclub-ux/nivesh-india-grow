@@ -23,776 +23,281 @@
   --danger:#c0392b;
   --shadow:0 8px 26px rgba(5,107,123,.12);
 }
-
 *{box-sizing:border-box;margin:0;padding:0}
-
 html{scroll-behavior:smooth}
-
 body{
   font-family:Arial,Helvetica,sans-serif;
-  background:
-    radial-gradient(circle at 10% 0%,rgba(11,143,163,.10),transparent 28%),
-    linear-gradient(180deg,#f6fcfd 0%,#eef9fa 100%);
-  color:var(--text);
-  min-height:100vh;
+  background:radial-gradient(circle at 10% 0%,rgba(11,143,163,.10),transparent 28%),
+             linear-gradient(180deg,#f6fcfd 0%,#eef9fa 100%);
+  color:var(--text);min-height:100vh;
 }
+button,input{font:inherit} button{cursor:pointer}.hidden{display:none!important}
 
-button,input{font:inherit}
-button{cursor:pointer}
-.hidden{display:none!important}
-
-/* AUTH */
 #auth{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:18px;
-  background:
-    radial-gradient(circle at 15% 10%,rgba(255,255,255,.14),transparent 25%),
-    radial-gradient(circle at 90% 90%,rgba(24,184,199,.18),transparent 28%),
-    linear-gradient(135deg,var(--ocean-deep),var(--ocean));
+  min-height:100vh;display:flex;align-items:center;justify-content:center;padding:18px;
+  background:radial-gradient(circle at 15% 10%,rgba(255,255,255,.14),transparent 25%),
+             radial-gradient(circle at 90% 90%,rgba(24,184,199,.18),transparent 28%),
+             linear-gradient(135deg,var(--ocean-deep),var(--ocean));
 }
-
 .auth-card{
-  width:100%;
-  max-width:410px;
-  background:rgba(255,255,255,.98);
-  border:1px solid rgba(255,255,255,.5);
-  border-radius:26px;
-  padding:28px 22px;
+  width:100%;max-width:410px;background:rgba(255,255,255,.98);
+  border:1px solid rgba(255,255,255,.5);border-radius:26px;padding:28px 22px;
   box-shadow:0 24px 70px rgba(0,0,0,.24);
 }
-
-.brand{
-  text-align:center;
-  color:var(--ocean-deep);
-  font-size:28px;
-  font-weight:900;
-  letter-spacing:-.5px;
-}
-
-.brand-sub{
-  text-align:center;
-  color:var(--muted);
-  font-size:13px;
-  margin:5px 0 25px;
-}
-
-.auth-title{
-  font-size:23px;
-  font-weight:800;
-  margin-bottom:6px;
-  color:var(--ocean-deep);
-}
-
-.auth-desc{
-  font-size:13px;
-  color:var(--muted);
-  margin-bottom:18px;
-}
-
+.brand{text-align:center;color:var(--ocean-deep);font-size:28px;font-weight:900;letter-spacing:-.5px}
+.brand-sub{text-align:center;color:var(--muted);font-size:13px;margin:5px 0 25px}
+.auth-title{font-size:23px;font-weight:800;margin-bottom:6px;color:var(--ocean-deep)}
+.auth-desc{font-size:13px;color:var(--muted);margin-bottom:18px}
 .field{margin-bottom:13px}
-
-.field label{
-  display:block;
-  font-size:13px;
-  font-weight:700;
-  margin-bottom:6px;
-}
-
+.field label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
 .field input{
-  width:100%;
-  height:48px;
-  border:1px solid #d9e8eb;
-  border-radius:13px;
-  padding:0 13px;
-  outline:none;
-  background:#f8fcfd;
-  color:var(--text);
+  width:100%;height:48px;border:1px solid #d9e8eb;border-radius:13px;padding:0 13px;
+  outline:none;background:#f8fcfd;color:var(--text);
 }
-
-.field input:focus{
-  border-color:var(--ocean);
-  background:#fff;
-  box-shadow:0 0 0 3px rgba(11,143,163,.10);
-}
-
+.field input:focus{border-color:var(--ocean);background:#fff;box-shadow:0 0 0 3px rgba(11,143,163,.10)}
 .btn{
-  width:100%;
-  min-height:48px;
-  border:0;
-  border-radius:13px;
-  background:linear-gradient(135deg,var(--ocean-dark),var(--ocean));
-  color:white;
-  font-weight:800;
-  box-shadow:0 6px 16px rgba(11,143,163,.20);
-  transition:.2s ease;
+  width:100%;min-height:48px;border:0;border-radius:13px;
+  background:linear-gradient(135deg,var(--ocean-dark),var(--ocean));color:#fff;font-weight:800;
+  box-shadow:0 6px 16px rgba(11,143,163,.20);transition:.2s ease;
 }
-
-.btn:hover{transform:translateY(-1px)}
-.btn:active{transform:scale(.98)}
-
+.btn:hover{transform:translateY(-1px)}.btn:active{transform:scale(.98)}
 .btn-light{
-  width:100%;
-  min-height:46px;
-  border:1px solid var(--ocean-border);
-  border-radius:13px;
-  background:var(--ocean-soft);
-  color:var(--ocean-dark);
-  font-weight:700;
-  margin-top:10px;
+  width:100%;min-height:46px;border:1px solid var(--ocean-border);border-radius:13px;
+  background:var(--ocean-soft);color:var(--ocean-dark);font-weight:700;margin-top:10px;
 }
+.switch{text-align:center;color:var(--muted);font-size:13px;margin-top:17px}
+.switch b{color:var(--ocean-dark);cursor:pointer}
 
-.switch{
-  text-align:center;
-  color:var(--muted);
-  font-size:13px;
-  margin-top:17px;
-}
-
-.switch b{
-  color:var(--ocean-dark);
-  cursor:pointer;
-}
-
-/* APP */
-#app{
-  display:none;
-  min-height:100vh;
-  padding-bottom:82px;
-}
-
+#app{display:none;min-height:100vh;padding-bottom:82px}
 .top{
-  height:64px;
-  background:linear-gradient(135deg,var(--ocean-deep),var(--ocean));
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 16px;
-  position:sticky;
-  top:0;
-  z-index:20;
-  box-shadow:0 6px 20px rgba(5,107,123,.20);
+  height:64px;background:linear-gradient(135deg,var(--ocean-deep),var(--ocean));color:#fff;
+  display:flex;align-items:center;justify-content:space-between;padding:0 16px;position:sticky;top:0;
+  z-index:20;box-shadow:0 6px 20px rgba(5,107,123,.20);
 }
-
-.top-title{
-  font-size:19px;
-  font-weight:900;
-  letter-spacing:.1px;
-}
-
+.top-title{font-size:19px;font-weight:900;letter-spacing:.1px}
 .avatar{
-  width:39px;
-  height:39px;
-  border-radius:50%;
-  background:rgba(255,255,255,.18);
-  border:1px solid rgba(255,255,255,.28);
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:900;
+  width:39px;height:39px;border-radius:50%;background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.28);color:#fff;display:flex;align-items:center;
+  justify-content:center;font-weight:900;
 }
+.page{display:none}.page.active{display:block}
+.wrap{width:100%;max-width:440px;margin:auto;padding:16px}
+.title{font-size:20px;font-weight:900;margin:5px 0 14px;color:var(--ocean-deep)}
 
-.page{display:none}
-.page.active{display:block}
-
-.wrap{
-  width:100%;
-  max-width:440px;
-  margin:auto;
-  padding:16px;
-}
-
-.title{
-  font-size:20px;
-  font-weight:900;
-  margin:5px 0 14px;
-  color:var(--ocean-deep);
-}
-
-/* HOME */
 .hero{
-  background:
-    radial-gradient(circle at 90% 10%,rgba(255,255,255,.16),transparent 25%),
-    linear-gradient(135deg,var(--ocean-deep),var(--ocean));
-  color:#fff;
-  border-radius:22px;
-  padding:20px;
-  margin-bottom:15px;
-  box-shadow:var(--shadow);
+  background:radial-gradient(circle at 90% 10%,rgba(255,255,255,.16),transparent 25%),
+             linear-gradient(135deg,var(--ocean-deep),var(--ocean));
+  color:#fff;border-radius:22px;padding:20px;margin-bottom:15px;box-shadow:var(--shadow);
 }
-
-.hero-small{font-size:13px;opacity:.82}
-.hero-name{font-size:25px;font-weight:900;margin-top:3px}
-
-.money-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  margin-top:17px;
-}
-
-.money{
-  background:rgba(255,255,255,.12);
-  border:1px solid rgba(255,255,255,.13);
-  border-radius:14px;
-  padding:11px;
-}
-
-.money small{font-size:10px;opacity:.82}
-.money strong{display:block;font-size:18px;margin-top:3px}
-
+.hero-small{font-size:13px;opacity:.82}.hero-name{font-size:25px;font-weight:900;margin-top:3px}
+.money-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:17px}
+.money{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.13);border-radius:14px;padding:11px}
+.money small{font-size:10px;opacity:.82}.money strong{display:block;font-size:18px;margin-top:3px}
 .announcement{
-  background:linear-gradient(135deg,#e8f8fa,#f8fdfe);
-  border:1px solid var(--ocean-border);
-  border-radius:15px;
-  padding:13px;
-  margin-bottom:16px;
-  font-size:13px;
-  color:var(--ocean-deep);
+  background:linear-gradient(135deg,#e8f8fa,#f8fdfe);border:1px solid var(--ocean-border);
+  border-radius:15px;padding:13px;margin-bottom:16px;font-size:13px;color:var(--ocean-deep);
 }
-
 .announcement b{color:var(--ocean-dark)}
-
 .plan{
-  position:relative;
-  overflow:hidden;
-  background:#fff;
-  border:1px solid var(--ocean-border);
-  border-radius:19px;
-  padding:16px;
-  margin-bottom:13px;
-  box-shadow:var(--shadow);
-  transition:.2s ease;
+  position:relative;overflow:hidden;background:#fff;border:1px solid var(--ocean-border);
+  border-radius:19px;padding:16px;margin-bottom:13px;box-shadow:var(--shadow);transition:.2s ease;
 }
-
-.plan:hover{
-  transform:translateY(-2px);
-  box-shadow:0 13px 30px rgba(5,107,123,.15);
-}
-
+.plan:hover{transform:translateY(-2px);box-shadow:0 13px 30px rgba(5,107,123,.15)}
 .plan::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  height:4px;
+  content:"";position:absolute;top:0;left:0;right:0;height:4px;
   background:linear-gradient(90deg,var(--ocean-dark),var(--ocean-light));
 }
-
-.plan-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-}
-
+.plan-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
 .plan-name{font-size:17px;font-weight:900;color:var(--ocean-deep)}
-
 .badge{
-  background:var(--ocean-soft);
-  color:var(--ocean-dark);
-  border:1px solid var(--ocean-border);
-  border-radius:20px;
-  padding:5px 8px;
-  font-size:10px;
-  font-weight:800;
+  background:var(--ocean-soft);color:var(--ocean-dark);border:1px solid var(--ocean-border);
+  border-radius:20px;padding:5px 8px;font-size:10px;font-weight:800;
 }
+.price{color:var(--ocean-dark);font-size:26px;font-weight:900;margin:11px 0}
+.plan-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.info{background:var(--ocean-pale);border:1px solid #e4f3f5;border-radius:11px;padding:9px}
+.info small{display:block;color:var(--muted);font-size:10px}
+.info b{font-size:13px;display:block;margin-top:3px;color:var(--text)}
 
-.price{
-  color:var(--ocean-dark);
-  font-size:26px;
-  font-weight:900;
-  margin:11px 0;
-}
-
-.plan-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-}
-
-.info{
-  background:var(--ocean-pale);
-  border:1px solid #e4f3f5;
-  border-radius:11px;
-  padding:9px;
-}
-
-.info small{
-  display:block;
-  color:var(--muted);
-  font-size:10px;
-}
-
-.info b{
-  font-size:13px;
-  display:block;
-  margin-top:3px;
-  color:var(--text);
-}
-
-/* COMMON CARDS */
 .card{
-  background:#fff;
-  border:1px solid var(--ocean-border);
-  border-radius:18px;
-  padding:15px;
-  margin-bottom:12px;
-  box-shadow:var(--shadow);
+  background:#fff;border:1px solid var(--ocean-border);border-radius:18px;padding:15px;
+  margin-bottom:12px;box-shadow:var(--shadow);
 }
-
-.row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-}
-
-.row+.row{margin-top:13px}
-
-.muted{color:var(--muted);font-size:12px}
-.bold{font-weight:800}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.row+.row{margin-top:13px}.muted{color:var(--muted);font-size:12px}.bold{font-weight:800}
 .value{font-weight:900;color:var(--ocean-dark)}
 
-/* TEAM */
-.stats{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  margin-bottom:15px;
-}
-
-.stat{
-  background:#fff;
-  border:1px solid var(--ocean-border);
-  border-radius:16px;
-  padding:14px;
-  box-shadow:var(--shadow);
-}
-
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:15px}
+.stat{background:#fff;border:1px solid var(--ocean-border);border-radius:16px;padding:14px;box-shadow:var(--shadow)}
 .stat small{color:var(--muted);font-size:11px}
-.stat b{
-  display:block;
-  font-size:21px;
-  margin-top:4px;
-  color:var(--ocean-deep);
-}
-
-.tabs{
-  display:flex;
-  gap:8px;
-  overflow:auto;
-  margin-bottom:13px;
-  padding-bottom:2px;
-}
-
+.stat b{display:block;font-size:21px;margin-top:4px;color:var(--ocean-deep)}
+.tabs{display:flex;gap:8px;overflow:auto;margin-bottom:13px;padding-bottom:2px}
 .tab{
-  white-space:nowrap;
-  border:1px solid var(--ocean-border);
-  background:#fff;
-  color:var(--ocean-dark);
-  padding:9px 15px;
-  border-radius:20px;
-  font-size:12px;
-  font-weight:800;
+  white-space:nowrap;border:1px solid var(--ocean-border);background:#fff;color:var(--ocean-dark);
+  padding:9px 15px;border-radius:20px;font-size:12px;font-weight:800;
 }
-
-.tab.active{
-  background:var(--ocean);
-  color:#fff;
-  border-color:var(--ocean);
-}
-
-.member{
-  display:flex;
-  align-items:center;
-  gap:11px;
-  padding:12px 0;
-  border-bottom:1px solid #e8f2f4;
-}
-
+.tab.active{background:var(--ocean);color:#fff;border-color:var(--ocean)}
+.member{display:flex;align-items:center;gap:11px;padding:12px 0;border-bottom:1px solid #e8f2f4}
 .member:last-child{border-bottom:0}
-
 .member-icon{
-  width:39px;
-  height:39px;
-  border-radius:50%;
-  background:var(--ocean-soft);
-  color:var(--ocean-dark);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:900;
+  width:39px;height:39px;border-radius:50%;background:var(--ocean-soft);color:var(--ocean-dark);
+  display:flex;align-items:center;justify-content:center;font-weight:900;
 }
+.member-info{flex:1}.member-info b{font-size:13px}
+.member-info small{display:block;color:var(--muted);font-size:10px;margin-top:3px}
 
-.member-info{flex:1}
-.member-info b{font-size:13px}
-.member-info small{
-  display:block;
-  color:var(--muted);
-  font-size:10px;
-  margin-top:3px;
-}
-
-/* SHARE */
 .qr{
-  width:180px;
-  height:180px;
-  margin:5px auto 18px;
-  border:9px solid white;
-  border-radius:8px;
+  width:180px;height:180px;margin:5px auto 18px;border:9px solid white;border-radius:8px;
   box-shadow:0 0 0 1px var(--ocean-border),var(--shadow);
-  background:
-    repeating-linear-gradient(90deg,#12343d 0 5px,#fff 5px 10px),
-    repeating-linear-gradient(0deg,transparent 0 7px,#12343d 7px 11px);
+  background:repeating-linear-gradient(90deg,#12343d 0 5px,#fff 5px 10px),
+             repeating-linear-gradient(0deg,transparent 0 7px,#12343d 7px 11px);
 }
-
 .share-code{
-  background:var(--ocean-pale);
-  border:1px dashed #8bcbd4;
-  border-radius:12px;
-  padding:13px;
-  text-align:center;
-  font-size:21px;
-  font-weight:900;
-  letter-spacing:2px;
-  color:var(--ocean-dark);
-  margin-bottom:10px;
+  background:var(--ocean-pale);border:1px dashed #8bcbd4;border-radius:12px;padding:13px;
+  text-align:center;font-size:21px;font-weight:900;letter-spacing:2px;color:var(--ocean-dark);margin-bottom:10px;
 }
-
 .copy{
-  border:0;
-  background:linear-gradient(135deg,var(--ocean-dark),var(--ocean));
-  color:white;
-  padding:10px 17px;
-  border-radius:10px;
-  font-weight:800;
+  border:0;background:linear-gradient(135deg,var(--ocean-dark),var(--ocean));color:#fff;
+  padding:10px 17px;border-radius:10px;font-weight:800;
 }
-
-.link-box{
-  display:flex;
-  gap:7px;
-  margin-top:10px;
-}
-
+.link-box{display:flex;gap:7px;margin-top:10px}
 .link-box input{
-  flex:1;
-  min-width:0;
-  height:42px;
-  border:1px solid var(--ocean-border);
-  border-radius:10px;
-  padding:0 9px;
-  font-size:11px;
-  color:var(--text);
-  background:#fbfeff;
+  flex:1;min-width:0;height:42px;border:1px solid var(--ocean-border);border-radius:10px;
+  padding:0 9px;font-size:11px;color:var(--text);background:#fbfeff;
 }
 
-/* DEVICES */
 .device{
-  border:1px solid var(--ocean-border);
-  background:white;
-  border-radius:18px;
-  padding:15px;
-  margin-bottom:12px;
-  box-shadow:var(--shadow);
+  border:1px solid var(--ocean-border);background:#fff;border-radius:18px;padding:15px;
+  margin-bottom:12px;box-shadow:var(--shadow);
 }
-
 .device-icon{
-  width:45px;
-  height:45px;
-  border-radius:12px;
-  background:var(--ocean-soft);
-  color:var(--ocean-dark);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:22px;
+  width:45px;height:45px;border-radius:12px;background:var(--ocean-soft);color:var(--ocean-dark);
+  display:flex;align-items:center;justify-content:center;font-size:22px;
 }
-
-.device-name{
-  font-weight:900;
-  color:var(--ocean-deep);
-}
-
+.device-name{font-weight:900;color:var(--ocean-deep)}
 .device-status{
-  display:inline-block;
-  margin-top:7px;
-  padding:4px 8px;
-  border-radius:20px;
-  font-size:10px;
-  font-weight:800;
-  background:var(--ocean-soft);
-  color:var(--ocean-dark);
+  display:inline-block;margin-top:7px;padding:4px 8px;border-radius:20px;font-size:10px;font-weight:800;
+  background:var(--ocean-soft);color:var(--ocean-dark);
 }
 
-/* MY */
 .profile{
-  background:
-    radial-gradient(circle at 90% 10%,rgba(255,255,255,.15),transparent 25%),
-    linear-gradient(135deg,var(--ocean-deep),var(--ocean));
-  color:white;
-  border-radius:20px;
-  padding:18px;
-  margin-bottom:15px;
-  box-shadow:var(--shadow);
+  background:radial-gradient(circle at 90% 10%,rgba(255,255,255,.15),transparent 25%),
+             linear-gradient(135deg,var(--ocean-deep),var(--ocean));
+  color:#fff;border-radius:20px;padding:18px;margin-bottom:15px;box-shadow:var(--shadow);
 }
-
 .profile-icon{
-  width:54px;
-  height:54px;
-  border-radius:50%;
-  background:rgba(255,255,255,.18);
-  border:1px solid rgba(255,255,255,.22);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:22px;
-  font-weight:900;
-  margin-bottom:9px;
+  width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;
+  font-size:22px;font-weight:900;margin-bottom:9px;
 }
-
-.menu{
-  background:#fff;
-  border:1px solid var(--ocean-border);
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:var(--shadow);
-}
-
+.menu{background:#fff;border:1px solid var(--ocean-border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
 .menu-item{
-  min-height:54px;
-  padding:0 15px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  border-bottom:1px solid #e8f2f4;
-  font-size:14px;
-  font-weight:700;
-  cursor:pointer;
-  transition:.15s ease;
+  min-height:54px;padding:0 15px;display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid #e8f2f4;font-size:14px;font-weight:700;cursor:pointer;transition:.15s ease;
 }
-
-.menu-item:hover{background:var(--ocean-pale)}
-.menu-item:last-child{border-bottom:0}
-
-.menu-left{
-  display:flex;
-  align-items:center;
-  gap:11px;
-}
-
+.menu-item:hover{background:var(--ocean-pale)}.menu-item:last-child{border-bottom:0}
+.menu-left{display:flex;align-items:center;gap:11px}
 .menu-icon{
-  width:31px;
-  height:31px;
-  border-radius:9px;
-  background:var(--ocean-soft);
-  color:var(--ocean-dark);
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  width:31px;height:31px;border-radius:9px;background:var(--ocean-soft);color:var(--ocean-dark);
+  display:flex;align-items:center;justify-content:center;
 }
-
 .arrow{color:#9aa4b1;font-size:20px}
 
-/* MODAL */
 .modal{
-  position:fixed;
-  inset:0;
-  background:rgba(3,32,40,.54);
-  display:none;
-  align-items:flex-end;
-  justify-content:center;
-  z-index:100;
+  position:fixed;inset:0;background:rgba(3,32,40,.54);display:none;align-items:flex-end;
+  justify-content:center;z-index:100;
 }
-
 .modal-box{
-  width:100%;
-  max-width:440px;
-  background:white;
-  border-radius:23px 23px 0 0;
-  padding:20px;
-  animation:up .2s ease;
-  box-shadow:0 -10px 40px rgba(0,0,0,.16);
+  width:100%;max-width:440px;background:white;border-radius:23px 23px 0 0;padding:20px;
+  animation:up .2s ease;box-shadow:0 -10px 40px rgba(0,0,0,.16);
 }
+@keyframes up{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.modal-title{font-size:19px;font-weight:900;margin-bottom:15px;color:var(--ocean-deep)}
 
-@keyframes up{
-  from{transform:translateY(100%)}
-  to{transform:translateY(0)}
-}
-
-.modal-title{
-  font-size:19px;
-  font-weight:900;
-  margin-bottom:15px;
-  color:var(--ocean-deep);
-}
-
-/* NAV */
 .bottom{
-  position:fixed;
-  left:50%;
-  transform:translateX(-50%);
-  bottom:0;
-  width:100%;
-  max-width:440px;
-  height:72px;
-  background:rgba(255,255,255,.97);
-  border-top:1px solid var(--ocean-border);
-  display:none;
-  grid-template-columns:repeat(5,1fr);
-  z-index:90;
-  box-shadow:0 -7px 22px rgba(5,107,123,.10);
+  position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:100%;max-width:440px;height:72px;
+  background:rgba(255,255,255,.97);border-top:1px solid var(--ocean-border);display:none;
+  grid-template-columns:repeat(5,1fr);z-index:90;box-shadow:0 -7px 22px rgba(5,107,123,.10);
   backdrop-filter:blur(12px);
 }
-
 .nav-btn{
-  border:0;
-  background:transparent;
-  color:#819399;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  gap:4px;
-  font-size:10px;
-  font-weight:700;
-  transition:.15s ease;
+  border:0;background:transparent;color:#819399;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;gap:4px;font-size:10px;font-weight:700;transition:.15s ease;
 }
-
 .nav-icon{font-size:20px;line-height:20px}
-
-.nav-btn.active{
-  color:var(--ocean);
-  background:linear-gradient(180deg,transparent,var(--ocean-soft));
-}
-
-/* TOAST */
+.nav-btn.active{color:var(--ocean);background:linear-gradient(180deg,transparent,var(--ocean-soft))}
 .toast{
-  position:fixed;
-  left:50%;
-  bottom:88px;
-  transform:translateX(-50%);
-  background:var(--ocean-deep);
-  color:white;
-  padding:11px 17px;
-  border-radius:11px;
-  font-size:12px;
-  display:none;
-  z-index:200;
-  max-width:90%;
-  text-align:center;
-  box-shadow:0 8px 25px rgba(0,0,0,.18);
+  position:fixed;left:50%;bottom:88px;transform:translateX(-50%);background:var(--ocean-deep);
+  color:white;padding:11px 17px;border-radius:11px;font-size:12px;display:none;z-index:200;
+  max-width:90%;text-align:center;box-shadow:0 8px 25px rgba(0,0,0,.18);
 }
-
-/* SMALL SCREEN */
 @media(max-width:600px){
-  body{font-size:14px}
-  .wrap{padding:14px}
-  .card,.plan,.stat,.device{border-radius:17px}
-  .bottom{height:70px}
+  body{font-size:14px}.wrap{padding:14px}.card,.plan,.stat,.device{border-radius:17px}.bottom{height:70px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================= LOGIN / REGISTER ================= -->
 <section id="auth">
   <div class="auth-card">
-
     <div class="brand">Nivesh India Grow</div>
     <div class="brand-sub">Secure account management platform</div>
 
     <div id="loginBox">
       <div class="auth-title">Welcome Back</div>
       <div class="auth-desc">Login to continue to your account.</div>
-
       <div class="field">
         <label>Mobile / Username</label>
         <input id="loginUser" type="text" placeholder="Enter mobile or username" autocomplete="username">
       </div>
-
       <div class="field">
         <label>Password</label>
         <input id="loginPass" type="password" placeholder="Enter password" autocomplete="current-password">
       </div>
-
       <button class="btn" onclick="loginUser()">Login</button>
-
-      <div class="switch">
-        Don't have an account?
-        <b onclick="showRegister()">Create Account</b>
-      </div>
+      <div class="switch">Don't have an account? <b onclick="showRegister()">Create Account</b></div>
     </div>
 
     <div id="registerBox" class="hidden">
       <div class="auth-title">Create Account</div>
       <div class="auth-desc">Register your account to continue.</div>
-
       <div class="field">
         <label>Name</label>
         <input id="regName" type="text" placeholder="Enter your name" autocomplete="name">
       </div>
-
       <div class="field">
         <label>Mobile / Username</label>
         <input id="regUser" type="text" placeholder="Enter mobile or username" autocomplete="username">
       </div>
-
       <div class="field">
         <label>Password</label>
         <input id="regPass" type="password" placeholder="Create password" autocomplete="new-password">
       </div>
-
       <div class="field">
         <label>Referral Code</label>
         <input id="regRef" type="text" placeholder="Referral code (optional)">
       </div>
-
       <button class="btn" onclick="registerUser()">Register</button>
-
-      <div class="switch">
-        Already have an account?
-        <b onclick="showLogin()">Login</b>
-      </div>
+      <div class="switch">Already have an account? <b onclick="showLogin()">Login</b></div>
     </div>
-
   </div>
 </section>
 
-
-<!-- ================= APP ================= -->
 <div id="app">
-
 <header class="top">
   <div class="top-title">Nivesh India Grow</div>
   <div class="avatar" id="topAvatar">U</div>
 </header>
 
-
-<!-- ================= HOME ================= -->
 <main id="home" class="page active">
 <div class="wrap">
-
   <div class="hero">
     <div class="hero-small">Welcome back</div>
     <div class="hero-name" id="welcomeName">User</div>
-
     <div class="money-grid">
-      <div class="money">
-        <small>Available Balance</small>
-        <strong id="balance">₹0.00</strong>
-      </div>
-
-      <div class="money">
-        <small>Total Income</small>
-        <strong id="income">₹0.00</strong>
-      </div>
+      <div class="money"><small>Available Balance</small><strong id="balance">₹0.00</strong></div>
+      <div class="money"><small>Total Income</small><strong id="income">₹0.00</strong></div>
     </div>
   </div>
 
@@ -804,97 +309,39 @@ button{cursor:pointer}
   <div class="title">Available Plans</div>
 
   <div class="plan">
-    <div class="plan-top">
-      <div class="plan-name">Starter Plan</div>
-      <div class="badge">AVAILABLE</div>
-    </div>
-
+    <div class="plan-top"><div class="plan-name">Starter Plan</div><div class="badge">AVAILABLE</div></div>
     <div class="price">₹1,000</div>
-
     <div class="plan-grid">
-      <div class="info">
-        <small>Duration</small>
-        <b>7 Days</b>
-      </div>
-      <div class="info">
-        <small>Illustrative Figure</small>
-        <b>₹50 / day</b>
-      </div>
-      <div class="info">
-        <small>Plan Type</small>
-        <b>Starter</b>
-      </div>
-      <div class="info">
-        <small>Status</small>
-        <b>Available</b>
-      </div>
+      <div class="info"><small>Duration</small><b>7 Days</b></div>
+      <div class="info"><small>Illustrative Figure</small><b>₹50 / day</b></div>
+      <div class="info"><small>Plan Type</small><b>Starter</b></div>
+      <div class="info"><small>Status</small><b>Available</b></div>
     </div>
-
-    <button class="btn" style="margin-top:12px" onclick="openRecharge()">
-      Continue
-    </button>
+    <button class="btn" style="margin-top:12px" onclick="openRecharge()">Continue</button>
   </div>
-
 
   <div class="plan">
-    <div class="plan-top">
-      <div class="plan-name">Growth Plan</div>
-      <div class="badge">AVAILABLE</div>
-    </div>
-
+    <div class="plan-top"><div class="plan-name">Growth Plan</div><div class="badge">AVAILABLE</div></div>
     <div class="price">₹5,000</div>
-
     <div class="plan-grid">
-      <div class="info">
-        <small>Duration</small>
-        <b>15 Days</b>
-      </div>
-      <div class="info">
-        <small>Illustrative Figure</small>
-        <b>₹300 / day</b>
-      </div>
-      <div class="info">
-        <small>Plan Type</small>
-        <b>Growth</b>
-      </div>
-      <div class="info">
-        <small>Status</small>
-        <b>Available</b>
-      </div>
+      <div class="info"><small>Duration</small><b>15 Days</b></div>
+      <div class="info"><small>Illustrative Figure</small><b>₹300 / day</b></div>
+      <div class="info"><small>Plan Type</small><b>Growth</b></div>
+      <div class="info"><small>Status</small><b>Available</b></div>
     </div>
-
-    <button class="btn" style="margin-top:12px" onclick="openRecharge()">
-      Continue
-    </button>
+    <button class="btn" style="margin-top:12px" onclick="openRecharge()">Continue</button>
   </div>
-
 </div>
 </main>
 
-
-<!-- ================= TEAM ================= -->
 <main id="team" class="page">
 <div class="wrap">
-
   <div class="title">My Team</div>
-
   <div class="stats">
-    <div class="stat">
-      <small>Team Size</small>
-      <b>24</b>
-    </div>
-    <div class="stat">
-      <small>Active Members</small>
-      <b>18</b>
-    </div>
-    <div class="stat">
-      <small>LV1</small>
-      <b>12</b>
-    </div>
-    <div class="stat">
-      <small>LV2</small>
-      <b>8</b>
-    </div>
+    <div class="stat"><small>Team Size</small><b>24</b></div>
+    <div class="stat"><small>Active Members</small><b>18</b></div>
+    <div class="stat"><small>LV1</small><b>12</b></div>
+    <div class="stat"><small>LV2</small><b>8</b></div>
   </div>
 
   <div class="tabs">
@@ -905,97 +352,78 @@ button{cursor:pointer}
   </div>
 
   <div class="card">
-    <div class="member" data-level="lv1">
-      <div class="member-icon">A</div>
-      <div class="member-info">
-        <b>User A</b>
-        <small>LV1 · Active</small>
-      </div>
-      <span class="value">Active</span>
-    </div>
-
-    <div class="member" data-level="lv1">
-      <div class="member-icon">R</div>
-      <div class="member-info">
-        <b>User R</b>
-        <small>LV1 · Active</small>
-      </div>
-      <span class="value">Active</span>
-    </div>
-
-    <div class="member" data-level="lv2">
-      <div class="member-icon">S</div>
-      <div class="member-info">
-        <b>User S</b>
-        <small>LV2 · Active</small>
-      </div>
-      <span class="value">Active</span>
-    </div>
-
-    <div class="member" data-level="lv3">
-      <div class="member-icon">M</div>
-      <div class="member-info">
-        <b>User M</b>
-        <small>LV3 · Active</small>
-      </div>
-      <span class="value">Active</span>
-    </div>
+    <div class="member" data-level="lv1"><div class="member-icon">A</div><div class="member-info"><b>User A</b><small>LV1 · Active</small></div><span class="value">Active</span></div>
+    <div class="member" data-level="lv1"><div class="member-icon">R</div><div class="member-info"><b>User R</b><small>LV1 · Active</small></div><span class="value">Active</span></div>
+    <div class="member" data-level="lv2"><div class="member-icon">S</div><div class="member-info"><b>User S</b><small>LV2 · Active</small></div><span class="value">Active</span></div>
+    <div class="member" data-level="lv3"><div class="member-icon">M</div><div class="member-info"><b>User M</b><small>LV3 · Active</small></div><span class="value">Active</span></div>
   </div>
-
 </div>
 </main>
 
-
-<!-- ================= SHARE ================= -->
 <main id="share" class="page">
 <div class="wrap">
-
   <div class="title">Share & Referral</div>
-
   <div class="card" style="text-align:center">
     <div class="qr"></div>
-
     <div class="muted">Your Referral Code</div>
     <div class="share-code" id="refCode">NIG2026</div>
-
     <button class="copy" onclick="copyCode()">Copy Code</button>
-
     <div class="muted" style="margin-top:20px">Referral Link</div>
-
     <div class="link-box">
       <input id="refLink" readonly>
       <button class="copy" onclick="copyLink()">Copy</button>
     </div>
   </div>
-
   <div class="card">
-    <div class="row">
-      <span class="bold">Referral Members</span>
-      <span class="value">24</span>
-    </div>
-    <div class="row">
-      <span class="bold">LV1 Members</span>
-      <span>12</span>
-    </div>
-    <div class="row">
-      <span class="bold">LV2 Members</span>
-      <span>8</span>
-    </div>
-    <div class="row">
-      <span class="bold">LV3 Members</span>
-      <span>4</span>
-    </div>
+    <div class="row"><span class="bold">Referral Members</span><span class="value">24</span></div>
+    <div class="row"><span class="bold">LV1 Members</span><span>12</span></div>
+    <div class="row"><span class="bold">LV2 Members</span><span>8</span></div>
+    <div class="row"><span class="bold">LV3 Members</span><span>4</span></div>
   </div>
-
 </div>
 </main>
 
-
-<!-- ================= DEVICES ================= -->
 <main id="devices" class="page">
 <div class="wrap">
-
   <div class="title">My Devices</div>
 
   <div class="device">
-    <div class
+    <div class="row">
+      <div style="display:flex;gap:11px;align-items:center">
+        <div class="device-icon">📱</div>
+        <div><div class="device-name">Starter Plan</div><div class="muted">Plan ID: STARTER-001</div></div>
+      </div>
+    </div>
+    <span class="device-status">ACTIVE</span>
+    <div class="row" style="margin-top:14px"><span class="muted">Start Date</span><span>—</span></div>
+    <div class="row"><span class="muted">Expiry Date</span><span>—</span></div>
+  </div>
+
+  <div class="device">
+    <div class="row">
+      <div style="display:flex;gap:11px;align-items:center">
+        <div class="device-icon">📱</div>
+        <div><div class="device-name">Growth Plan</div><div class="muted">Plan ID: GROWTH-001</div></div>
+      </div>
+    </div>
+    <span class="device-status">AVAILABLE</span>
+  </div>
+</div>
+</main>
+
+<main id="my" class="page">
+<div class="wrap">
+  <div class="profile">
+    <div class="profile-icon" id="profileInitial">U</div>
+    <div style="font-size:19px;font-weight:900" id="profileName">User</div>
+    <div style="font-size:12px;opacity:.8" id="profileUser">User</div>
+  </div>
+
+  <div class="menu">
+    <div class="menu-item" onclick="openRecharge()"><div class="menu-left"><div class="menu-icon">💳</div>Recharge</div><span class="arrow">›</span></div>
+    <div class="menu-item" onclick="openWithdraw()"><div class="menu-left"><div class="menu-icon">💸</div>Withdraw</div><span class="arrow">›</span></div>
+    <div class="menu-item" onclick="go('devices')"><div class="menu-left"><div class="menu-icon">📱</div>Devices</div><span class="arrow">›</span></div>
+    <div class="menu-item" onclick="toast('Bank account section will be connected to the backend.')"><div class="menu-left"><div class="menu-icon">🏦</div>Bank Account</div><span class="arrow">›</span></div>
+    <div class="menu-item" onclick="toast('Income details will be connected to the backend.')"><div class="menu-left"><div class="menu-icon">📄</div>Income Details</div><span class="arrow">›</span></div>
+    <div class="menu-item" onclick="toast('Recharge details will be connected to the backend.')"><div class="menu-left"><div class="menu-icon">💰</div>Recharge Details</div><span class="arrow">›</span></div>
+    <div class="menu-item" onclick="toast('Withdrawal details will be connected to the backend.')"><div
