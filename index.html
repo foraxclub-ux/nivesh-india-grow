@@ -240,7 +240,25 @@ localStorage.setItem(USER_KEY,JSON.stringify(data)); localStorage.setItem(SESSIO
    document.getElementById('auth').style.display='none'; document.getElementById('app').style.display='block'; document.getElementById('bottomNav').style.display='grid';
    const initial=(data.name||'N').charAt(0).toUpperCase(); document.getElementById('welcome').textContent='Welcome, '+data.name; document.getElementById('avatar').textContent=initial; document.getElementById('profileAvatar').textContent=initial; document.getElementById('profileName').textContent=data.name; document.getElementById('profileUser').textContent=data.user;
    const bal=Number(data.balance||0), inc=Number(data.income||0); document.getElementById('balance').textContent='₹'+bal.toLocaleString('en-IN'); document.getElementById('income').textContent='₹'+inc.toLocaleString('en-IN'); document.getElementById('teamCount').textContent=data.team||0; document.getElementById('myBalance').textContent='₹'+bal.toLocaleString('en-IN'); document.getElementById('myIncome').textContent='₹'+inc.toLocaleString('en-IN');
-   const base=location.origin+location.pathname.replace(/index\.html$/,''); document.getElementById('refLink').value=base+'?ref=NIG2026';
+const base=location.origin+location.pathname.replace(/index\.html$/,'');
+const refCode=data.refCode||'NIG'+String(data.user||'USER').replace(/[^a-zA-Z0-9]/g,'').toUpperCase().slice(0,8)+'1000';
+
+document.getElementById('refCode').value=refCode;
+document.getElementById('refLink').value=base+'?ref='+refCode;
+
+document.getElementById('teamRefCode').value=refCode;
+document.getElementById('teamRefLink').value=base+'?ref='+refCode;
+
+document.getElementById('commission').textContent='₹'+Number(data.commission||0).toLocaleString('en-IN');
+document.getElementById('salaryBonus').textContent='₹'+Number(data.salaryBonus||0).toLocaleString('en-IN');
+
+const teamSize=Number(data.team||0);
+document.getElementById('teamSize').textContent=teamSize;
+document.getElementById('bonusMembers').textContent=teamSize;
+document.getElementById('bonusStatus').textContent=teamSize+' / 50 members';
+
+const progress=Math.min((teamSize/50)*100,100);
+document.getElementById('bonusProgress').style.width=progress+'%';   
  }
  window.logout=function(){localStorage.removeItem(SESSION_KEY);document.getElementById('app').style.display='none';document.getElementById('bottomNav').style.display='none';document.getElementById('auth').style.display='flex';document.getElementById('loginUser').value='';document.getElementById('loginPass').value='';showLogin();toast('Logged out.');};
  window.showPage=function(id,btn){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.nav').forEach(x=>x.classList.remove('active'));if(btn)btn.classList.add('active');else{const b=[...document.querySelectorAll('.nav')].find(x=>x.getAttribute('onclick')&&x.getAttribute('onclick').includes("'"+id+"'"));if(b)b.classList.add('active')}window.scrollTo(0,0)};
