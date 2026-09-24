@@ -1,1177 +1,128 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#073b4c">
 <meta name="description" content="Nivesh India Grow account management platform">
 <title>Nivesh India Grow</title>
-
 <style>
-:root{
-  --ocean:#0b8fa3;
-  --ocean-dark:#056b7b;
-  --ocean-deep:#073b4c;
-  --ocean-light:#18b8c7;
-  --ocean-soft:#e8f8fa;
-  --ocean-pale:#f3fbfc;
-  --ocean-border:#c8e9ee;
-  --text:#17343d;
-  --muted:#71878e;
-  --white:#ffffff;
-  --green:#16844a;
-  --danger:#c0392b;
-  --shadow:0 8px 26px rgba(5,107,123,.12);
-}
-
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:
-    radial-gradient(circle at 10% 0%,rgba(11,143,163,.10),transparent 28%),
-    linear-gradient(180deg,#f6fcfd 0%,#eef9fa 100%);
-  color:var(--text);
-  min-height:100vh;
-}
-
-button,input{
-  font:inherit;
-}
-
-button{
-  cursor:pointer;
-}
-
-.hidden{
-  display:none!important;
-}
-
-/* ================= AUTH ================= */
-
-#auth{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:22px 16px;
-  background:
-    radial-gradient(circle at 15% 10%,rgba(255,255,255,.15),transparent 25%),
-    radial-gradient(circle at 90% 90%,rgba(24,184,199,.20),transparent 30%),
-    linear-gradient(135deg,#073b4c 0%,#0b8fa3 55%,#18aabd 100%);
-}
-
-.auth-card{
-  width:100%;
-  max-width:440px;
-  background:rgba(255,255,255,.98);
-  border:1px solid rgba(255,255,255,.65);
-  border-radius:30px;
-  padding:34px 28px 28px;
-  box-shadow:0 28px 80px rgba(0,0,0,.25);
-}
-
-.brand{
-  text-align:center;
-  color:var(--ocean-deep);
-  font-size:30px;
-  font-weight:900;
-  letter-spacing:-1px;
-}
-
-.brand-sub{
-  text-align:center;
-  color:var(--muted);
-  font-size:14px;
-  margin:7px 0 30px;
-}
-
-.auth-title{
-  font-size:25px;
-  font-weight:900;
-  margin-bottom:7px;
-  color:var(--ocean-deep);
-}
-
-.auth-desc{
-  font-size:14px;
-  color:var(--muted);
-  margin-bottom:21px;
-}
-
-.field{
-  margin-bottom:16px;
-}
-
-.field label{
-  display:block;
-  font-size:14px;
-  font-weight:800;
-  margin-bottom:7px;
-  color:#25454d;
-}
-
-.field input{
-  width:100%;
-  height:53px;
-  border:1.5px solid #d5e8eb;
-  border-radius:15px;
-  padding:0 15px;
-  outline:none;
-  background:#f8fcfd;
-  color:var(--text);
-  font-size:15px;
-  transition:.2s ease;
-}
-
-.field input:focus{
-  border-color:var(--ocean);
-  background:#fff;
-  box-shadow:0 0 0 4px rgba(11,143,163,.10);
-}
-
-.btn{
-  width:100%;
-  min-height:52px;
-  border:0;
-  border-radius:15px;
-  background:linear-gradient(135deg,var(--ocean-dark),var(--ocean));
-  color:white;
-  font-weight:900;
-  box-shadow:0 8px 20px rgba(11,143,163,.24);
-  transition:.2s ease;
-}
-
-.btn:hover{
-  transform:translateY(-1px);
-  box-shadow:0 11px 24px rgba(11,143,163,.30);
-}
-
-.btn:active{
-  transform:scale(.98);
-}
-
-.btn-light{
-  width:100%;
-  min-height:48px;
-  border:1px solid var(--ocean-border);
-  border-radius:14px;
-  background:var(--ocean-soft);
-  color:var(--ocean-dark);
-  font-weight:800;
-  margin-top:10px;
-}
-
-.switch{
-  text-align:center;
-  color:var(--muted);
-  font-size:14px;
-  margin-top:20px;
-}
-
-.switch b{
-  color:var(--ocean-dark);
-  cursor:pointer;
-}
-
-/* ================= APP ================= */
-
-#app{
-  display:none;
-  min-height:100vh;
-  padding-bottom:82px;
-}
-
-.top{
-  height:64px;
-  background:linear-gradient(135deg,var(--ocean-deep),var(--ocean));
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 17px;
-  position:sticky;
-  top:0;
-  z-index:20;
-  box-shadow:0 6px 20px rgba(5,107,123,.20);
-}
-
-.top-title{
-  font-size:19px;
-  font-weight:900;
-}
-
-.avatar{
-  width:40px;
-  height:40px;
-  border-radius:50%;
-  background:rgba(255,255,255,.18);
-  border:1px solid rgba(255,255,255,.30);
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:900;
-}
-
-.page{
-  display:none;
-}
-
-.page.active{
-  display:block;
-}
-
-.wrap{
-  width:100%;
-  max-width:470px;
-  margin:auto;
-  padding:17px;
-}
-
-.title{
-  font-size:21px;
-  font-weight:900;
-  margin:5px 0 15px;
-  color:var(--ocean-deep);
-}
-
-/* ================= HOME ================= */
-
-.hero{
-  background:
-    radial-gradient(circle at 90% 10%,rgba(255,255,255,.18),transparent 26%),
-    linear-gradient(135deg,var(--ocean-deep),var(--ocean));
-  color:#fff;
-  border-radius:23px;
-  padding:21px;
-  margin-bottom:16px;
-  box-shadow:0 12px 32px rgba(5,107,123,.20);
-}
-
-.hero-small{
-  font-size:13px;
-  opacity:.82;
-}
-
-.hero-name{
-  font-size:27px;
-  font-weight:900;
-  margin-top:4px;
-}
-
-.money-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  margin-top:18px;
-}
-
-.money{
-  background:rgba(255,255,255,.12);
-  border:1px solid rgba(255,255,255,.15);
-  border-radius:15px;
-  padding:12px;
-}
-
-.money small{
-  font-size:10px;
-  opacity:.85;
-}
-
-.money strong{
-  display:block;
-  font-size:18px;
-  margin-top:4px;
-}
-
-.announcement{
-  background:linear-gradient(135deg,#e8f8fa,#f8fdfe);
-  border:1px solid var(--ocean-border);
-  border-radius:16px;
-  padding:14px;
-  margin-bottom:17px;
-  font-size:13px;
-  color:var(--ocean-deep);
-  line-height:1.5;
-}
-
-.announcement b{
-  color:var(--ocean-dark);
-}
-
-.plan{
-  position:relative;
-  overflow:hidden;
-  background:#fff;
-  border:1px solid var(--ocean-border);
-  border-radius:20px;
-  padding:17px;
-  margin-bottom:14px;
-  box-shadow:var(--shadow);
-  transition:.2s ease;
-}
-
-.plan::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  height:4px;
-  background:linear-gradient(90deg,var(--ocean-dark),var(--ocean-light));
-}
-
-.plan:hover{
-  transform:translateY(-2px);
-  box-shadow:0 14px 32px rgba(5,107,123,.16);
-}
-
-.plan-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-}
-
-.plan-name{
-  font-size:18px;
-  font-weight:900;
-  color:var(--ocean-deep);
-}
-
-.badge{
-  background:var(--ocean-soft);
-  color:var(--ocean-dark);
-  border:1px solid var(--ocean-border);
-  border-radius:20px;
-  padding:5px 9px;
-  font-size:10px;
-  font-weight:900;
-}
-
-.price{
-  color:var(--ocean-dark);
-  font-size:28px;
-  font-weight:900;
-  margin:12px 0;
-}
-
-.plan-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:9px;
-}
-
-.info{
-  background:var(--ocean-pale);
-  border:1px solid #e4f3f5;
-  border-radius:12px;
-  padding:10px;
-}
-
-.info small{
-  display:block;
-  color:var(--muted);
-  font-size:10px;
-}
-
-.info b{
-  font-size:13px;
-  display:block;
-  margin-top:4px;
-  color:var(--text);
-}
-
-/* ================= CARDS ================= */
-
-.card{
-  background:#fff;
-  border:1px solid var(--ocean-border);
-  border-radius:19px;
-  padding:16px;
-  margin-bottom:13px;
-  box-shadow:var(--shadow);
-}
-
-.row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-}
-
-.row+.row{
-  margin-top:14px;
-}
-
-.muted{
-  color:var(--muted);
-  font-size:12px;
-}
-
-.bold{
-  font-weight:800;
-}
-
-.value{
-  font-weight:900;
-  color:var(--ocean-dark);
-}
-
-/* ================= TEAM ================= */
-
-.stats{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  margin-bottom:16px;
-}
-
-.stat{
-  background:#fff;
-  border:1px solid var(--ocean-border);
-  border-radius:17px;
-  padding:15px;
-  box-shadow:var(--shadow);
-}
-
-.stat small{
-  color:var(--muted);
-  font-size:11px;
-}
-
-.stat b{
-  display:block;
-  font-size:22px;
-  margin-top:4px;
-  color:var(--ocean-deep);
-}
-
-.tabs{
-  display:flex;
-  gap:8px;
-  overflow:auto;
-  margin-bottom:14px;
-  padding-bottom:2px;
-}
-
-.tab{
-  white-space:nowrap;
-  border:1px solid var(--ocean-border);
-  background:#fff;
-  color:var(--ocean-dark);
-  padding:9px 16px;
-  border-radius:20px;
-  font-size:12px;
-  font-weight:800;
-}
-
-.tab.active{
-  background:var(--ocean);
-  color:#fff;
-  border-color:var(--ocean);
-}
-
-.member{
-  display:flex;
-  align-items:center;
-  gap:11px;
-  padding:13px 0;
-  border-bottom:1px solid #e8f2f4;
-}
-
-.member:last-child{
-  border-bottom:0;
-}
-
-.member-icon{
-  width:41px;
-  height:41px;
-  border-radius:50%;
-  background:var(--ocean-soft);
-  color:var(--ocean-dark);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:900;
-}
-
-.member-info{
-  flex:1;
-}
-
-.member-info b{
-  font-size:13px;
-}
-
-.member-info small{
-  display:block;
-  color:var(--muted);
-  font-size:10px;
-  margin-top:3px;
-}
-
-/* ================= SHARE ================= */
-
-.qr{
-  width:180px;
-  height:180px;
-  margin:5px auto 18px;
-  border:9px solid #fff;
-  border-radius:9px;
-  box-shadow:0 0 0 1px var(--ocean-border),var(--shadow);
-  background:
-    repeating-linear-gradient(90deg,#12343d 0 5px,#fff 5px 10px),
-    repeating-linear-gradient(0deg,transparent 0 7px,#12343d 7px 11px);
-}
-
-.qr-label{
-  font-size:11px;
-  color:var(--muted);
-  margin-top:-10px;
-  margin-bottom:15px;
-}
-
-.share-code{
-  background:var(--ocean-pale);
-  border:1px dashed #8bcbd4;
-  border-radius:12px;
-  padding:13px;
-  text-align:center;
-  font-size:21px;
-  font-weight:900;
-  letter-spacing:2px;
-  color:var(--ocean-dark);
-  margin-bottom:10px;
-}
-
-.copy{
-  border:0;
-  background:linear-gradient(135deg,var(--ocean-dark),var(--ocean));
-  color:white;
-  padding:10px 17px;
-  border-radius:10px;
-  font-weight:800;
-}
-
-.link-box{
-  display:flex;
-  gap:7px;
-  margin-top:10px;
-}
-
-.link-box input{
-  flex:1;
-  min-width:0;
-  height:43px;
-  border:1px solid var(--ocean-border);
-  border-radius:10px;
-  padding:0 9px;
-  font-size:10px;
-  color:var(--text);
-  background:#fbfeff;
-}
-
-/* ================= DEVICES ================= */
-
-.device{
-  border:1px solid var(--ocean-border);
-  background:#fff;
-  border-radius:19px;
-  padding:16px;
-  margin-bottom:13px;
-  box-shadow:var(--shadow);
-}
-
-.device-head{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.device-icon{
-  width:47px;
-  height:47px;
-  border-radius:13px;
-  background:var(--ocean-soft);
-  color:var(--ocean-dark);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:22px;
-}
-
-.device-name{
-  font-weight:900;
-  color:var(--ocean-deep);
-}
-
-.device-status{
-  display:inline-block;
-  margin-top:7px;
-  padding:4px 8px;
-  border-radius:20px;
-  font-size:10px;
-  font-weight:800;
-  background:var(--ocean-soft);
-  color:var(--ocean-dark);
-}
-
-.progress{
-  height:8px;
-  background:#e6f3f5;
-  border-radius:20px;
-  overflow:hidden;
-  margin-top:14px;
-}
-
-.progress-bar{
-  height:100%;
-  background:linear-gradient(90deg,var(--ocean-dark),var(--ocean-light));
-  border-radius:20px;
-}
-
-/* ================= MY ================= */
-
-.profile{
-  background:
-    radial-gradient(circle at 90% 10%,rgba(255,255,255,.16),transparent 26%),
-    linear-gradient(135deg,var(--ocean-deep),var(--ocean));
-  color:white;
-  border-radius:21px;
-  padding:19px;
-  margin-bottom:16px;
-  box-shadow:var(--shadow);
-}
-
-.profile-icon{
-  width:55px;
-  height:55px;
-  border-radius:50%;
-  background:rgba(255,255,255,.18);
-  border:1px solid rgba(255,255,255,.23);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:22px;
-  font-weight:900;
-  margin-bottom:10px;
-}
-
-.profile-name{
-  font-size:20px;
-  font-weight:900;
-}
-
-.profile-user{
-  opacity:.75;
-  font-size:12px;
-  margin-top:4px;
-}
-
-.menu{
-  background:#fff;
-  border:1px solid var(--ocean-border);
-  border-radius:19px;
-  overflow:hidden;
-  box-shadow:var(--shadow);
-}
-
-.menu-title{
-  padding:13px 15px 8px;
-  font-size:11px;
-  color:var(--muted);
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:.7px;
-}
-
-.menu-item{
-  min-height:55px;
-  padding:0 15px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  border-bottom:1px solid #e8f2f4;
-  font-size:14px;
-  font-weight:700;
-  cursor:pointer;
-  transition:.15s ease;
-}
-
-.menu-item:hover{
-  background:var(--ocean-pale);
-}
-
-.menu-item:last-child{
-  border-bottom:0;
-}
-
-.menu-left{
-  display:flex;
-  align-items:center;
-  gap:11px;
-}
-
-.menu-icon{
-  width:32px;
-  height:32px;
-  border-radius:9px;
-  background:var(--ocean-soft);
-  color:var(--ocean-dark);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.arrow{
-  color:#9aa4b1;
-  font-size:20px;
-}
-
-/* ================= MODAL ================= */
-
-.modal{
-  position:fixed;
-  inset:0;
-  background:rgba(3,32,40,.55);
-  display:none;
-  align-items:flex-end;
-  justify-content:center;
-  z-index:100;
-}
-
-.modal.show{
-  display:flex;
-}
-
-.modal-box{
-  width:100%;
-  max-width:470px;
-  background:#fff;
-  border-radius:24px 24px 0 0;
-  padding:21px;
-  animation:up .2s ease;
-  box-shadow:0 -10px 40px rgba(0,0,0,.17);
-}
-
-@keyframes up{
-  from{transform:translateY(100%)}
-  to{transform:translateY(0)}
-}
-
-.modal-title{
-  font-size:20px;
-  font-weight:900;
-  margin-bottom:15px;
-  color:var(--ocean-deep);
-}
-
-.modal-note{
-  background:var(--ocean-pale);
-  border:1px solid var(--ocean-border);
-  border-radius:13px;
-  padding:12px;
-  color:var(--muted);
-  font-size:12px;
-  line-height:1.5;
-  margin-bottom:15px;
-}
-
-/* ================= NAV ================= */
-
-.bottom{
-  position:fixed;
-  left:50%;
-  transform:translateX(-50%);
-  bottom:0;
-  width:100%;
-  max-width:470px;
-  height:73px;
-  background:rgba(255,255,255,.97);
-  border-top:1px solid var(--ocean-border);
-  display:none;
-  grid-template-columns:repeat(5,1fr);
-  z-index:90;
-  box-shadow:0 -7px 22px rgba(5,107,123,.10);
-  backdrop-filter:blur(12px);
-}
-
-.nav-btn{
-  border:0;
-  background:transparent;
-  color:#819399;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  gap:4px;
-  font-size:10px;
-  font-weight:800;
-  transition:.15s ease;
-}
-
-.nav-icon{
-  font-size:20px;
-  line-height:20px;
-}
-
-.nav-btn.active{
-  color:var(--ocean);
-  background:linear-gradient(180deg,transparent,var(--ocean-soft));
-}
-
-/* ================= TOAST ================= */
-
-.toast{
-  position:fixed;
-  left:50%;
-  bottom:90px;
-  transform:translateX(-50%);
-  background:var(--ocean-deep);
-  color:white;
-  padding:11px 17px;
-  border-radius:12px;
-  font-size:12px;
-  display:none;
-  z-index:200;
-  max-width:90%;
-  text-align:center;
-  box-shadow:0 8px 25px rgba(0,0,0,.18);
-}
-
-.toast.show{
-  display:block;
-  animation:toastIn .2s ease;
-}
-
-@keyframes toastIn{
-  from{
-    opacity:0;
-    transform:translate(-50%,10px);
-  }
-  to{
-    opacity:1;
-    transform:translate(-50%,0);
-  }
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:600px){
-  body{
-    font-size:14px;
-  }
-
-  .auth-card{
-    padding:30px 22px 25px;
-    border-radius:27px;
-  }
-
-  .brand{
-    font-size:27px;
-  }
-
-  .wrap{
-    padding:14px;
-  }
-
-  .card,
-  .plan,
-  .stat,
-  .device{
-    border-radius:17px;
-  }
-
-  .bottom{
-    height:70px;
-  }
-}
+*{box-sizing:border-box}html,body{margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;background:#eef8fa;color:#073b4c}button,input{font:inherit}button{cursor:pointer;border:0}.hidden{display:none!important}
+body{min-height:100vh;background:linear-gradient(145deg,#073b4c 0%,#087f8c 46%,#11a8b5 100%)}
+.auth{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px 18px}
+.auth-card{width:min(100%,480px);background:rgba(255,255,255,.98);border-radius:34px;padding:34px 28px 30px;box-shadow:0 25px 70px rgba(0,0,0,.24)}
+.brand{text-align:center;margin-bottom:28px}.brand h1{font-size:38px;line-height:1.05;margin:0 0 12px;font-weight:800;letter-spacing:-1.4px}.brand p{margin:0;color:#789096;font-size:18px}
+.auth-title{font-size:30px;margin:26px 0 8px;font-weight:800}.auth-sub{color:#789096;font-size:17px;margin:0 0 25px}.field{margin:17px 0}.field label{display:block;font-size:17px;font-weight:700;margin-bottom:9px}.field input{width:100%;height:62px;border:2px solid #d7e8ea;border-radius:20px;padding:0 18px;outline:none;background:#fbfeff;color:#073b4c}.field input:focus{border-color:#1295a3;box-shadow:0 0 0 4px rgba(18,149,163,.1)}
+.primary{width:100%;height:62px;border-radius:20px;background:linear-gradient(135deg,#087f8c,#0ea7b5);color:white;font-weight:800;font-size:20px;box-shadow:0 12px 28px rgba(8,127,140,.24);margin-top:8px}.switch{text-align:center;margin-top:22px;color:#789096;font-size:16px}.switch button{background:none;color:#087f8c;font-weight:800;padding:0}
+.app{display:none;min-height:100vh;padding-bottom:86px;background:#f2fbfc}.top{position:sticky;top:0;z-index:10;background:linear-gradient(135deg,#073b4c,#087f8c);color:white;padding:18px 18px 20px;box-shadow:0 5px 20px rgba(0,0,0,.14)}.top-row{display:flex;align-items:center;justify-content:space-between;gap:12px}.top h2{margin:0;font-size:22px}.welcome{font-size:13px;opacity:.8;margin-top:4px}.avatar{width:44px;height:44px;border-radius:50%;background:#fff;color:#087f8c;display:grid;place-items:center;font-weight:800;font-size:18px}
+.page{display:none;padding:18px}.page.active{display:block}.wrap{max-width:760px;margin:auto}.title{font-size:27px;font-weight:800;margin:6px 0 18px}.subtitle{color:#789096;margin:-8px 0 18px}
+.hero{background:linear-gradient(135deg,#087f8c,#10a9b5);color:#fff;border-radius:26px;padding:22px;box-shadow:0 12px 28px rgba(8,127,140,.2);margin-bottom:16px}.hero .small{opacity:.8;font-size:13px}.hero .money{font-size:34px;font-weight:800;margin-top:5px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}.stat,.card,.device,.profile{background:white;border-radius:20px;padding:17px;box-shadow:0 6px 22px rgba(7,59,76,.07);border:1px solid #e0eff1}.stat b{display:block;font-size:21px;margin-bottom:5px}.stat span{font-size:12px;color:#789096}
+.section-head{display:flex;justify-content:space-between;align-items:center;margin:22px 0 12px}.section-head h3{margin:0;font-size:20px}.link{background:none;color:#087f8c;font-weight:700}
+.plans{display:grid;gap:13px}.plan{background:#fff;border:1px solid #e0eff1;border-radius:22px;padding:18px;box-shadow:0 6px 22px rgba(7,59,76,.06)}.plan-top{display:flex;justify-content:space-between;gap:12px}.plan h3{margin:0 0 7px}.price{font-size:24px;font-weight:800}.badge{display:inline-block;background:#e6f7f8;color:#087f8c;padding:6px 9px;border-radius:999px;font-size:11px;font-weight:800}.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}.plan-grid div{background:#f3fafb;border-radius:14px;padding:10px}.plan-grid small{display:block;color:#789096;font-size:10px}.plan-grid b{font-size:14px}.note{font-size:11px;color:#789096;margin-top:11px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.menu-card{background:#fff;border-radius:20px;padding:18px;border:1px solid #e0eff1;box-shadow:0 6px 22px rgba(7,59,76,.06);font-weight:700}.menu-card small{display:block;color:#789096;font-weight:400;margin-top:5px}
+.team-tabs{display:flex;gap:8px;overflow:auto;margin-bottom:14px}.tab{white-space:nowrap;background:#fff;border:1px solid #dcecee;padding:10px 14px;border-radius:999px;color:#52747b;font-weight:700}.tab.active{background:#087f8c;color:#fff;border-color:#087f8c}.member{display:flex;align-items:center;gap:12px;background:#fff;padding:14px;border-radius:18px;margin:9px 0;border:1px solid #e0eff1}.member-icon{width:40px;height:40px;border-radius:50%;background:#e6f7f8;color:#087f8c;display:grid;place-items:center;font-weight:800}.member-info{flex:1}.member-info b{display:block}.member-info small{color:#789096}.status{font-size:11px;padding:5px 8px;border-radius:999px;background:#e7f8ed;color:#23804a}
+.qr{width:180px;height:180px;margin:10px auto 18px;border-radius:18px;background:repeating-linear-gradient(45deg,#073b4c 0 4px,#fff 4px 8px);border:10px solid white;box-shadow:0 6px 20px rgba(0,0,0,.12)}.share-card{text-align:center}.codebox{display:flex;gap:8px}.codebox input{flex:1;height:52px;border:2px solid #dcecee;border-radius:14px;padding:0 12px;background:#f9fdfe;color:#073b4c;font-weight:700}.copy{height:52px;padding:0 15px;border-radius:14px;background:#087f8c;color:#fff;font-weight:700}
+.device{margin:12px 0}.device-row{display:flex;justify-content:space-between;gap:10px}.device h3{margin:0 0 6px}.device p{margin:0;color:#789096;font-size:13px}.progress{height:9px;background:#e5f0f2;border-radius:20px;overflow:hidden;margin:15px 0 7px}.progress span{display:block;height:100%;background:#0b97a5;border-radius:20px}.device-foot{display:flex;justify-content:space-between;font-size:12px;color:#789096}.coming{background:#fff6df;color:#956d15;padding:6px 9px;border-radius:999px;font-size:11px;font-weight:800}
+.profile{display:flex;align-items:center;gap:13px}.profile .avatar{background:#e6f7f8}.profile-info{flex:1}.profile-info b{font-size:18px}.profile-info small{color:#789096}.balance-card{margin-top:12px;background:linear-gradient(135deg,#073b4c,#087f8c);color:#fff;border-radius:22px;padding:18px}.balance-row{display:flex;justify-content:space-between}.balance-row div{font-size:12px;opacity:.8}.balance-row b{display:block;font-size:24px;opacity:1;margin-top:4px}.actions{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}.action{background:#fff;border:1px solid #e0eff1;border-radius:17px;padding:14px 8px;text-align:center;font-weight:700;color:#073b4c}.action small{display:block;color:#789096;font-weight:400;margin-top:4px;font-size:10px}.logout{width:100%;height:54px;border-radius:17px;background:#ffe9e9;color:#b33b3b;font-weight:800;margin-top:14px}
+.bottom{position:fixed;bottom:0;left:0;right:0;height:72px;background:rgba(255,255,255,.98);border-top:1px solid #dcecee;display:none;grid-template-columns:repeat(5,1fr);z-index:30;box-shadow:0 -8px 24px rgba(7,59,76,.08)}.nav{background:none;color:#789096;font-size:11px;padding:8px 2px}.nav span{display:block;font-size:22px;line-height:25px}.nav.active{color:#087f8c;font-weight:800}
+.modal{position:fixed;inset:0;background:rgba(0,30,38,.55);display:none;align-items:flex-end;justify-content:center;z-index:50;padding:15px}.modal-box{width:min(100%,520px);background:#fff;border-radius:26px 26px 12px 12px;padding:22px}.modal-box h3{margin:0 0 15px}.close{float:right;background:#edf7f8;border-radius:50%;width:34px;height:34px;color:#087f8c;font-size:20px}.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%) translateY(20px);background:#073b4c;color:#fff;padding:12px 16px;border-radius:13px;z-index:100;opacity:0;pointer-events:none;transition:.25s;max-width:90%;text-align:center;font-size:14px}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(max-width:420px){.auth-card{padding:30px 20px 25px}.brand h1{font-size:33px}.auth-title{font-size:27px}.stats{gap:7px}.stat{padding:13px 8px}.stat b{font-size:18px}.plan-grid{gap:5px}.actions{gap:7px}}
 </style>
 </head>
-
 <body>
-
-<!-- =========================================================
-     LOGIN / REGISTER
-========================================================= -->
-
-<section id="auth">
-
-  <div class="auth-card">
-
-    <div class="brand">Nivesh India Grow</div>
-    <div class="brand-sub">Secure account management platform</div>
-
-    <!-- LOGIN -->
-    <div id="loginBox">
-
-      <div class="auth-title">Welcome Back</div>
-
-      <div class="auth-desc">
-        Login to continue to your account.
-      </div>
-
-      <div class="field">
-        <label>Mobile / Username</label>
-        <input
-          id="loginUser"
-          type="text"
-          placeholder="Enter mobile or username"
-          autocomplete="username"
-        >
-      </div>
-
-      <div class="field">
-        <label>Password</label>
-        <input
-          id="loginPass"
-          type="password"
-          placeholder="Enter password"
-          autocomplete="current-password"
-        >
-      </div>
-
-      <button class="btn" id="loginButton">
-        Login
-      </button>
-
-      <div class="switch">
-        Don't have an account?
-        <b id="showRegisterButton">Create Account</b>
-      </div>
-
-    </div>
-
-
-    <!-- REGISTER -->
-    <div id="registerBox" class="hidden">
-
-      <div class="auth-title">Create Account</div>
-
-      <div class="auth-desc">
-        Register your account to continue.
-      </div>
-
-      <div class="field">
-        <label>Name</label>
-        <input
-          id="regName"
-          type="text"
-          placeholder="Enter your name"
-          autocomplete="name"
-        >
-      </div>
-
-      <div class="field">
-        <label>Mobile / Username</label>
-        <input
-          id="regUser"
-          type="text"
-          placeholder="Enter mobile or username"
-          autocomplete="username"
-        >
-      </div>
-
-      <div class="field">
-        <label>Password</label>
-        <input
-          id="regPass"
-          type="password"
-          placeholder="Create password"
-          autocomplete="new-password"
-        >
-      </div>
-
-      <div class="field">
-        <label>Referral Code</label>
-        <input
-          id="regRef"
-          type="text"
-          placeholder="Referral code (optional)"
-        >
-      </div>
-
-      <button class="btn" id="registerButton">
-        Create Account
-      </button>
-
-      <div class="switch">
-        Already have an account?
-        <b id="showLoginButton">Login</b>
-      </div>
-
-    </div>
-
+<section id="auth" class="auth">
+ <div class="auth-card">
+  <div class="brand"><h1>Nivesh India Grow</h1><p>Secure account management platform</p></div>
+  <div id="loginBox">
+   <h2 class="auth-title">Welcome Back</h2><p class="auth-sub">Login to continue to your account.</p>
+   <div class="field"><label>Mobile / Username</label><input id="loginUser" autocomplete="username" placeholder="Enter mobile or username"></div>
+   <div class="field"><label>Password</label><input id="loginPass" type="password" autocomplete="current-password" placeholder="Enter password"></div>
+   <button type="button" class="primary" onclick="loginUser()">Login</button>
+   <div class="switch">Don't have an account? <button type="button" onclick="showRegister()">Create Account</button></div>
   </div>
-
+  <div id="registerBox" class="hidden">
+   <h2 class="auth-title">Create Account</h2><p class="auth-sub">Create your account to continue.</p>
+   <div class="field"><label>Full Name</label><input id="regName" autocomplete="name" placeholder="Enter full name"></div>
+   <div class="field"><label>Mobile / Username</label><input id="regUser" autocomplete="username" placeholder="Enter mobile or username"></div>
+   <div class="field"><label>Password</label><input id="regPass" type="password" autocomplete="new-password" placeholder="Create password"></div>
+   <div class="field"><label>Confirm Password</label><input id="regPass2" type="password" autocomplete="new-password" placeholder="Confirm password"></div>
+   <button type="button" class="primary" onclick="registerUser()">Create Account</button>
+   <div class="switch">Already have an account? <button type="button" onclick="showLogin()">Login</button></div>
+  </div>
+ </div>
 </section>
 
+<div id="app" class="app">
+<header class="top"><div class="top-row"><div><h2>Nivesh India Grow</h2><div id="welcome" class="welcome">Welcome</div></div><div id="avatar" class="avatar">N</div></div></header>
 
-<!-- =========================================================
-     MAIN APP
-========================================================= -->
+<main id="home" class="page active"><div class="wrap">
+ <div class="title">Home</div>
+ <div class="hero"><div class="small">Available Balance</div><div class="money" id="balance">₹0</div></div>
+ <div class="stats"><div class="stat"><b id="income">₹0</b><span>Total Income</span></div><div class="stat"><b id="teamCount">0</b><span>Team Members</span></div><div class="stat"><b>Active</b><span>Account</span></div></div>
+ <div class="section-head"><h3>Plans</h3><span class="badge">Illustrative</span></div>
+ <div class="plans">
+  <div class="plan"><div class="plan-top"><div><h3>Starter Plan</h3><div class="price">₹1,000</div></div><span class="badge">7 Days</span></div><div class="plan-grid"><div><small>Daily Figure</small><b>₹50</b></div><div><small>Illustrative Total</small><b>₹1,350</b></div><div><small>Quota</small><b>Limited</b></div></div><div class="note">Figures shown here are illustrative. Connect a real backend before using financial transactions.</div></div>
+  <div class="plan"><div class="plan-top"><div><h3>Growth Plan</h3><div class="price">₹5,000</div></div><span class="coming">Coming Soon</span></div><div class="plan-grid"><div><small>Daily Figure</small><b>₹300</b></div><div><small>Illustrative Total</small><b>₹9,500</b></div><div><small>Days</small><b>15</b></div></div><div class="note">Illustrative figures only; no real return or payment is processed by this frontend.</div></div>
+ </div>
+ <div class="section-head"><h3>Announcement</h3></div><div class="card">Welcome to Nivesh India Grow. Keep your account details secure.</div>
+</div></main>
 
-<div id="app">
+<main id="team" class="page"><div class="wrap"><div class="title">My Team</div><div class="subtitle">Team overview and member levels</div>
+ <div class="stats"><div class="stat"><b>24</b><span>Team Size</span></div><div class="stat"><b>12</b><span>LV1</span></div><div class="stat"><b>8</b><span>LV2</span></div></div>
+ <div class="team-tabs"><button type="button" class="tab active" onclick="filterTeam('all',this)">All</button><button type="button" class="tab" onclick="filterTeam('LV1',this)">LV1</button><button type="button" class="tab" onclick="filterTeam('LV2',this)">LV2</button><button type="button" class="tab" onclick="filterTeam('LV3',this)">LV3</button></div>
+ <div id="members"></div></div></main>
 
-  <header class="top">
+<main id="share" class="page"><div class="wrap"><div class="title">Share</div><div class="subtitle">Your referral information</div>
+ <div class="card share-card"><div class="qr" aria-label="QR placeholder"></div><h3>Referral Code</h3><div class="codebox"><input id="refCode" value="NIG2026" readonly><button type="button" class="copy" onclick="copyText('refCode')">Copy</button></div><h3 style="margin-top:20px">Referral Link</h3><div class="codebox"><input id="refLink" readonly><button type="button" class="copy" onclick="copyText('refLink')">Copy</button></div><p class="note">This page displays referral information only. Tracking requires a server-side system.</p></div>
+ </div></main>
 
-    <div class="top-title">
-      Nivesh India Grow
-    </div>
+<main id="devices" class="page"><div class="wrap"><div class="title">My Devices</div><div class="subtitle">Active and available plans</div>
+ <div class="device"><div class="device-row"><div><h3>Starter Plan</h3><p>7 day plan</p></div><span class="badge">Active</span></div><div class="progress"><span style="width:65%"></span></div><div class="device-foot"><span>Progress 65%</span><span>₹1,000</span></div></div>
+ <div class="device"><div class="device-row"><div><h3>Growth Plan</h3><p>15 day plan</p></div><span class="coming">Coming Soon</span></div><div class="progress"><span style="width:0%"></span></div><div class="device-foot"><span>Not activated</span><span>₹5,000</span></div></div>
+ </div></main>
 
-    <div class="avatar" id="topAvatar">
-      U
-    </div>
+<main id="my" class="page"><div class="wrap"><div class="title">My Account</div>
+ <div class="profile"><div id="profileAvatar" class="avatar">N</div><div class="profile-info"><b id="profileName">User</b><small id="profileUser">Username</small></div></div>
+ <div class="balance-card"><div class="balance-row"><div>Balance<b id="myBalance">₹0</b></div><div>Total Income<b id="myIncome">₹0</b></div></div></div>
+ <div class="actions"><button type="button" class="action" onclick="openModal('Recharge')">₹<small>Recharge</small></button><button type="button" class="action" onclick="toast('Withdrawal module needs a real backend and payment setup.')">↗<small>Withdraw</small></button><button type="button" class="action" onclick="showPage('devices')">▣<small>Devices</small></button></div>
+ <div class="section-head"><h3>Account</h3></div><div class="grid2"><button type="button" class="menu-card" onclick="toast('Personal information is stored locally in this frontend.')">Personal Information<small>Profile details</small></button><button type="button" class="menu-card" onclick="toast('Income details will appear here after backend integration.')">Income Details<small>Income history</small></button><button type="button" class="menu-card" onclick="toast('Recharge details need backend integration.')">Recharge Details<small>Recharge history</small></button><button type="button" class="menu-card" onclick="toast('Withdrawal details need backend integration.')">Withdrawal Details<small>Withdrawal history</small></button><button type="button" class="menu-card" onclick="toast('About Nivesh India Grow')">About Us<small>Platform information</small></button><button type="button" class="menu-card" onclick="downloadApp()">Download<small>App package</small></button></div>
+ <button type="button" class="logout" onclick="logout()">Log Out</button>
+ </div></main>
 
-  </header>
+<nav class="bottom" id="bottomNav"><button type="button" class="nav active" onclick="showPage('home',this)"><span>⌂</span>Home</button><button type="button" class="nav" onclick="showPage('team',this)"><span>♙</span>Team</button><button type="button" class="nav" onclick="showPage('share',this)"><span>↗</span>Share</button><button type="button" class="nav" onclick="showPage('devices',this)"><span>▣</span>Devices</button><button type="button" class="nav" onclick="showPage('my',this)"><span>●</span>My</button></nav>
+</div>
 
-
-  <!-- =====================================================
-       HOME
-  ====================================================== -->
-
-  <main id="home" class="page active">
-
-    <div class="wrap">
-
-      <div class="hero">
-
-        <div class="hero-small">
-          Welcome back
-        </div>
-
-        <div class="hero-name" id="welcomeName">
-          User
-        </div>
-
-        <div class="money-grid">
-
-          <div class="money">
-            <small>Available Balance</small>
-            <strong id="balance">₹0.00</strong>
-          </div>
-
-          <div class="money">
-            <small>Total Income</small>
-            <strong id="income">₹0.00</strong>
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="announcement">
-
-        <b>📢 Announcement</b><br>
-
-        Keep your account information updated and use only
-        authorized payment methods.
-
-      </div>
-
-
-      <div class="title">
-        Available Plans
-      </div>
-
-
-      <!-- STARTER PLAN -->
-
-      <div class="plan">
-
-        <div class="plan-top">
-
-          <div class="plan-name">
-            Starter Plan
-          </div>
-
-          <div class="badge">
-            AVAILABLE
-          </div>
-
-        </div>
-
-        <div class="price">
-          ₹1,000
-        </div>
-
-        <div class="plan-grid">
-
-          <div class="info">
-            <small>Duration</small>
-            <b>7 Days</b>
-          </div>
-
-          <div class="info">
-            <small>Illustrative Figure</small>
-            <b>₹50 / day</b>
-          </div>
-
-          <div class="info">
-            <small>Plan Type</small>
-            <b>Starter</b>
-          </div>
-
-          <div class="info">
-            <small>Status</small>
-            <b>Available</b>
-          </div>
-
-        </div>
-
-        <button
-          class="btn"
-          style="margin-top:13px"
-          onclick="openRecharge('Starter Plan','₹1,000')"
-        >
-          Continue
-        </button>
-
-      </div>
-
-
-      <!-- GROWTH PLAN -->
-
-      <div class="plan">
-
-        <div class="plan-top">
-
-          <div class="plan-name">
-            Growth Plan
-          </div>
-
-          <div class="badge">
-            AVAILABLE
-          </div>
-
-        </div>
-
-        <div class="price">
-          ₹5,000
-        </div>
-
-        <div class="plan-grid">
-
-          <div class="info">
-            <small>Duration</small>
-            <b>15 Days</b>
-          </div>
-
-          <div class="info">
-            <small>Illustrative Figure</small>
-            <b>₹300 / day</b>
-          </div>
-
-          <div class="info">
+<div id="modal" class="modal"><div class="modal-box"><button type="button" class="close" onclick="closeModal()">×</button><h3 id="modalTitle">Recharge</h3><p class="subtitle">This frontend does not process real payments.</p><div class="field"><label>Amount</label><input id="rechargeAmount" type="number" min="1" placeholder="Enter amount"></div><button type="button" class="primary" onclick="submitRecharge()">Continue</button></div></div>
+<div id="toast" class="toast"></div>
+<script>
+(function(){
+ const USER_KEY='nig_user_v2', SESSION_KEY='nig_session_v2';
+ window.showRegister=function(){document.getElementById('loginBox').classList.add('hidden');document.getElementById('registerBox').classList.remove('hidden')};
+ window.showLogin=function(){document.getElementById('registerBox').classList.add('hidden');document.getElementById('loginBox').classList.remove('hidden')};
+ function getUser(){try{return JSON.parse(localStorage.getItem(USER_KEY)||'null')}catch(e){return null}}
+ window.registerUser=function(){
+   const name=document.getElementById('regName').value.trim(), user=document.getElementById('regUser').value.trim(), p=document.getElementById('regPass').value, p2=document.getElementById('regPass2').value;
+   if(!name||!user||!p||!p2)return toast('Please fill all fields.');
+   if(user.length<3)return toast('Username/mobile must be at least 3 characters.');
+   if(p.length<4)return toast('Password must be at least 4 characters.');
+   if(p!==p2)return toast('Passwords do not match.');
+   if(getUser())return toast('An account already exists on this browser. Please login.');
+   const data={name,user,password:p,balance:0,income:0,team:0}; localStorage.setItem(USER_KEY,JSON.stringify(data)); localStorage.setItem(SESSION_KEY,'1'); showApp(); toast('Account created successfully.');
+ };
+ window.loginUser=function(){
+   const u=document.getElementById('loginUser').value.trim(), p=document.getElementById('loginPass').value, data=getUser();
+   if(!u||!p)return toast('Enter username/mobile and password.');
+   if(!data)return toast('No account found. Tap Create Account first.');
+   if(data.user!==u||data.password!==p)return toast('Incorrect username/mobile or password.');
+   localStorage.setItem(SESSION_KEY,'1'); showApp(); toast('Login successful.');
+ };
+ function showApp(){
+   const data=getUser(); if(!data){showLogin();return}
+   document.getElementById('auth').style.display='none'; document.getElementById('app').style.display='block'; document.getElementById('bottomNav').style.display='grid';
+   const initial=(data.name||'N').charAt(0).toUpperCase(); document.getElementById('welcome').textContent='Welcome, '+data.name; document.getElementById('avatar').textContent=initial; document.getElementById('profileAvatar').textContent=initial; document.getElementById('profileName').textContent=data.name; document.getElementById('profileUser').textContent=data.user;
+   const bal=Number(data.balance||0), inc=Number(data.income||0); document.getElementById('balance').textContent='₹'+bal.toLocaleString('en-IN'); document.getElementById('income').textContent='₹'+inc.toLocaleString('en-IN'); document.getElementById('teamCount').textContent=data.team||0; document.getElementById('myBalance').textContent='₹'+bal.toLocaleString('en-IN'); document.getElementById('myIncome').textContent='₹'+inc.toLocaleString('en-IN');
+   const base=location.origin+location.pathname.replace(/index\.html$/,''); document.getElementById('refLink').value=base+'?ref=NIG2026';
+ }
+ window.logout=function(){localStorage.removeItem(SESSION_KEY);document.getElementById('app').style.display='none';document.getElementById('bottomNav').style.display='none';document.getElementById('auth').style.display='flex';document.getElementB
        
