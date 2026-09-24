@@ -224,7 +224,9 @@ body{min-height:100vh;background:linear-gradient(145deg,#073b4c 0%,#087f8c 46%,#
    if(p.length<4)return toast('Password must be at least 4 characters.');
    if(p!==p2)return toast('Passwords do not match.');
    if(getUser())return toast('An account already exists on this browser. Please login.');
-   const data={name,user,password:p,balance:0,income:0,team:0}; localStorage.setItem(USER_KEY,JSON.stringify(data)); localStorage.setItem(SESSION_KEY,'1'); showApp(); toast('Account created successfully.');
+const refCode='NIG'+user.replace(/[^a-zA-Z0-9]/g,'').toUpperCase().slice(0,8)+Math.floor(1000+Math.random()*9000);
+const data={name,user,password:p,balance:0,income:0,team:0,refCode:refCode,commission:0,salaryBonus:0};
+localStorage.setItem(USER_KEY,JSON.stringify(data)); localStorage.setItem(SESSION_KEY,'1'); showApp(); toast('Account created successfully.');    
  };
  window.loginUser=function(){
    const u=document.getElementById('loginUser').value.trim(), p=document.getElementById('loginPass').value, data=getUser();
