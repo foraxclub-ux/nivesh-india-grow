@@ -1,13 +1,13 @@
-<!doctype html><html lang="hi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Nivesh India Grow - Copy Code</title><style>body{font-family:Arial;margin:0;padding:16px;background:#eef8fa}h2{color:#073b4c}button{width:100%;height:52px;border:0;border-radius:12px;background:#087f8c;color:#fff;font-size:18px;font-weight:700;margin-bottom:12px}textarea{width:100%;height:75vh;box-sizing:border-box;border:1px solid #ccc;border-radius:12px;padding:12px;font-family:monospace;font-size:12px;background:#fff}</style><h2>Nivesh India Grow — Complete Code</h2><button onclick="copyAll()">📋 Copy Full Code</button><textarea id="code" spellcheck="false">&lt;!doctype html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-&lt;meta charset=&quot;utf-8&quot;&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,viewport-fit=cover&quot;&gt;
-&lt;meta name=&quot;theme-color&quot; content=&quot;#073b4c&quot;&gt;
-&lt;meta name=&quot;description&quot; content=&quot;Nivesh India Grow account management platform&quot;&gt;
-&lt;title&gt;Nivesh India Grow&lt;/title&gt;
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#073b4c">
+<meta name="description" content="Nivesh India Grow account management platform">
+<title>Nivesh India Grow</title>
 
-&lt;style&gt;
+<style>
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;background:#eef8fa;color:#073b4c}
 button,input{font:inherit}
@@ -610,324 +610,1627 @@ body{
   .plan-grid{gap:5px}
   .actions{gap:7px}
 }
-&lt;/style&gt;
-&lt;/head&gt;
+</style>
+</head>
 
-&lt;body&gt;
+<body>
 
-&lt;section id=&quot;auth&quot; class=&quot;auth&quot;&gt;
- &lt;div class=&quot;auth-card&quot;&gt;
+<section id="auth" class="auth">
+ <div class="auth-card">
 
-  &lt;div class=&quot;brand&quot;&gt;
-   &lt;h1&gt;Nivesh India Grow&lt;/h1&gt;
-   &lt;p&gt;Secure account management platform&lt;/p&gt;
-  &lt;/div&gt;
+  <div class="brand">
+   <h1>Nivesh India Grow</h1>
+   <p>Secure account management platform</p>
+  </div>
 
-  &lt;div id=&quot;loginBox&quot;&gt;
-   &lt;h2 class=&quot;auth-title&quot;&gt;Welcome Back&lt;/h2&gt;
-   &lt;p class=&quot;auth-sub&quot;&gt;Login to continue to your account.&lt;/p&gt;
+  <div id="loginBox">
+   <h2 class="auth-title">Welcome Back</h2>
+   <p class="auth-sub">Login to continue to your account.</p>
 
-   &lt;div class=&quot;field&quot;&gt;
-    &lt;label&gt;Mobile / Username&lt;/label&gt;
-    &lt;input id=&quot;loginUser&quot; autocomplete=&quot;username&quot; placeholder=&quot;Enter mobile or username&quot;&gt;
-   &lt;/div&gt;
+   <div class="field">
+    <label>Mobile / Username</label>
+    <input id="loginUser" autocomplete="username" placeholder="Enter mobile or username">
+   </div>
 
-   &lt;div class=&quot;field&quot;&gt;
-    &lt;label&gt;Password&lt;/label&gt;
-    &lt;input id=&quot;loginPass&quot; type=&quot;password&quot; autocomplete=&quot;current-password&quot; placeholder=&quot;Enter password&quot;&gt;
-   &lt;/div&gt;
+   <div class="field">
+    <label>Password</label>
+    <input id="loginPass" type="password" autocomplete="current-password" placeholder="Enter password">
+   </div>
 
-   &lt;button type=&quot;button&quot; class=&quot;primary&quot; id=&quot;loginBtn&quot;&gt;Login&lt;/button&gt;
+   <button type="button" class="primary" id="loginBtn">Login</button>
 
-   &lt;div class=&quot;switch&quot;&gt;
-    Don&#x27;t have an account?
-    &lt;button type=&quot;button&quot; id=&quot;showRegisterBtn&quot;&gt;Create Account&lt;/button&gt;
-   &lt;/div&gt;
-  &lt;/div&gt;
+   <div class="switch">
+    Don't have an account?
+    <button type="button" id="showRegisterBtn">Create Account</button>
+   </div>
+  </div>
 
-  &lt;div id=&quot;registerBox&quot; class=&quot;hidden&quot;&gt;
-   &lt;h2 class=&quot;auth-title&quot;&gt;Create Account&lt;/h2&gt;
-   &lt;p class=&quot;auth-sub&quot;&gt;Create your account to continue.&lt;/p&gt;
+  <div id="registerBox" class="hidden">
+   <h2 class="auth-title">Create Account</h2>
+   <p class="auth-sub">Create your account to continue.</p>
 
-   &lt;div class=&quot;field&quot;&gt;
-    &lt;label&gt;Full Name&lt;/label&gt;
-    &lt;input id=&quot;regName&quot; autocomplete=&quot;name&quot; placeholder=&quot;Enter full name&quot;&gt;
-   &lt;/div&gt;
+   <div class="field">
+    <label>Full Name</label>
+    <input id="regName" autocomplete="name" placeholder="Enter full name">
+   </div>
 
-   &lt;div class=&quot;field&quot;&gt;
-    &lt;label&gt;Mobile / Username&lt;/label&gt;
-    &lt;input id=&quot;regUser&quot; autocomplete=&quot;username&quot; placeholder=&quot;Enter mobile or username&quot;&gt;
-   &lt;/div&gt;
+   <div class="field">
+    <label>Mobile / Username</label>
+    <input id="regUser" autocomplete="username" placeholder="Enter mobile or username">
+   </div>
 
-   &lt;div class=&quot;field&quot;&gt;
-    &lt;label&gt;Password&lt;/label&gt;
-    &lt;input id=&quot;regPass&quot; type=&quot;password&quot; autocomplete=&quot;new-password&quot; placeholder=&quot;Create password&quot;&gt;
-   &lt;/div&gt;
+   <div class="field">
+    <label>Password</label>
+    <input id="regPass" type="password" autocomplete="new-password" placeholder="Create password">
+   </div>
 
-   &lt;div class=&quot;field&quot;&gt;
-    &lt;label&gt;Confirm Password&lt;/label&gt;
-    &lt;input id=&quot;regPass2&quot; type=&quot;password&quot; autocomplete=&quot;new-password&quot; placeholder=&quot;Confirm password&quot;&gt;
-   &lt;/div&gt;
+   <div class="field">
+    <label>Confirm Password</label>
+    <input id="regPass2" type="password" autocomplete="new-password" placeholder="Confirm password">
+   </div>
 
-   &lt;button type=&quot;button&quot; class=&quot;primary&quot; id=&quot;registerBtn&quot;&gt;Create Account&lt;/button&gt;
+   <div class="field">
+    <label>Referral Code</label>
+    <input id="regRef" readonly placeholder="Referral code will appear automatically">
+   </div>
 
-   &lt;div class=&quot;switch&quot;&gt;
+   <button type="button" class="primary" id="registerBtn">Create Account</button>
+
+   <div class="switch">
     Already have an account?
-    &lt;button type=&quot;button&quot; id=&quot;showLoginBtn&quot;&gt;Login&lt;/button&gt;
-   &lt;/div&gt;
-  &lt;/div&gt;
+    <button type="button" id="showLoginBtn">Login</button>
+   </div>
+  </div>
 
- &lt;/div&gt;
-&lt;/section&gt;
-
-
-&lt;div id=&quot;app&quot; class=&quot;app&quot;&gt;
-
-&lt;header class=&quot;top&quot;&gt;
- &lt;div class=&quot;top-row&quot;&gt;
-  &lt;div&gt;
-   &lt;h2&gt;Nivesh India Grow&lt;/h2&gt;
-   &lt;div id=&quot;welcome&quot; class=&quot;welcome&quot;&gt;Welcome&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div id=&quot;avatar&quot; class=&quot;avatar&quot;&gt;N&lt;/div&gt;
- &lt;/div&gt;
-&lt;/header&gt;
+ </div>
+</section>
 
 
-&lt;!-- HOME --&gt;
-&lt;main id=&quot;home&quot; class=&quot;page active&quot;&gt;
-&lt;div class=&quot;wrap&quot;&gt;
+<div id="app" class="app">
 
- &lt;div class=&quot;title&quot;&gt;Home&lt;/div&gt;
-
- &lt;div class=&quot;hero&quot;&gt;
-  &lt;div class=&quot;small&quot;&gt;Available Balance&lt;/div&gt;
-  &lt;div class=&quot;money&quot; id=&quot;balance&quot;&gt;₹0&lt;/div&gt;
- &lt;/div&gt;
-
- &lt;div class=&quot;stats&quot;&gt;
-  &lt;div class=&quot;stat&quot;&gt;
-   &lt;b id=&quot;income&quot;&gt;₹0&lt;/b&gt;
-   &lt;span&gt;Total Income&lt;/span&gt;
-  &lt;/div&gt;
-
-  &lt;div class=&quot;stat&quot;&gt;
-   &lt;b id=&quot;teamCount&quot;&gt;0&lt;/b&gt;
-   &lt;span&gt;Team Members&lt;/span&gt;
-  &lt;/div&gt;
-
-  &lt;div class=&quot;stat&quot;&gt;
-   &lt;b&gt;Active&lt;/b&gt;
-   &lt;span&gt;Account&lt;/span&gt;
-  &lt;/div&gt;
- &lt;/div&gt;
+<header class="top">
+ <div class="top-row">
+  <div>
+   <h2>Nivesh India Grow</h2>
+   <div id="welcome" class="welcome">Welcome</div>
+  </div>
+  <div id="avatar" class="avatar">N</div>
+ </div>
+</header>
 
 
- &lt;div class=&quot;section-head&quot;&gt;
-  &lt;h3&gt;Investment Plans&lt;/h3&gt;
- &lt;/div&gt;
+<!-- HOME -->
+<main id="home" class="page active">
+<div class="wrap">
+
+ <div class="title">Home</div>
+
+ <div class="hero">
+  <div class="small">Available Balance</div>
+  <div class="money" id="balance">₹0</div>
+ </div>
+
+ <div class="stats">
+  <div class="stat">
+   <b id="income">₹0</b>
+   <span>Total Income</span>
+  </div>
+
+  <div class="stat">
+   <b id="teamCount">0</b>
+   <span>Team Members</span>
+  </div>
+
+  <div class="stat">
+   <b>Active</b>
+   <span>Account</span>
+  </div>
+ </div>
 
 
- &lt;div class=&quot;plans&quot;&gt;
+ <div class="section-head">
+  <h3>Investment Plans</h3>
+ </div>
 
-  &lt;!-- LEVEL 1 --&gt;
-  &lt;div class=&quot;plan&quot;&gt;
-   &lt;div class=&quot;plan-top&quot;&gt;
-    &lt;div&gt;
-     &lt;h3&gt;Level 1 Investment&lt;/h3&gt;
-     &lt;div class=&quot;price&quot;&gt;₹2,500&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;span class=&quot;badge&quot;&gt;60 Days&lt;/span&gt;
-   &lt;/div&gt;
 
-   &lt;div class=&quot;plan-grid&quot;&gt;
-    &lt;div&gt;
-     &lt;small&gt;Buy Price&lt;/small&gt;
-     &lt;b&gt;₹2,500&lt;/b&gt;
-    &lt;/div&gt;
+ <div class="plans">
 
-    &lt;div&gt;
-     &lt;small&gt;Day Income&lt;/small&gt;
-     &lt;b&gt;₹100&lt;/b&gt;
-    &lt;/div&gt;
+  <!-- LEVEL 1 -->
+  <div class="plan">
+   <div class="plan-top">
+    <div>
+     <h3>Level 1 Investment</h3>
+     <div class="price">₹2,500</div>
+    </div>
+    <span class="badge">60 Days</span>
+   </div>
 
-    &lt;div&gt;
-     &lt;small&gt;Total Revenue&lt;/small&gt;
-     &lt;b&gt;₹6,000&lt;/b&gt;
-    &lt;/div&gt;
-   &lt;/div&gt;
+   <div class="plan-grid">
+    <div>
+     <small>Buy Price</small>
+     <b>₹2,500</b>
+    </div>
 
-   &lt;button type=&quot;button&quot;
-     class=&quot;primary&quot;
-     style=&quot;margin-top:14px&quot;
-     onclick=&quot;buyPlan(1,2500,100,6000,60)&quot;&gt;
+    <div>
+     <small>Day Income</small>
+     <b>₹100</b>
+    </div>
+
+    <div>
+     <small>Total Revenue</small>
+     <b>₹6,000</b>
+    </div>
+   </div>
+
+   <button type="button"
+     class="primary"
+     style="margin-top:14px"
+     onclick="buyPlan(1,2500,100,6000,60)">
      Buy Level 1
-   &lt;/button&gt;
-  &lt;/div&gt;
+   </button>
+  </div>
 
 
-  &lt;!-- LEVEL 2 --&gt;
-  &lt;div class=&quot;plan&quot;&gt;
-   &lt;div class=&quot;plan-top&quot;&gt;
-    &lt;div&gt;
-     &lt;h3&gt;Level 2 Investment&lt;/h3&gt;
-     &lt;div class=&quot;price&quot;&gt;₹3,500&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;span class=&quot;badge&quot;&gt;60 Days&lt;/span&gt;
-   &lt;/div&gt;
+  <!-- LEVEL 2 -->
+  <div class="plan">
+   <div class="plan-top">
+    <div>
+     <h3>Level 2 Investment</h3>
+     <div class="price">₹3,500</div>
+    </div>
+    <span class="badge">60 Days</span>
+   </div>
 
-   &lt;div class=&quot;plan-grid&quot;&gt;
-    &lt;div&gt;
-     &lt;small&gt;Buy Price&lt;/small&gt;
-     &lt;b&gt;₹3,500&lt;/b&gt;
-    &lt;/div&gt;
+   <div class="plan-grid">
+    <div>
+     <small>Buy Price</small>
+     <b>₹3,500</b>
+    </div>
 
-    &lt;div&gt;
-     &lt;small&gt;Day Income&lt;/small&gt;
-     &lt;b&gt;₹150&lt;/b&gt;
-    &lt;/div&gt;
+    <div>
+     <small>Day Income</small>
+     <b>₹150</b>
+    </div>
 
-    &lt;div&gt;
-     &lt;small&gt;Total Revenue&lt;/small&gt;
-     &lt;b&gt;₹9,000&lt;/b&gt;
-    &lt;/div&gt;
-   &lt;/div&gt;
+    <div>
+     <small>Total Revenue</small>
+     <b>₹9,000</b>
+    </div>
+   </div>
 
-   &lt;button type=&quot;button&quot;
-     class=&quot;primary&quot;
-     style=&quot;margin-top:14px&quot;
-     onclick=&quot;buyPlan(2,3500,150,9000,60)&quot;&gt;
+   <button type="button"
+     class="primary"
+     style="margin-top:14px"
+     onclick="buyPlan(2,3500,150,9000,60)">
      Buy Level 2
-   &lt;/button&gt;
-  &lt;/div&gt;
+   </button>
+  </div>
 
 
-  &lt;!-- LEVEL 3 --&gt;
-  &lt;div class=&quot;plan&quot;&gt;
-   &lt;div class=&quot;plan-top&quot;&gt;
-    &lt;div&gt;
-     &lt;h3&gt;Level 3 Investment&lt;/h3&gt;
-     &lt;div class=&quot;price&quot;&gt;₹7,000&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;span class=&quot;badge&quot;&gt;60 Days&lt;/span&gt;
-   &lt;/div&gt;
+  <!-- LEVEL 3 -->
+  <div class="plan">
+   <div class="plan-top">
+    <div>
+     <h3>Level 3 Investment</h3>
+     <div class="price">₹7,000</div>
+    </div>
+    <span class="badge">60 Days</span>
+   </div>
 
-   &lt;div class=&quot;plan-grid&quot;&gt;
-    &lt;div&gt;
-     &lt;small&gt;Buy Price&lt;/small&gt;
-     &lt;b&gt;₹7,000&lt;/b&gt;
-    &lt;/div&gt;
+   <div class="plan-grid">
+    <div>
+     <small>Buy Price</small>
+     <b>₹7,000</b>
+    </div>
 
-    &lt;div&gt;
-     &lt;small&gt;Day Income&lt;/small&gt;
-     &lt;b&gt;₹350&lt;/b&gt;
-    &lt;/div&gt;
+    <div>
+     <small>Day Income</small>
+     <b>₹350</b>
+    </div>
 
-    &lt;div&gt;
-     &lt;small&gt;Total Revenue&lt;/small&gt;
-     &lt;b&gt;₹21,000&lt;/b&gt;
-    &lt;/div&gt;
-   &lt;/div&gt;
+    <div>
+     <small>Total Revenue</small>
+     <b>₹21,000</b>
+    </div>
+   </div>
 
-   &lt;button type=&quot;button&quot;
-     class=&quot;primary&quot;
-     style=&quot;margin-top:14px&quot;
-     onclick=&quot;buyPlan(3,7000,350,21000,60)&quot;&gt;
+   <button type="button"
+     class="primary"
+     style="margin-top:14px"
+     onclick="buyPlan(3,7000,350,21000,60)">
      Buy Level 3
-   &lt;/button&gt;
-  &lt;/div&gt;
+   </button>
+  </div>
 
 
-  &lt;!-- LEVEL 4 --&gt;
-  &lt;div class=&quot;plan&quot;&gt;
-   &lt;div class=&quot;plan-top&quot;&gt;
-    &lt;div&gt;
-     &lt;h3&gt;Level 4 Investment&lt;/h3&gt;
-     &lt;div class=&quot;price&quot;&gt;₹15,000&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;span class=&quot;badge&quot;&gt;60 Days&lt;/span&gt;
-   &lt;/div&gt;
+  <!-- LEVEL 4 -->
+  <div class="plan">
+   <div class="plan-top">
+    <div>
+     <h3>Level 4 Investment</h3>
+     <div class="price">₹15,000</div>
+    </div>
+    <span class="badge">60 Days</span>
+   </div>
 
-   &lt;div class=&quot;plan-grid&quot;&gt;
-    &lt;div&gt;
-     &lt;small&gt;Buy Price&lt;/small&gt;
-     &lt;b&gt;₹15,000&lt;/b&gt;
-    &lt;/div&gt;
+   <div class="plan-grid">
+    <div>
+     <small>Buy Price</small>
+     <b>₹15,000</b>
+    </div>
 
-    &lt;div&gt;
-     &lt;small&gt;Day Income&lt;/small&gt;
-     &lt;b&gt;₹800&lt;/b&gt;
-    &lt;/div&gt;
+    <div>
+     <small>Day Income</small>
+     <b>₹800</b>
+    </div>
 
-    &lt;div&gt;
-     &lt;small&gt;Total Revenue&lt;/small&gt;
-     &lt;b&gt;₹48,000&lt;/b&gt;
-    &lt;/div&gt;
-   &lt;/div&gt;
+    <div>
+     <small>Total Revenue</small>
+     <b>₹48,000</b>
+    </div>
+   </div>
 
-   &lt;button type=&quot;button&quot;
-     class=&quot;primary&quot;
-     style=&quot;margin-top:14px&quot;
-     onclick=&quot;buyPlan(4,15000,800,48000,60)&quot;&gt;
+   <button type="button"
+     class="primary"
+     style="margin-top:14px"
+     onclick="buyPlan(4,15000,800,48000,60)">
      Buy Level 4
-   &lt;/button&gt;
-  &lt;/div&gt;
+   </button>
+  </div>
 
 
-  &lt;!-- LEVEL 5 --&gt;
-  &lt;div class=&quot;plan&quot;&gt;
-   &lt;div class=&quot;plan-top&quot;&gt;
-    &lt;div&gt;
-     &lt;h3&gt;Level 5 Investment&lt;/h3&gt;
-     &lt;div class=&quot;price&quot;&gt;₹30,000&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;span class=&quot;badge&quot;&gt;60 Days&lt;/span&gt;
-   &lt;/div&gt;
+  <!-- LEVEL 5 -->
+  <div class="plan">
+   <div class="plan-top">
+    <div>
+     <h3>Level 5 Investment</h3>
+     <div class="price">₹30,000</div>
+    </div>
+    <span class="badge">60 Days</span>
+   </div>
 
-   &lt;div class=&quot;plan-grid&quot;&gt;
-    &lt;div&gt;
-     &lt;small&gt;Buy Price&lt;/small&gt;
-     &lt;b&gt;₹30,000&lt;/b&gt;
-    &lt;/div&gt;
+   <div class="plan-grid">
+    <div>
+     <small>Buy Price</small>
+     <b>₹30,000</b>
+    </div>
 
-    &lt;div&gt;
-     &lt;small&gt;Day Income&lt;/small&gt;
-     &lt;b&gt;₹1,500&lt;/b&gt;
-    &lt;/div&gt;
+    <div>
+     <small>Day Income</small>
+     <b>₹1,500</b>
+    </div>
 
-    &lt;div&gt;
-     &lt;small&gt;Total Revenue&lt;/small&gt;
-     &lt;b&gt;₹90,000&lt;/b&gt;
-    &lt;/div&gt;
-   &lt;/div&gt;
+    <div>
+     <small>Total Revenue</small>
+     <b>₹90,000</b>
+    </div>
+   </div>
 
-   &lt;button type=&quot;button&quot;
-     class=&quot;primary&quot;
-     style=&quot;margin-top:14px&quot;
-     onclick=&quot;buyPlan(5,30000,1500,90000,60)&quot;&gt;
+   <button type="button"
+     class="primary"
+     style="margin-top:14px"
+     onclick="buyPlan(5,30000,1500,90000,60)">
      Buy Level 5
-   &lt;/button&gt;
-  &lt;/div&gt;
+   </button>
+  </div>
 
- &lt;/div&gt;
+ </div>
 
 
- &lt;div class=&quot;section-head&quot;&gt;
-  &lt;h3&gt;Announcement&lt;/h3&gt;
- &lt;/div&gt;
+ <div class="section-head">
+  <h3>Announcement</h3>
+ </div>
 
- &lt;div class=&quot;card&quot;&gt;
+ <div class="card">
   Plan figures are displayed as provided for this website.
   Actual financial transactions and returns require the appropriate backend and legal setup.
- &lt;/div&gt;
+ </div>
 
-&lt;/div&gt;
-&lt;/main&gt;
+</div>
+</main>
 
 
-&lt;!-- TEAM --&gt;
-&lt;main id=&quot;team&quot; class=&quot;page&quot;&gt;
-&lt;div class=&quot;wrap&quot;&gt;
+<!-- TEAM -->
+<main id="team" class="page">
+<div class="wrap">
 
-&lt;div class=&quot;title&quot;&gt;My Team&lt;/div&gt;
-&lt;div class=&quot;subtitle&quot;&gt;Referral, commission
+<div class="title">My Team</div>
+<div class="subtitle">Referral, commission and team overview</div>
+
+<div class="card" style="margin-bottom:14px">
+
+ <h3 style="margin-top:0">My Referral</h3>
+
+ <div style="font-size:13px;color:#789096;margin-bottom:7px">
+  Referral Code
+ </div>
+
+ <div class="codebox">
+  <input id="teamRefCode" readonly>
+  <button type="button" class="copy" onclick="copyText('teamRefCode')">
+   Copy
+  </button>
+ </div>
+
+ <div style="font-size:13px;color:#789096;margin:16px 0 7px">
+  Referral Link
+ </div>
+
+ <div class="codebox">
+  <input id="teamRefLink" readonly>
+  <button type="button" class="copy" onclick="copyText('teamRefLink')">
+   Copy
+  </button>
+ </div>
+
+</div>
+
+
+<div class="stats">
+
+ <div class="stat">
+  <b id="teamSize">0</b>
+  <span>Team Size</span>
+ </div>
+
+ <div class="stat">
+  <b id="lv1Count">0</b>
+  <span>LV1</span>
+ </div>
+
+ <div class="stat">
+  <b id="lv2Count">0</b>
+  <span>LV2</span>
+ </div>
+
+</div>
+
+
+<div class="stats">
+
+ <div class="stat">
+  <b id="lv3Count">0</b>
+  <span>LV3</span>
+ </div>
+
+ <div class="stat">
+  <b id="commission">₹0</b>
+  <span>Commission</span>
+ </div>
+
+ <div class="stat">
+  <b id="salaryBonus">₹0</b>
+  <span>Salary Bonus</span>
+ </div>
+
+</div>
+
+
+<div class="card" style="margin-bottom:14px">
+
+ <h3 style="margin-top:0">Commission</h3>
+
+ <p class="subtitle" style="margin-bottom:0">
+  Qualifying referral deposits are eligible for the configured 10% commission.
+ </p>
+
+</div>
+
+
+<div class="card" style="margin-bottom:14px">
+
+ <h3 style="margin-top:0">Monthly Salary Bonus</h3>
+
+ <div class="plan-grid">
+
+  <div>
+   <small>Required Members</small>
+   <b>50</b>
+  </div>
+
+  <div>
+   <small>Current Members</small>
+   <b id="bonusMembers">0</b>
+  </div>
+
+  <div>
+   <small>Bonus</small>
+   <b>₹10,000</b>
+  </div>
+
+ </div>
+
+ <div class="progress">
+  <span id="bonusProgress" style="width:0%"></span>
+ </div>
+
+ <div class="device-foot">
+  <span id="bonusStatus">0 / 50 members</span>
+  <span>Monthly</span>
+ </div>
+
+</div>
+
+
+<div class="team-tabs">
+
+ <button type="button"
+   class="tab active"
+   onclick="filterTeam('all',this)">
+   All
+ </button>
+
+ <button type="button"
+   class="tab"
+   onclick="filterTeam('LV1',this)">
+   LV1
+ </button>
+
+ <button type="button"
+   class="tab"
+   onclick="filterTeam('LV2',this)">
+   LV2
+ </button>
+
+ <button type="button"
+   class="tab"
+   onclick="filterTeam('LV3',this)">
+   LV3
+ </button>
+
+</div>
+
+<div id="members"></div>
+
+</div>
+</main>
+
+
+<!-- SHARE -->
+<main id="share" class="page">
+<div class="wrap">
+
+ <div class="title">Share</div>
+ <div class="subtitle">Your referral information</div>
+
+ <div class="card share-card">
+
+  <div class="qr" aria-label="QR placeholder"></div>
+
+  <h3>Referral Code</h3>
+
+  <div class="codebox">
+   <input id="refCode" value="NIG2026" readonly>
+   <button type="button" class="copy" onclick="copyText('refCode')">
+    Copy
+   </button>
+  </div>
+
+  <h3 style="margin-top:20px">Referral Link</h3>
+
+  <div class="codebox">
+   <input id="refLink" readonly>
+   <button type="button" class="copy" onclick="copyText('refLink')">
+    Copy
+   </button>
+  </div>
+
+  <p class="note">
+   This page displays referral information only.
+   Tracking requires a server-side system.
+  </p>
+
+ </div>
+
+</div>
+</main>
+
+
+<!-- DEVICES -->
+<main id="devices" class="page">
+<div class="wrap">
+
+ <div class="title">My Devices</div>
+
+ <div class="subtitle">
+  Your purchased plans
+ </div>
+
+ <div id="devicesList"></div>
+
+</div>
+</main>
+
+
+<!-- MY ACCOUNT -->
+<main id="my" class="page">
+<div class="wrap">
+
+ <div class="title">My Account</div>
+
+ <div class="profile">
+  <div id="profileAvatar" class="avatar">N</div>
+
+  <div class="profile-info">
+   <b id="profileName">User</b>
+   <small id="profileUser">Username</small>
+  </div>
+ </div>
+
+
+ <div class="balance-card">
+
+  <div class="balance-row">
+
+   <div>
+    Balance
+    <b id="myBalance">₹0</b>
+   </div>
+
+   <div>
+    Total Income
+    <b id="myIncome">₹0</b>
+   </div>
+
+  </div>
+
+ </div>
+
+
+ <div class="actions">
+
+  <button type="button"
+    class="action"
+    onclick="openModal('Recharge')">
+    ₹
+    <small>Recharge</small>
+  </button>
+
+  <button type="button"
+    class="action"
+    onclick="toast('Withdrawal module needs a real backend and payment setup.')">
+    ↗
+    <small>Withdraw</small>
+  </button>
+
+  <button type="button"
+    class="action"
+    onclick="showPage('devices')">
+    ▣
+    <small>Devices</small>
+  </button>
+
+ </div>
+
+
+ <div class="section-head">
+  <h3>Account</h3>
+ </div>
+
+
+ <div class="grid2">
+
+  <button type="button"
+    class="menu-card"
+    onclick="toast('Personal information is stored locally in this frontend.')">
+    Personal Information
+    <small>Profile details</small>
+  </button>
+
+  <button type="button"
+    class="menu-card"
+    onclick="toast('Income details will appear here after backend integration.')">
+    Income Details
+    <small>Income history</small>
+  </button>
+
+  <button type="button"
+    class="menu-card"
+    onclick="toast('Recharge details need backend integration.')">
+    Recharge Details
+    <small>Recharge history</small>
+  </button>
+
+  <button type="button"
+    class="menu-card"
+    onclick="toast('Withdrawal details need backend integration.')">
+    Withdrawal Details
+    <small>Withdrawal history</small>
+  </button>
+
+  <button type="button"
+    class="menu-card"
+    onclick="toast('About Nivesh India Grow')">
+    About Us
+    <small>Platform information</small>
+  </button>
+
+  <button type="button"
+    class="menu-card"
+    onclick="downloadApp()">
+    Download
+    <small>App package</small>
+  </button>
+
+ </div>
+
+
+ <button type="button"
+   class="logout"
+   onclick="logout()">
+   Log Out
+ </button>
+
+</div>
+</main>
+
+
+<!-- BOTTOM NAV -->
+<nav class="bottom" id="bottomNav">
+
+ <button type="button"
+   class="nav active"
+   onclick="showPage('home',this)">
+   <span>⌂</span>
+   Home
+ </button>
+
+ <button type="button"
+   class="nav"
+   onclick="showPage('team',this)">
+   <span>♙</span>
+   Team
+ </button>
+
+ <button type="button"
+   class="nav"
+   onclick="showPage('share',this)">
+   <span>↗</span>
+   Share
+ </button>
+
+ <button type="button"
+   class="nav"
+   onclick="showPage('devices',this)">
+   <span>▣</span>
+   Devices
+ </button>
+
+ <button type="button"
+   class="nav"
+   onclick="showPage('my',this)">
+   <span>●</span>
+   My
+ </button>
+
+</nav>
+
+</div>
+
+
+<!-- RECHARGE MODAL -->
+<div id="modal" class="modal">
+
+ <div class="modal-box">
+
+  <button type="button"
+    class="close"
+    onclick="closeModal()">
+    ×
+  </button>
+
+  <h3 id="modalTitle">Recharge</h3>
+
+  <p class="subtitle">
+   This frontend does not process real payments.
+  </p>
+
+  <div class="field">
+   <label>Amount</label>
+   <input
+     id="rechargeAmount"
+     type="number"
+     min="1"
+     placeholder="Enter amount">
+  </div>
+
+  <button type="button"
+    class="primary"
+    onclick="submitRecharge()">
+    Continue
+  </button>
+
+ </div>
+
+</div>
+
+
+<div id="toast" class="toast"></div>
+
+
+<script>
+(function(){
+
+ const USER_KEY='nig_user_v2';
+ const SESSION_KEY='nig_session_v2';
+
+
+ /* =========================
+    LOGIN / REGISTER
+ ========================= */
+
+ window.showRegister=function(){
+   document.getElementById('loginBox').classList.add('hidden');
+   document.getElementById('registerBox').classList.remove('hidden');
+
+   const ref = new URLSearchParams(window.location.search).get('ref') || '';
+   const refInput = document.getElementById('regRef');
+
+   if(refInput){
+     refInput.value = ref;
+     refInput.readOnly = true;
+   }
+ };
+
+
+ window.showLogin=function(){
+   document.getElementById('registerBox').classList.add('hidden');
+   document.getElementById('loginBox').classList.remove('hidden');
+ };
+
+
+ function getUser(){
+   try{
+     return JSON.parse(localStorage.getItem(USER_KEY)||'null');
+   }catch(e){
+     return null;
+   }
+ }
+
+
+ window.registerUser=function(){
+
+   const name=document.getElementById('regName').value.trim();
+   const user=document.getElementById('regUser').value.trim();
+   const p=document.getElementById('regPass').value;
+   const p2=document.getElementById('regPass2').value;
+
+   if(!name||!user||!p||!p2)
+     return toast('Please fill all fields.');
+
+   if(user.length<3)
+     return toast('Username/mobile must be at least 3 characters.');
+
+   if(p.length<4)
+     return toast('Password must be at least 4 characters.');
+
+   if(p!==p2)
+     return toast('Passwords do not match.');
+
+   if(getUser())
+     return toast('An account already exists on this browser. Please login.');
+
+
+   const refCode=
+     'NIG'+
+     user.replace(/[^a-zA-Z0-9]/g,'')
+     .toUpperCase()
+     .slice(0,8)+
+     Math.floor(1000+Math.random()*9000);
+
+
+   const signupRef=
+     document.getElementById('regRef').value.trim() ||
+     new URLSearchParams(location.search).get('ref')||'';
+
+
+   const data={
+     name:name,
+     user:user,
+     password:p,
+     balance:0,
+     income:0,
+     team:0,
+     refCode:refCode,
+     commission:0,
+     salaryBonus:0,
+     referredBy:signupRef,
+
+     /* NEW:
+        Purchased plans are stored here.
+     */
+     purchasedPlans:[]
+   };
+
+
+   localStorage.setItem(
+     USER_KEY,
+     JSON.stringify(data)
+   );
+
+   localStorage.setItem(
+     SESSION_KEY,
+     '1'
+   );
+
+   showApp();
+
+   toast('Account created successfully.');
+
+ };
+
+
+ window.loginUser=function(){
+
+   const u=document.getElementById('loginUser').value.trim();
+   const p=document.getElementById('loginPass').value;
+   const data=getUser();
+
+   if(!u||!p)
+     return toast('Enter username/mobile and password.');
+
+   if(!data)
+     return toast('No account found. Tap Create Account first.');
+
+   if(data.user!==u||data.password!==p)
+     return toast('Incorrect username/mobile or password.');
+
+   localStorage.setItem(SESSION_KEY,'1');
+
+   showApp();
+
+   toast('Login successful.');
+
+ };
+
+
+ /* =========================
+    SHOW APP
+ ========================= */
+
+ function showApp(){
+
+   const data=getUser();
+
+   if(!data){
+     showLogin();
+     return;
+   }
+
+
+   /* Old accounts ke liye */
+   if(!Array.isArray(data.purchasedPlans)){
+     data.purchasedPlans=[];
+     localStorage.setItem(
+       USER_KEY,
+       JSON.stringify(data)
+     );
+   }
+
+
+   document.getElementById('auth').style.display='none';
+
+   document.getElementById('app').style.display='block';
+
+   document.getElementById('bottomNav').style.display='grid';
+
+
+   const initial=
+     (data.name||'N')
+     .charAt(0)
+     .toUpperCase();
+
+
+   document.getElementById('welcome').textContent=
+     'Welcome, '+data.name;
+
+   document.getElementById('avatar').textContent=
+     initial;
+
+   document.getElementById('profileAvatar').textContent=
+     initial;
+
+   document.getElementById('profileName').textContent=
+     data.name;
+
+   document.getElementById('profileUser').textContent=
+     data.user;
+
+
+   const bal=Number(data.balance||0);
+   const inc=Number(data.income||0);
+
+
+   document.getElementById('balance').textContent=
+     '₹'+bal.toLocaleString('en-IN');
+
+   document.getElementById('income').textContent=
+     '₹'+inc.toLocaleString('en-IN');
+
+   document.getElementById('teamCount').textContent=
+     data.team||0;
+
+   document.getElementById('myBalance').textContent=
+     '₹'+bal.toLocaleString('en-IN');
+
+   document.getElementById('myIncome').textContent=
+     '₹'+inc.toLocaleString('en-IN');
+
+
+   /* =========================
+      REFERRAL
+   ========================= */
+
+   const base=
+     location.origin+
+     location.pathname.replace(/index\.html$/,'');
+
+
+   const refCode=
+     data.refCode||
+     'NIG'+
+     String(data.user||'USER')
+     .replace(/[^a-zA-Z0-9]/g,'')
+     .toUpperCase()
+     .slice(0,8)+
+     '1000';
+
+
+   document.getElementById('refCode').value=
+     refCode;
+
+   document.getElementById('refLink').value=
+     base+'?ref='+refCode;
+
+   document.getElementById('teamRefCode').value=
+     refCode;
+
+   document.getElementById('teamRefLink').value=
+     base+'?ref='+refCode;
+
+
+   /* =========================
+      TEAM
+   ========================= */
+
+   document.getElementById('commission').textContent=
+     '₹'+
+     Number(data.commission||0)
+     .toLocaleString('en-IN');
+
+
+   document.getElementById('salaryBonus').textContent=
+     '₹'+
+     Number(data.salaryBonus||0)
+     .toLocaleString('en-IN');
+
+
+   const teamSize=
+     Number(data.team||0);
+
+
+   document.getElementById('teamSize').textContent=
+     teamSize;
+
+   document.getElementById('bonusMembers').textContent=
+     teamSize;
+
+   document.getElementById('bonusStatus').textContent=
+     teamSize+' / 50 members';
+
+
+   const progress=
+     Math.min((teamSize/50)*100,100);
+
+
+   document.getElementById('bonusProgress').style.width=
+     progress+'%';
+
+
+   /* =========================
+      DEVICES
+   ========================= */
+
+   renderDevices();
+
+ }
+
+
+ /* =========================
+    LOGOUT
+ ========================= */
+
+ window.logout=function(){
+
+   localStorage.removeItem(SESSION_KEY);
+
+   document.getElementById('app').style.display='none';
+
+   document.getElementById('bottomNav').style.display='none';
+
+   document.getElementById('auth').style.display='flex';
+
+   document.getElementById('loginUser').value='';
+
+   document.getElementById('loginPass').value='';
+
+   showLogin();
+
+   toast('Logged out.');
+
+ };
+
+
+ /* =========================
+    PAGE NAVIGATION
+ ========================= */
+
+ window.showPage=function(id,btn){
+
+   document
+     .querySelectorAll('.page')
+     .forEach(x=>x.classList.remove('active'));
+
+   document
+     .getElementById(id)
+     .classList.add('active');
+
+
+   document
+     .querySelectorAll('.nav')
+     .forEach(x=>x.classList.remove('active'));
+
+
+   if(btn){
+
+     btn.classList.add('active');
+
+   }else{
+
+     const b=
+       [...document.querySelectorAll('.nav')]
+       .find(x=>
+         x.getAttribute('onclick') &&
+         x.getAttribute('onclick')
+         .includes("'"+id+"'")
+       );
+
+     if(b)
+       b.classList.add('active');
+   }
+
+
+   window.scrollTo(0,0);
+
+ };
+
+
+ /* =========================
+    DEMO TEAM
+ ========================= */
+
+ const demo=[
+   ['Aarav','LV1'],
+   ['Riya','LV1'],
+   ['Kabir','LV2'],
+   ['Anaya','LV2'],
+   ['Vivaan','LV3'],
+   ['Meera','LV1'],
+   ['Arjun','LV2'],
+   ['Ishita','LV3']
+ ];
+
+
+ window.filterTeam=function(level,btn){
+
+   document
+     .querySelectorAll('.tab')
+     .forEach(x=>x.classList.remove('active'));
+
+   btn.classList.add('active');
+
+
+   const list=
+     level==='all'
+     ? demo
+     : demo.filter(x=>x[1]===level);
+
+
+   document.getElementById('members').innerHTML=
+     list.map(m=>
+       '<div class="member">'+
+         '<div class="member-icon">'+m[0][0]+'</div>'+
+         '<div class="member-info">'+
+           '<b>'+m[0]+'</b>'+
+           '<small>'+m[1]+' • Demo team member</small>'+
+         '</div>'+
+         '<span class="status">Active</span>'+
+       '</div>'
+     ).join('');
+
+ };
+
+
+ /* =========================
+    BUY PLAN
+ ========================= */
+
+ window.buyPlan=function(
+   level,
+   price,
+   dayIncome,
+   totalRevenue,
+   days
+ ){
+
+   const data=getUser();
+
+
+   if(!data){
+     return toast('Please login first.');
+   }
+
+
+   if(!Array.isArray(data.purchasedPlans)){
+     data.purchasedPlans=[];
+   }
+
+
+   /* Same level duplicate purchase ko rokna */
+   const alreadyBought=
+     data.purchasedPlans.some(
+       plan=>Number(plan.level)===Number(level)
+     );
+
+
+   if(alreadyBought){
+
+     showPage('devices');
+
+     return toast(
+       'Level '+level+' is already in My Devices.'
+     );
+
+   }
+
+
+   /*
+     Frontend record only.
+     Real payment / balance deduction
+     yahan nahi kiya ja raha.
+   */
+
+   const newPlan={
+     level:Number(level),
+     price:Number(price),
+     dayIncome:Number(dayIncome),
+     totalRevenue:Number(totalRevenue),
+     days:Number(days),
+
+     progress:0,
+
+     status:'Pending',
+
+     purchasedAt:new Date().toISOString()
+   };
+
+
+   data.purchasedPlans.push(newPlan);
+
+
+   localStorage.setItem(
+     USER_KEY,
+     JSON.stringify(data)
+   );
+
+
+   renderDevices();
+
+
+   showPage('devices');
+
+
+   toast(
+     'Level '+level+' added to My Devices.'
+   );
+
+ };
+
+
+ /* =========================
+    RENDER DEVICES
+ ========================= */
+
+ window.renderDevices=function(){
+
+   const box=
+     document.getElementById('devicesList');
+
+
+   if(!box)
+     return;
+
+
+   const data=getUser();
+
+
+   if(!data){
+
+     box.innerHTML=
+       '<div class="empty-device">'+
+         '<h3>Please Login</h3>'+
+         '<div>Login to view your purchased plans.</div>'+
+       '</div>';
+
+     return;
+   }
+
+
+   const plans=
+     Array.isArray(data.purchasedPlans)
+     ? data.purchasedPlans
+     : [];
+
+
+   if(plans.length===0){
+
+     box.innerHTML=
+       '<div class="empty-device">'+
+         '<h3>No Purchased Plans</h3>'+
+         '<div>Home page se Level 1–5 me se koi plan select karein.</div>'+
+       '</div>';
+
+     return;
+   }
+
+
+   box.innerHTML=
+     plans.map(plan=>{
+
+       const progress=
+         Math.min(
+           Math.max(
+             Number(plan.progress||0),
+             0
+           ),
+           100
+         );
+
+
+       const status=
+         plan.status||'Pending';
+
+
+       let statusHtml=
+         '<span class="pending">'+
+         status+
+         '</span>';
+
+
+       if(status==='Active'){
+
+         statusHtml=
+           '<span class="badge">Active</span>';
+
+       }
+
+
+       if(status==='Completed'){
+
+         statusHtml=
+           '<span class="status">Completed</span>';
+
+       }
+
+
+       return (
+
+         '<div class="device">'+
+
+           '<div class="device-row">'+
+
+             '<div>'+
+               '<h3>Level '+
+               Number(plan.level)+
+               ' Investment</h3>'+
+
+               '<p>'+
+               Number(plan.days)+
+               ' Days • Buy Price ₹'+
+               Number(plan.price)
+               .toLocaleString('en-IN')+
+               '</p>'+
+             '</div>'+
+
+             statusHtml+
+
+           '</div>'+
+
+
+           '<div class="plan-grid">'+
+
+             '<div>'+
+               '<small>Buy Price</small>'+
+               '<b>₹'+
+               Number(plan.price)
+               .toLocaleString('en-IN')+
+               '</b>'+
+             '</div>'+
+
+             '<div>'+
+               '<small>Day Income</small>'+
+               '<b>₹'+
+               Number(plan.dayIncome)
+               .toLocaleString('en-IN')+
+               '</b>'+
+             '</div>'+
+
+             '<div>'+
+               '<small>Total Revenue</small>'+
+               '<b>₹'+
+               Number(plan.totalRevenue)
+               .toLocaleString('en-IN')+
+               '</b>'+
+             '</div>'+
+
+           '</div>'+
+
+
+           '<div class="progress">'+
+             '<span style="width:'+progress+'%"></span>'+
+           '</div>'+
+
+
+           '<div class="device-foot">'+
+             '<span>Progress '+
+             progress+
+             '%</span>'+
+
+             '<span>'+
+             Number(plan.days)+
+             ' Days'+
+             '</span>'+
+           '</div>'+
+
+         '</div>'
+
+       );
+
+     }).join('');
+
+ };
+
+
+ /* =========================
+    COPY
+ ========================= */
+
+ window.copyText=function(id){
+
+   const el=document.getElementById(id);
+
+   const val=el.value;
+
+
+   if(navigator.clipboard){
+
+     navigator.clipboard
+       .writeText(val)
+       .then(()=>toast('Copied'))
+       .catch(()=>{
+
+         el.select();
+
+         document.execCommand('copy');
+
+         toast('Copied');
+
+       });
+
+   }else{
+
+     el.select();
+
+     document.execCommand('copy');
+
+     toast('Copied');
+
+   }
+
+ };
+
+
+ /* =========================
+    MODAL
+ ========================= */
+
+ window.openModal=function(title){
+
+   document.getElementById('modalTitle').textContent=
+     title;
+
+   document.getElementById('modal').style.display=
+     'flex';
+
+ };
+
+
+ window.closeModal=function(){
+
+   document.getElementById('modal').style.display=
+     'none';
+
+ };
+
+
+ window.submitRecharge=function(){
+
+   toast(
+     'Real payment processing is not connected yet.'
+   );
+
+   closeModal();
+
+ };
+
+
+ window.downloadApp=function(){
+
+   toast(
+     'APK package is not attached yet. The website itself is live.'
+   );
+
+ };
+
+
+ /* =========================
+    TOAST
+ ========================= */
+
+ let toastTimer;
+
+
+ window.toast=function(msg){
+
+   const t=
+     document.getElementById('toast');
+
+
+   t.textContent=msg;
+
+   t.classList.add('show');
+
+
+   clearTimeout(toastTimer);
+
+
+   toastTimer=setTimeout(
+     ()=>t.classList.remove('show'),
+     2600
+   );
+
+ };
+
+
+ /* =========================
+    BOOT
+ ========================= */
+
+ function boot(){
+
+   const showReg=
+     document.getElementById('showRegisterBtn');
+
+   const showLog=
+     document.getElementById('showLoginBtn');
+
+   const regBtn=
+     document.getElementById('registerBtn');
+
+   const logBtn=
+     document.getElementById('loginBtn');
+
+
+   if(showReg)
+     showReg.addEventListener(
+       'click',
+       function(e){
+         e.preventDefault();
+         showRegister();
+       }
+     );
+
+
+   if(showLog)
+     showLog.addEventListener(
+       'click',
+       function(e){
+         e.preventDefault();
+         showLogin();
+       }
+     );
+
+
+   if(regBtn)
+     regBtn.addEventListener(
+       'click',
+       function(e){
+         e.preventDefault();
+         registerUser();
+       }
+     );
+
+
+   if(logBtn)
+     logBtn.addEventListener(
+       'click',
+       function(e){
+         e.preventDefault();
+         loginUser();
+       }
+     );
+
+
+   const params = new URLSearchParams(location.search);
+   const regLink = params.get('register');
+   const referral = params.get('ref');
+
+
+   if(regLink==='1' || referral)
+     showRegister();
+
+
+   const tab=
+     document.querySelector('.tab');
+
+
+   if(tab)
+     filterTeam('all',tab);
+
+
+   try{
+
+     if(
+       localStorage.getItem(SESSION_KEY)==='1' &&
+       getUser()
+     ){
+
+       showApp();
+
+     }else{
+
+       document.getElementById('auth').style.display='flex';
+
+       document.getElementById('app').style.display='none';
+
+       document.getElementById('bottomNav').style.display='none';
+
+     }
+
+   }catch(e){
+
+     document.getElementById('auth').style.display='flex';
+
+   }
+
+ }
+
+
+ if(document.readyState==='loading'){
+
+   document.addEventListener(
+     'DOMContentLoaded',
+     boot
+   );
+
+ }else{
+
+   boot();
+
+ }
+
+})();
+</script>
+
+</body>
+</html>
