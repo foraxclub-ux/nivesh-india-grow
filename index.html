@@ -669,6 +669,11 @@ body{
     <input id="regPass2" type="password" autocomplete="new-password" placeholder="Confirm password">
    </div>
 
+   <div class="field">
+    <label>Referral Code</label>
+    <input id="regRef" readonly placeholder="Referral code will appear automatically">
+   </div>
+
    <button type="button" class="primary" id="registerBtn">Create Account</button>
 
    <div class="switch">
@@ -1346,17 +1351,70 @@ body{
 <script>
 (function(){
 
- const USER_KEY='nig_user_v2';
- const SESSION_KEY='nig_session_v2';
+ const USERS_KEY='nig_users_v3';
+ const OLD_USER_KEY='nig_user_v2';
+ const SESSION_KEY='nig_session_v3';
 
 
  /* =========================
     LOGIN / REGISTER
  ========================= */
 
+ function getUsers(){
+   try{
+     const raw=localStorage.getItem(USERS_KEY);
+     if(raw){
+       const users=JSON.parse(raw);
+       if(Array.isArray(users)) return users;
+     }
+   }catch(e){}
+
+   try{
+     const old=JSON.parse(localStorage.getItem(OLD_USER_KEY)||'null');
+     if(old && old.user){
+       const users=[old];
+       localStorage.setItem(USERS_KEY,JSON.stringify(users));
+       return users;
+     }
+   }catch(e){}
+
+   return [];
+ }
+
+ function saveUsers(users){
+   localStorage.setItem(USERS_KEY,JSON.stringify(users));
+ }
+
+ function getUser(){
+   try{
+     const session=localStorage.getItem(SESSION_KEY);
+     if(!session) return null;
+     const users=getUsers();
+     return users.find(x=>String(x.user).toLowerCase()===String(session).toLowerCase())||null;
+   }catch(e){
+     return null;
+   }
+ }
+
+ function updateCurrentUser(data){
+   const users=getUsers();
+   const index=users.findIndex(x=>String(x.user).toLowerCase()===String(data.user).toLowerCase());
+   if(index>=0){
+     users[index]=data;
+     saveUsers(users);
+   }
+ }
+
  window.showRegister=function(){
    document.getElementById('loginBox').classList.add('hidden');
    document.getElementById('registerBox').classList.remove('hidden');
+
+   const ref=new URLSearchParams(window.location.search).get('ref')||'';
+   const refInput=document.getElementById('regRef');
+   if(refInput){
+     refInput.value=ref;
+     refInput.readOnly=true;
+   }
  };
 
 
@@ -1366,21 +1424,13 @@ body{
  };
 
 
- function getUser(){
-   try{
-     return JSON.parse(localStorage.getItem(USER_KEY)||'null');
-   }catch(e){
-     return null;
-   }
- }
-
-
  window.registerUser=function(){
 
    const name=document.getElementById('regName').value.trim();
    const user=document.getElementById('regUser').value.trim();
    const p=document.getElementById('regPass').value;
    const p2=document.getElementById('regPass2').value;
+   const signupRef=document.getElementById('regRef') ? document.getElementById('regRef').value.trim() : '';
 
    if(!name||!user||!p||!p2)
      return toast('Please fill all fields.');
@@ -1394,9 +1444,10 @@ body{
    if(p!==p2)
      return toast('Passwords do not match.');
 
-   if(getUser())
-     return toast('An account already exists on this browser. Please login.');
-
+   const users=getUsers();
+   const exists=users.some(x=>String(x.user).toLowerCase()===user.toLowerCase());
+   if(exists)
+     return toast('This username/mobile is already registered. Please login.');
 
    const refCode=
      'NIG'+
@@ -1404,11 +1455,6 @@ body{
      .toUpperCase()
      .slice(0,8)+
      Math.floor(1000+Math.random()*9000);
-
-
-   const signupRef=
-     new URLSearchParams(location.search).get('ref')||'';
-
 
    const data={
      name:name,
@@ -1421,28 +1467,15 @@ body{
      commission:0,
      salaryBonus:0,
      referredBy:signupRef,
-
-     /* NEW:
-        Purchased plans are stored here.
-     */
      purchasedPlans:[]
    };
 
-
-   localStorage.setItem(
-     USER_KEY,
-     JSON.stringify(data)
-   );
-
-   localStorage.setItem(
-     SESSION_KEY,
-     '1'
-   );
+   users.push(data);
+   saveUsers(users);
+   localStorage.setItem(SESSION_KEY,user);
 
    showApp();
-
    toast('Account created successfully.');
-
  };
 
 
@@ -1450,23 +1483,22 @@ body{
 
    const u=document.getElementById('loginUser').value.trim();
    const p=document.getElementById('loginPass').value;
-   const data=getUser();
+   const users=getUsers();
 
    if(!u||!p)
      return toast('Enter username/mobile and password.');
 
+   const data=users.find(x=>String(x.user).toLowerCase()===u.toLowerCase());
+
    if(!data)
      return toast('No account found. Tap Create Account first.');
 
-   if(data.user!==u||data.password!==p)
+   if(data.password!==p)
      return toast('Incorrect username/mobile or password.');
 
-   localStorage.setItem(SESSION_KEY,'1');
-
+   localStorage.setItem(SESSION_KEY,data.user);
    showApp();
-
    toast('Login successful.');
-
  };
 
 
@@ -1487,10 +1519,7 @@ body{
    /* Old accounts ke liye */
    if(!Array.isArray(data.purchasedPlans)){
      data.purchasedPlans=[];
-     localStorage.setItem(
-       USER_KEY,
-       JSON.stringify(data)
-     );
+     updateCurrentUser(data);
    }
 
 
@@ -1804,10 +1833,7 @@ body{
    data.purchasedPlans.push(newPlan);
 
 
-   localStorage.setItem(
-     USER_KEY,
-     JSON.stringify(data)
-   );
+   updateCurrentUser(data);
 
 
    renderDevices();
@@ -2177,7 +2203,7 @@ body{
    try{
 
      if(
-       localStorage.getItem(SESSION_KEY)==='1' &&
+       localStorage.getItem(SESSION_KEY) &&
        getUser()
      ){
 
