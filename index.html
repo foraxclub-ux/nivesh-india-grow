@@ -1619,26 +1619,7 @@ body{
      .toLocaleString('en-IN');
 
 
-   const teamSize=
-     Number(data.team||0);
-
-
-   document.getElementById('teamSize').textContent=
-     teamSize;
-
-   document.getElementById('bonusMembers').textContent=
-     teamSize;
-
-   document.getElementById('bonusStatus').textContent=
-     teamSize+' / 50 members';
-
-
-   const progress=
-     Math.min((teamSize/50)*100,100);
-
-
-   document.getElementById('bonusProgress').style.width=
-     progress+'%';
+   
 
 
    /* =========================
