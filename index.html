@@ -1562,8 +1562,7 @@ body{
    document.getElementById('income').textContent=
      '₹'+inc.toLocaleString('en-IN');
 
-   document.getElementById('teamCount').textContent=
-     data.team||0;
+   renderTeam();
 
    document.getElementById('myBalance').textContent=
      '₹'+bal.toLocaleString('en-IN');
@@ -1721,49 +1720,191 @@ body{
 
 
  /* =========================
-    DEMO TEAM
- ========================= */
+   REAL REFERRAL TEAM
+========================= */
 
- const demo=[
-   ['Aarav','LV1'],
-   ['Riya','LV1'],
-   ['Kabir','LV2'],
-   ['Anaya','LV2'],
-   ['Vivaan','LV3'],
-   ['Meera','LV1'],
-   ['Arjun','LV2'],
-   ['Ishita','LV3']
- ];
+let currentTeamMembers=[];
 
+function getTeamMembers(currentUser){
 
- window.filterTeam=function(level,btn){
+  const users=getUsers();
 
-   document
-     .querySelectorAll('.tab')
-     .forEach(x=>x.classList.remove('active'));
+  const normalize=v=>
+    String(v||'').trim().toLowerCase();
 
-   btn.classList.add('active');
+  const level1=users.filter(user=>
+    normalize(user.referredBy)===
+    normalize(currentUser.refCode)
+  );
 
+  const level2=level1.flatMap(parent=>
+    users.filter(user=>
+      normalize(user.referredBy)===
+      normalize(parent.refCode)
+    )
+  );
 
-   const list=
-     level==='all'
-     ? demo
-     : demo.filter(x=>x[1]===level);
+  const level3=level2.flatMap(parent=>
+    users.filter(user=>
+      normalize(user.referredBy)===
+      normalize(parent.refCode)
+    )
+  );
 
+  const seen=new Set();
+  const members=[];
 
-   document.getElementById('members').innerHTML=
-     list.map(m=>
-       '<div class="member">'+
-         '<div class="member-icon">'+m[0][0]+'</div>'+
-         '<div class="member-info">'+
-           '<b>'+m[0]+'</b>'+
-           '<small>'+m[1]+' • Demo team member</small>'+
-         '</div>'+
-         '<span class="status">Active</span>'+
-       '</div>'
-     ).join('');
+  [
+    [level1,'LV1'],
+    [level2,'LV2'],
+    [level3,'LV3']
+  ].forEach(([list,level])=>{
 
- };
+    list.forEach(user=>{
+
+      const key=
+        String(user.user||'').toLowerCase();
+
+      if(!key || seen.has(key))
+        return;
+
+      seen.add(key);
+
+      members.push({
+        user:user,
+        level:level
+      });
+
+    });
+  });
+
+  return members;
+}
+
+function renderTeam(){
+
+  const data=getUser();
+
+  if(!data)
+    return;
+
+  currentTeamMembers=
+    getTeamMembers(data);
+
+  const lv1=
+    currentTeamMembers.filter(
+      m=>m.level==='LV1'
+    ).length;
+
+  const lv2=
+    currentTeamMembers.filter(
+      m=>m.level==='LV2'
+    ).length;
+
+  const lv3=
+    currentTeamMembers.filter(
+      m=>m.level==='LV3'
+    ).length;
+
+  const total=
+    currentTeamMembers.length;
+
+  document.getElementById('teamSize').textContent=
+    total;
+
+  document.getElementById('lv1Count').textContent=
+    lv1;
+
+  document.getElementById('lv2Count').textContent=
+    lv2;
+
+  document.getElementById('lv3Count').textContent=
+    lv3;
+
+  document.getElementById('teamCount').textContent=
+    total;
+
+  document.getElementById('bonusMembers').textContent=
+    total;
+
+  document.getElementById('bonusStatus').textContent=
+    total+' / 50 members';
+
+  document.getElementById('bonusProgress').style.width=
+    Math.min((total/50)*100,100)+'%';
+
+  filterTeamList('all');
+}
+
+function filterTeamList(level){
+
+  const box=
+    document.getElementById('members');
+
+  if(!box)
+    return;
+
+  const list=
+    level==='all'
+    ? currentTeamMembers
+    : currentTeamMembers.filter(
+        m=>m.level===level
+      );
+
+  if(list.length===0){
+
+    box.innerHTML=
+      '<div class="empty-device">'+
+        '<h3>No Team Members</h3>'+
+        '<div>Referred users will appear here.</div>'+
+      '</div>';
+
+    return;
+  }
+
+  box.innerHTML=
+    list.map(item=>{
+
+      const user=item.user;
+      const name=user.name||user.user||'User';
+      const initial=
+        name.charAt(0).toUpperCase();
+
+      return(
+        '<div class="member">'+
+          '<div class="member-icon">'+
+            initial+
+          '</div>'+
+          '<div class="member-info">'+
+            '<b>'+
+              name+
+            '</b>'+
+            '<small>'+
+              item.level+
+              ' • '+
+              (user.user||'')+
+            '</small>'+
+          '</div>'+
+          '<span class="status">Active</span>'+
+        '</div>'
+      );
+
+    }).join('');
+}
+
+window.filterTeam=function(level,btn){
+
+  document
+    .querySelectorAll('.tab')
+    .forEach(x=>
+      x.classList.remove('active')
+    );
+
+  if(btn)
+    btn.classList.add('active');
+
+  filterTeamList(level);
+};
 
 
  /* =========================
