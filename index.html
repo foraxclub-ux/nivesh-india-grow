@@ -384,6 +384,129 @@ body{
 }
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
+
+/* REFERENCE HOME PAGE */
+.reference-data{display:none}
+.home-reference{padding-top:8px}
+.home-reference .home-hero{
+  position:relative;
+  min-height:128px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:18px 16px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#06384a 0%,#07596a 62%,#087f8c 100%);
+  color:#fff;
+  box-shadow:0 9px 22px rgba(6,56,74,.20);
+  border:1px solid rgba(0,201,151,.32);
+  margin-bottom:15px
+}
+.home-reference .home-hero:after{
+  content:"";
+  position:absolute;
+  width:120px;height:120px;
+  right:-18px;bottom:-35px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(0,201,151,.24),transparent 68%);
+}
+.home-reference .hero-copy{position:relative;z-index:2}
+.home-reference .hero-copy h3{
+  margin:0 0 6px;
+  font-size:19px;
+  line-height:1.15;
+  color:#fff
+}
+.home-reference .hero-copy p{
+  margin:0;
+  font-size:10px;
+  opacity:.86
+}
+.home-reference .hero-art{
+  position:relative;
+  z-index:2;
+  width:92px;
+  height:88px;
+  flex:0 0 92px;
+  display:grid;
+  place-items:center
+}
+.home-reference .hero-arrow{
+  position:absolute;
+  right:17px;top:3px;
+  color:#00c997;
+  font-size:42px;
+  font-weight:900;
+  transform:rotate(-8deg);
+  text-shadow:0 4px 12px rgba(0,201,151,.22)
+}
+.home-reference .hero-coins{
+  position:absolute;
+  right:7px;bottom:7px;
+  font-size:42px;
+  filter:drop-shadow(0 5px 8px rgba(0,0,0,.2))
+}
+.home-reference .home-title{
+  margin:0 0 10px;
+  font-size:18px;
+  font-weight:800;
+  color:#06384a
+}
+.home-reference .reference-plan{
+  padding:13px 12px 12px 14px;
+  border-radius:18px;
+  background:linear-gradient(180deg,#ffffff 0%,#f4fcfd 100%);
+  border:1px solid #cce8eb;
+  box-shadow:0 5px 16px rgba(6,56,74,.07);
+}
+.home-reference .reference-plan + .reference-plan{margin-top:10px}
+.home-reference .reference-plan .plan-top{align-items:flex-start}
+.home-reference .reference-plan h3{
+  font-size:14px;
+  margin:0 0 4px
+}
+.home-reference .reference-plan .price{
+  font-size:17px;
+  color:#06384a
+}
+.home-reference .reference-plan .badge{
+  font-size:9px;
+  padding:5px 8px
+}
+.home-reference .reference-plan .plan-grid{
+  margin-top:10px;
+  gap:4px
+}
+.home-reference .reference-plan .plan-grid div{
+  background:transparent;
+  border:0;
+  padding:4px 4px
+}
+.home-reference .reference-plan .plan-grid small{
+  font-size:8px;
+  color:#6a878d
+}
+.home-reference .reference-plan .plan-grid b{
+  display:block;
+  margin-top:2px;
+  font-size:11px
+}
+.home-reference .reference-buy{
+  height:34px;
+  margin-top:9px!important;
+  border-radius:18px;
+  font-size:11px;
+  box-shadow:none
+}
+.home-reference .home-note{
+  margin-top:12px;
+  font-size:10px;
+  color:#68858b;
+  text-align:center
+}
+
 @media(max-width:420px){
   .auth-card{padding:27px 18px 23px}
   .brand h1{font-size:30px}
@@ -486,43 +609,32 @@ body{
 
 
 <!-- HOME -->
-<main id="home" class="page active">
+<main id="home" class="page active home-reference">
 <div class="wrap">
 
- <div class="title">Home</div>
+ <div class="reference-data" aria-hidden="true">
+ <span id="balance">₹0</span>
+ <span id="income">₹0</span>
+ <span id="teamCount">0</span>
+</div>
 
- <div class="hero">
-  <div class="small">Available Balance</div>
-  <div class="money" id="balance">₹0</div>
- </div>
-
- <div class="stats">
-  <div class="stat">
-   <b id="income">₹0</b>
-   <span>Total Income</span>
+ <div class="home-hero">
+  <div class="hero-copy">
+   <h3>Your Growth<br>Our Priority</h3>
+   <p>Invest Smart • Earn Better • Grow Together</p>
   </div>
-
-  <div class="stat">
-   <b id="teamCount">0</b>
-   <span>Team Members</span>
-  </div>
-
-  <div class="stat">
-   <b>Active</b>
-   <span>Account</span>
+  <div class="hero-art" aria-hidden="true">
+   <div class="hero-arrow">↗</div>
+   <div class="hero-coins">🌱🪙</div>
   </div>
  </div>
 
-
- <div class="section-head">
-  <h3>Investment Plans</h3>
- </div>
-
+ <div class="home-title">Investment Plans</div>
 
  <div class="plans">
 
   <!-- LEVEL 1 -->
-  <div class="plan">
+  <div class="reference-plan">
    <div class="plan-top">
     <div>
      <h3>Level 1 Investment</h3>
@@ -536,29 +648,24 @@ body{
      <small>Buy Price</small>
      <b>₹2,500</b>
     </div>
-
     <div>
      <small>Day Income</small>
      <b>₹100</b>
     </div>
-
     <div>
      <small>Total Revenue</small>
      <b>₹6,000</b>
     </div>
    </div>
 
-   <button type="button"
-     class="primary"
-     style="margin-top:14px"
+   <button type="button" class="primary reference-buy"
      onclick="buyPlan(1,2500,100,6000,60)">
      Buy Level 1
    </button>
   </div>
 
-
   <!-- LEVEL 2 -->
-  <div class="plan">
+  <div class="reference-plan">
    <div class="plan-top">
     <div>
      <h3>Level 2 Investment</h3>
@@ -572,29 +679,24 @@ body{
      <small>Buy Price</small>
      <b>₹3,500</b>
     </div>
-
     <div>
      <small>Day Income</small>
      <b>₹150</b>
     </div>
-
     <div>
      <small>Total Revenue</small>
      <b>₹9,000</b>
     </div>
    </div>
 
-   <button type="button"
-     class="primary"
-     style="margin-top:14px"
+   <button type="button" class="primary reference-buy"
      onclick="buyPlan(2,3500,150,9000,60)">
      Buy Level 2
    </button>
   </div>
 
-
   <!-- LEVEL 3 -->
-  <div class="plan">
+  <div class="reference-plan">
    <div class="plan-top">
     <div>
      <h3>Level 3 Investment</h3>
@@ -608,29 +710,24 @@ body{
      <small>Buy Price</small>
      <b>₹7,000</b>
     </div>
-
     <div>
      <small>Day Income</small>
      <b>₹350</b>
     </div>
-
     <div>
      <small>Total Revenue</small>
      <b>₹21,000</b>
     </div>
    </div>
 
-   <button type="button"
-     class="primary"
-     style="margin-top:14px"
+   <button type="button" class="primary reference-buy"
      onclick="buyPlan(3,7000,350,21000,60)">
      Buy Level 3
    </button>
   </div>
 
-
   <!-- LEVEL 4 -->
-  <div class="plan">
+  <div class="reference-plan">
    <div class="plan-top">
     <div>
      <h3>Level 4 Investment</h3>
@@ -644,29 +741,24 @@ body{
      <small>Buy Price</small>
      <b>₹15,000</b>
     </div>
-
     <div>
      <small>Day Income</small>
      <b>₹800</b>
     </div>
-
     <div>
      <small>Total Revenue</small>
      <b>₹48,000</b>
     </div>
    </div>
 
-   <button type="button"
-     class="primary"
-     style="margin-top:14px"
+   <button type="button" class="primary reference-buy"
      onclick="buyPlan(4,15000,800,48000,60)">
      Buy Level 4
    </button>
   </div>
 
-
   <!-- LEVEL 5 -->
-  <div class="plan">
+  <div class="reference-plan">
    <div class="plan-top">
     <div>
      <h3>Level 5 Investment</h3>
@@ -680,21 +772,17 @@ body{
      <small>Buy Price</small>
      <b>₹30,000</b>
     </div>
-
     <div>
      <small>Day Income</small>
      <b>₹1,500</b>
     </div>
-
     <div>
      <small>Total Revenue</small>
      <b>₹90,000</b>
     </div>
    </div>
 
-   <button type="button"
-     class="primary"
-     style="margin-top:14px"
+   <button type="button" class="primary reference-buy"
      onclick="buyPlan(5,30000,1500,90000,60)">
      Buy Level 5
    </button>
@@ -702,14 +790,8 @@ body{
 
  </div>
 
-
- <div class="section-head">
-  <h3>Announcement</h3>
- </div>
-
- <div class="card">
+ <div class="home-note">
   Plan figures are displayed as provided for this website.
-  Actual financial transactions and returns require the appropriate backend and legal setup.
  </div>
 
 </div>
